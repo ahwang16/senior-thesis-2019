@@ -1,1 +1,6 @@
 pickle*
+TwitterAAE*
+*.pkl
+.DS_Store
+__MACOSX
+.ipynb_checkpoints
