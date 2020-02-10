@@ -99,7 +99,8 @@ def get_glove_vocab(vocab=_full_vocab) :
 def browns(debug=True, num_clusters=25) :
 	"""
 	Train Brown's clustering algorithm on Brown corpus (fiction) and
-	calculate precision (number of correct synonyms / total in cluster)
+	calculate precision (number of correct synonyms / total in cluster). Write
+	text file of precision and recall scores for each vocab word
 
 	Params:
 		num_clusters (int): number of clusters for Brown's algorithm return
@@ -114,36 +115,48 @@ def browns(debug=True, num_clusters=25) :
 	if not debug :
 		data = brown.sents(categories=["fiction"])
 
+	# Brown's clustering training
 	corpus = Corpus(data)
 	clustering = BrownClustering(corpus, num_clusters)
 	clustering.train()
 
-	precision, recall = [], []
+	precision, recall = [], [] # precision and recall for each vocab
 
+	# write individual precision and recall scores to text file
+	f = open("../data/browns.txt", "w")
+	f.write("vocab\tprecision\trecall\n")
+
+	# iterate through vocabulary to find synonym sets through WordNet
 	for v in clustering.vocabulary :
-		print(v)
 		p, r = 0.0, 0.0
+
+		# Brown's implementation gives clusters of (word, cluster_id) tuples
 		cluster = set(c[0] for c in clustering.get_similar(v, cap=1000))
+
+		# accumulate gold cluster for v with WordNet
 		gold = []
 		for syn in wordnet.synsets(v) :
 			for l in syn.lemmas() :
 				gold.append(l.name())
 		gold = set(gold)
-		print(gold)
 
-		intersection = cluster.intersection(gold)
-		print(cluster)
+		intersection = cluster.intersection(gold) # true positive
 
 		p = len(intersection) / (len(intersection) + len(cluster.difference(gold)))
 		r = len(intersection) / (len(intersection) + len(gold.difference(cluster)))
-		# p = len(cluster - gold)
-		# r = len(gold - cluster)
+
+		f.write("{}\t{}\t{}\n".format(v, p, r))
 
 
 		precision.append(p)
 		recall.append(r)
 
-	return np.mean(precision), np.mean(recall)
+
+	pre, rec = np.mean(precision), np.mean(recall)
+
+	f.write("\naverage\t{}\t{}\n".format(pre, rec))
+
+	return pre, rec
 
 
 def kmeans(embeds, vocab=_full_vocab, k=20, r=25) :
@@ -220,5 +233,5 @@ def eval(clusters):
 
 if __name__ == "__main__" :
 	# print(get_full_vocab(["big", "small", "good"]))
-	print(browns(debug=True, num_clusters=1))
+	print(browns(debug=False, num_clusters=25))
 	# load_glove()
