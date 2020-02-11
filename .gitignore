@@ -4,3 +4,4 @@ TwitterAAE*
 .DS_Store
 __MACOSX
 .ipynb_checkpoints
+glove*
