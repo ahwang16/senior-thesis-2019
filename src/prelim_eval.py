@@ -29,25 +29,25 @@ from sklearn.cluster import AgglomerativeClustering
 # 50 most frequent English adjectives https://www.ef.com/wwen/english-resources/english-vocabulary/top-50-adjectives/
 # 25 most frequent English nouns https://www.englishclub.com/vocabulary/common-nouns-25.htm
 # 65 common English nouns and adjectives
-SEED_VOCAB = [
-	"able", "bad", "best", "better", "big", "certain", "clear",
-	"different", "early", "easy", "economic", "free", "full", "good",
-	"great", "hard", "high", "important", "large", "late", "little", "local",
-	"long", "low", "major", "new", "old", "only", "other", "possible",
-	"recent", "right", "small", "social", "special", "strong", "sure", "true",
-	"whole", "young", "time", "person", "year", "way", "day", "thing",
-	"man", "world", "life", "hand", "part", "child", "eye", "woman", "place",
-	"work", "week", "case", "point", "government", "company", "number",
-	"group", "problem", "fact"
-]
+# SEED_VOCAB = [
+# 	"able", "bad", "best", "better", "big", "certain", "clear",
+# 	"different", "early", "easy", "economic", "free", "full", "good",
+# 	"great", "hard", "high", "important", "large", "late", "little", "local",
+# 	"long", "low", "major", "new", "old", "only", "other", "possible",
+# 	"recent", "right", "small", "social", "special", "strong", "sure", "true",
+# 	"whole", "young", "time", "person", "year", "way", "day", "thing",
+# 	"man", "world", "life", "hand", "part", "child", "eye", "woman", "place",
+# 	"work", "week", "case", "point", "government", "company", "number",
+# 	"group", "problem", "fact"
+# ]
 
-_full_vocab = set()
+# _full_vocab = set()
 
 # _gold_clusters = []
 
 _glove_50 = {} # all pretrained GloVe embeddings will be loaded here
-_glove_50_vocab = set() # GloVe embeddings for full vocab
-GLOVE_50_DIR = "../data/glove.twitter.27B.50d.txt"
+# _glove_50_vocab = set() # GloVe embeddings for full vocab
+GLOVE_50_DIR = "../glove.twitter.27B/glove.twitter.27B.50d.txt"
 
 
 # **************************************************************************** #
@@ -57,26 +57,26 @@ GLOVE_50_DIR = "../data/glove.twitter.27B.50d.txt"
 # of use)
 # input: list/set of strings (words)
 # output: set of all original vocab + members of first synsets
-def get_full_vocab(vocab=SEED_VOCAB) :
-	"""
-	Generate full vocabulary set by adding members of synsets for each
-	SEED_VOCAB. Use the first synset for each word (since synsets are ordered
-	by frequency of use)
+# def get_full_vocab(vocab=SEED_VOCAB) :
+# 	"""
+# 	Generate full vocabulary set by adding members of synsets for each
+# 	SEED_VOCAB. Use the first synset for each word (since synsets are ordered
+# 	by frequency of use)
 
-	Params:
-		vocab (list/set of strings): starting vocabulary
+# 	Params:
+# 		vocab (list/set of strings): starting vocabulary
 
-	Returns:
-		v (set of strings): expanded vocabulary
-	"""
-	v = set()
+# 	Returns:
+# 		v (set of strings): expanded vocabulary
+# 	"""
+# 	v = set()
 
-	for word in SEED_VOCAB :
-		for w in wordnet.synsets(word)[0].lemmas():
-			if "_" not in w.name() :
-				v.add(w.name())
+# 	for word in SEED_VOCAB :
+# 		for w in wordnet.synsets(word)[0].lemmas():
+# 			if "_" not in w.name() :
+# 				v.add(w.name())
 
-	return v
+# 	return v
 
 
 # Load 50-dim pretrained GloVe embeddings from text file
@@ -84,16 +84,21 @@ def load_glove(dir=GLOVE_50_DIR) :
 	with open(dir, "r") as glove_file:
 	    for line in glove_file:
 	        l = line.split()
-	        GLOVE_50[l[0]] = np.asarray(l[1:], dtype="float32")
+	        _glove_50[l[0]] = np.asarray(l[1:], dtype="float32")
 
 
 # Retrieve GloVe embeddings for given words
-def get_glove_vocab(vocab=_full_vocab) :
-	for v in vocab :
-		try :
-			_glove_50_vocab.add(_glove_50[v])
-		except :
-			pass
+# def get_glove_vocab(vocab=_full_vocab) :
+# 	for v in vocab :
+# 		try :
+# 			_glove_50_vocab.add(_glove_50[v])
+# 		except :
+# 			pass
+
+
+# Get vocabulary from fiction set of Brown corpus
+def get_brown_vocab() :
+	return set(brown.words(categories=['fiction']))
 
 
 def browns(debug=True, num_clusters=25) :
@@ -131,9 +136,7 @@ def browns(debug=True, num_clusters=25) :
 
 	# iterate through vocabulary to find synonym sets through WordNet
 	for v in clustering.vocabulary :
-		count += 1
-		if count % 10 == 0 :
-			print("{}/{}".format(count, len_vocab))
+		
 
 		p, r = 0.0, 0.0
 
@@ -160,6 +163,11 @@ def browns(debug=True, num_clusters=25) :
 
 		f.write("{}\t{}\t{}\n".format(v, p, r))
 
+		count += 1
+		if count % 10 == 0 :
+			print("{}/{}".format(count, len_vocab))
+			print(p, r)
+
 
 		precision.append(p)
 		recall.append(r)
@@ -168,36 +176,105 @@ def browns(debug=True, num_clusters=25) :
 	pre, rec = np.mean(precision), np.mean(recall)
 
 	f.write("\naverage\t{}\t{}\n".format(pre, rec))
+	f.close()
 
 	return pre, rec
 
 
-def kmeans(embeds, vocab=_full_vocab, k=20, r=25) :
+def kmeans(vocab, k=25, r=25) :
 	"""
 	Use k-means clustering with cosine similarity as the distance metric to
 	cluster the data into k groups.
 	    
     Params:
         k (int): number of clusters
-        data (ndarray): word embeddings of vocabulary
         vocab (list/dict): text vocabulary of dataset
-        r (int): number of randominzed cluster trials (optinal parameter for KMeansClusterer)
+        r (int): number of randominzed cluster trials (optional parameter for KMeansClusterer)
         
     Returns:
         cluster_dict (dict): cluster index (int) mapping to cluster (set)
         word_to_cluster (dict): vocab index mapping word (string) to cluster number (int)
 	"""
-	clusterer = KMeansClusterer(k, distance=cosine_distance, repeats=r)
-	clusters = clusterer.cluster(data, assign_clusters=True)
+	load_glove()
 
-	cluster_dict = { i : set() for i in range(k) }
+	# get GloVe word embeddings and number of missing words
+	embeds, words  = [], []
+	missing = 0
+	len_vocab = len(vocab)
+	for v in vocab :
+		try:
+			embeds.append(_glove_50[v])
+			words.append(v)
+		except:
+			missing += 1
+
+
+	### CLUSTER ################################################################
+	clusterer = KMeansClusterer(k, distance=cosine_distance, repeats=r)
+	clusters = clusterer.cluster(embeds, assign_clusters=True)
+
+	cluster_dict = { i : [] for i in range(k) }
 	word_to_cluster = {}
 
-	for i, v in enumerate(vocab):
-		cluster_dict[clusters[i]].add(v)
+	for i, v in enumerate(words):
+		cluster_dict[clusters[i]].append(v)
 		word_to_cluster[v] = clusters[i]
 
-	pass
+	for c in cluster_dict :
+		cluster_dict[c] = set(cluster_dict[c])
+
+	with open("../data/kmeans_clusters.pkl", "wb") as p :
+		pkl.dump(cluster_dict, p)
+
+	############################################################################
+
+	# write individual precision and recall scores to text file
+	f = open("../data/kmeans.txt", "w")
+	f.write("vocab\tprecision\trecall\n")
+
+	precision, recall = [], [] # precision and recall for each word
+	count = 0 # print for sanity check
+	for w in words :
+		p, r = 0.0, 0.0
+
+		cluster = get_cluster(w, cluster_dict, word_to_cluster)
+
+		# accumulate gold cluster for v with WordNet
+		gold = []
+		for syn in wordnet.synsets(v) :
+			for l in syn.lemmas() :
+				gold.append(l.name())
+		gold = set(gold)
+
+		intersection = cluster.intersection(gold) # true positive
+		
+		try:
+			p = len(intersection) / (len(intersection) + len(cluster.difference(gold)))
+		except:
+			continue
+		try:
+			r = len(intersection) / (len(intersection) + len(gold.difference(cluster)))
+		except:
+			continue
+
+		f.write("{}\t{}\t{}\n".format(v, p, r))
+
+		count += 1
+		if count % 10 == 0 :
+			print("{}/{}".format(count, len_vocab))
+			print(p, r)
+
+
+		precision.append(p)
+		recall.append(r)
+
+	pre, rec = np.mean(precision), np.mean(recall)
+
+	f.write("\naverage\t{}\t{}\n".format(pre, rec))
+	f.close()
+
+	print(missing, len_vocab)
+	return pre, rec
 
 
 def get_cluster(word, clusters, word2cluster):
@@ -218,9 +295,12 @@ def get_cluster(word, clusters, word2cluster):
         print("Word \"{}\" not seen in dataset".format(word))
 
 
-def agglom(embeds, linkage="ward", n_clusters=20) :
-	e = list(embeds)
-	clustering = AgglomerativeClustering().fit(e, linkage=linkage, n_clusters=n_clusters)
+def agglom(vocab, linkage="ward", n_clusters=25) :
+	load_glove()
+
+	embeds = []
+
+	clustering = AgglomerativeClustering().fit_predict(e, linkage=linkage, n_clusters=n_clusters)
 
 	precision, recall = 0.0, 0.0
 	pass
@@ -246,5 +326,13 @@ def eval(clusters):
 
 if __name__ == "__main__" :
 	# print(get_full_vocab(["big", "small", "good"]))
-	print(browns(debug=False, num_clusters=25))
+	# print(browns(debug=False, num_clusters=25))
 	# load_glove()
+
+	vocab = get_brown_vocab()
+	print(kmeans(vocab, k=900, r=25))
+
+	# print(kmeans(["hungry", "thirsty", "hello"], k=1, r=1))
+
+
+
