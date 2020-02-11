@@ -7,7 +7,7 @@
 import sys
 sys.path.append("../brown_clustering")
 
-from bert_embedding import BertEmbedding
+# from bert_embedding import BertEmbedding
 
 from brownclustering import Corpus
 from brownclustering import BrownClustering
@@ -126,8 +126,15 @@ def browns(debug=True, num_clusters=25) :
 	f = open("../data/browns.txt", "w")
 	f.write("vocab\tprecision\trecall\n")
 
+	count = 0 # print for sanity check
+	len_vocab = len(clustering.vocabulary)
+
 	# iterate through vocabulary to find synonym sets through WordNet
 	for v in clustering.vocabulary :
+		count += 1
+		if count % 10 == 0 :
+			print("{}/{}".format(count, len_vocab))
+
 		p, r = 0.0, 0.0
 
 		# Brown's implementation gives clusters of (word, cluster_id) tuples
@@ -141,9 +148,15 @@ def browns(debug=True, num_clusters=25) :
 		gold = set(gold)
 
 		intersection = cluster.intersection(gold) # true positive
-
-		p = len(intersection) / (len(intersection) + len(cluster.difference(gold)))
-		r = len(intersection) / (len(intersection) + len(gold.difference(cluster)))
+		
+		try:
+			p = len(intersection) / (len(intersection) + len(cluster.difference(gold)))
+		except:
+			continue
+		try:
+			r = len(intersection) / (len(intersection) + len(gold.difference(cluster)))
+		except:
+			continue
 
 		f.write("{}\t{}\t{}\n".format(v, p, r))
 
