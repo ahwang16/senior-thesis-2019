@@ -21,6 +21,7 @@ from nltk.corpus import wordnet
 
 import numpy as np
 import pickle as pkl
+from random import randint
 
 from sklearn.cluster import AgglomerativeClustering
 
@@ -195,9 +196,11 @@ def kmeans(vocab, k=25, r=25) :
         cluster_dict (dict): cluster index (int) mapping to cluster (set)
         word_to_cluster (dict): vocab index mapping word (string) to cluster number (int)
 	"""
+	print("loading glove")
 	load_glove()
 
 	# get GloVe word embeddings and number of missing words
+	print("gloving vocab")
 	embeds, words  = [], []
 	missing = 0
 	len_vocab = len(vocab)
@@ -210,9 +213,11 @@ def kmeans(vocab, k=25, r=25) :
 
 
 	### CLUSTER ################################################################
+	print("clustering")
 	clusterer = KMeansClusterer(k, distance=cosine_distance, repeats=r)
 	clusters = clusterer.cluster(embeds, assign_clusters=True)
 
+	print("enumerating")
 	cluster_dict = { i : [] for i in range(k) }
 	word_to_cluster = {}
 
@@ -223,6 +228,7 @@ def kmeans(vocab, k=25, r=25) :
 	for c in cluster_dict :
 		cluster_dict[c] = set(cluster_dict[c])
 
+	print("pickling")
 	with open("../data/kmeans_clusters.pkl", "wb") as p :
 		pkl.dump(cluster_dict, p)
 
@@ -300,13 +306,13 @@ def agglom(vocab, linkage="ward", n_clusters=25) :
 
 	embeds = []
 
-	clustering = AgglomerativeClustering().fit_predict(e, linkage=linkage, n_clusters=n_clusters)
+	clustering = AgglomerativeClustering().fit(e, linkage=linkage, n_clusters=n_clusters)
 
 	precision, recall = 0.0, 0.0
 	pass
 
 
-def random_cluster(vocab) :
+def random_cluster(vocab, num_clusters=900) :
 	"""
 	Random baseline for clustering precision and recall
 
@@ -314,9 +320,67 @@ def random_cluster(vocab) :
 		vocab (list of strings): words to cluster together
 
 	Returns:
-		precision (float): percen
+		precision (float)
+		recall (float)
 	"""
-	pass
+	clusters = [[] for i in range(num_clusters)]
+
+	print("clustering")
+	for v in vocab :
+		clusters[randint(0, num_clusters - 1)].append(v)
+
+	print("setting clusters")
+	for x in range(len(clusters)) :
+		clusters[x] = set(clusters[x])
+
+	precision, recall = [], []
+
+	# write individual precision and recall scores to text file
+	f = open("../data/random.txt", "w")
+	f.write("vocab\tprecision\trecall\n")
+
+	count = 0
+	for c in clusters :
+		for w in c :
+			p, r = 0.0, 0.0
+
+			# accumulate gold cluster for v with WordNet
+			gold = []
+			for syn in wordnet.synsets(w) :
+				for l in syn.lemmas() :
+					gold.append(l.name())
+			gold = set(gold)
+
+			intersection = c.intersection(gold) # true positive
+		
+			try:
+				p = len(intersection) / (len(intersection) + len(c.difference(gold)))
+			except:
+				continue
+			try:
+				r = len(intersection) / (len(intersection) + len(gold.difference(c)))
+			except:
+				continue
+
+		f.write("{}\t{}\t{}\n".format(v, p, r))
+
+		count += 1
+		if count % 10 == 0 :
+			print("{}/{}".format(count, len_vocab))
+			print(p, r)
+
+		precision.append(p)
+		recall.append(r)
+
+	pre, rec = np.mean(precision), np.mean(recall)
+
+	f.write("\naverage\t{}\t{}\n".format(pre, rec))
+	f.close()
+
+	return pre, rec
+
+
+	
 
 
 def eval(clusters):
@@ -329,10 +393,13 @@ if __name__ == "__main__" :
 	# print(browns(debug=False, num_clusters=25))
 	# load_glove()
 
-	vocab = get_brown_vocab()
-	print(kmeans(vocab, k=900, r=25))
+	# vocab = get_brown_vocab()
+	# print(kmeans(vocab, k=900, r=25))
 
 	# print(kmeans(["hungry", "thirsty", "hello"], k=1, r=1))
+
+	# print(random_cluster(["hungry", "thirsty", "hello", "goodbye"], num_clusters=2))
+	random_cluster(get_brown_vocab, num_clusters=900)
 
 
 
