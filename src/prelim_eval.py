@@ -469,15 +469,15 @@ if __name__ == "__main__" :
 	# print(browns(debug=False, num_clusters=25))
 	# load_glove()
 
-	# vocab = get_brown_vocab()
-	# print(kmeans(vocab, k=900, r=25))
+	vocab = get_brown_vocab()
+	print(kmeans(vocab, k=900, r=25))
 
 	# print(kmeans(["hungry", "thirsty", "hello"], k=1, r=1))
 
 	# print(random_cluster(["hungry", "thirsty", "hello", "goodbye"], num_clusters=2))
 #	random_cluster(get_brown_vocab(), num_clusters=900)
 
-	print(agglom(["hungry", "thirsty", "hello", "goodbye"], num_clusters=2))
+#	print(agglom(["hungry", "thirsty", "hello", "goodbye"], num_clusters=2))
 
 
 
