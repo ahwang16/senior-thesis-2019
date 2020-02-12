@@ -182,7 +182,7 @@ def browns(debug=True, num_clusters=25) :
 	return pre, rec
 
 
-def kmeans(vocab, k=25, r=25) :
+def kmeans(vocab, k=900, r=25) :
 	"""
 	Use k-means clustering with cosine similarity as the distance metric to
 	cluster the data into k groups.
@@ -301,15 +301,90 @@ def get_cluster(word, clusters, word2cluster):
         print("Word \"{}\" not seen in dataset".format(word))
 
 
-def agglom(vocab, linkage="ward", n_clusters=25) :
+def agglom(vocab, affinity="cosine", linkage="average", num_clusters=900) :
+	print("loading glove")
 	load_glove()
 
-	embeds = []
+	print("gloving vocab")
+	embeds, words  = [], []
+	missing = 0
+	len_vocab = len(vocab)
+	for v in vocab :
+		try:
+			embeds.append(_glove_50[v])
+			words.append(v)
+		except:
+			missing += 1
 
-	clustering = AgglomerativeClustering().fit(e, linkage=linkage, n_clusters=n_clusters)
+	### CLUSTERING #############################################################
+	print("clustering")
+	clusters = AgglomerativeClustering(n_clusters=num_clusters, affinity="cosine", linkage=linkage).fit(embeds)
 
-	precision, recall = 0.0, 0.0
-	pass
+	print("enumerating")
+	cluster_dict = { i : [] for i in range(num_clusters) }
+	word_to_cluster = {}
+
+	for i, v in enumerate(words):
+		cluster_dict[clusters[i]].append(v)
+		word_to_cluster[v] = clusters[i]
+
+	for c in cluster_dict :
+		cluster_dict[c] = set(cluster_dict[c])
+
+	print("pickling")
+	with open("../data/agglom_clusters.pkl", "wb") as p :
+		pkl.dump(cluster_dict, p)
+
+	############################################################################
+
+	# write individual precision and recall scores to text file
+	f = open("../data/agglom.txt", "w")
+	f.write("vocab\tprecision\trecall\n")
+
+	precision, recall = [], [] # precision and recall for each vocab
+	count = 0 # print for sanity check
+
+	for w in words :
+		p, r = 0.0, 0.0
+
+		cluster = get_cluster(w, cluster_dict, word_to_cluster)
+
+		# accumulate gold cluster for v with WordNet
+		gold = []
+		for syn in wordnet.synsets(w) :
+			for l in syn.lemmas() :
+				gold.append(l.name())
+		gold = set(gold)
+
+		intersection = cluster.intersection(gold) # true positive
+		
+		try:
+			p = len(intersection) / (len(intersection) + len(cluster.difference(gold)))
+		except:
+			continue
+		try:
+			r = len(intersection) / (len(intersection) + len(gold.difference(cluster)))
+		except:
+			continue
+
+		f.write("{}\t{}\t{}\n".format(w, p, r))
+
+		count += 1
+		if count % 10 == 0 :
+			print("{}/{}".format(count, len_vocab))
+			print(p, r)
+
+
+		precision.append(p)
+		recall.append(r)
+
+	pre, rec = np.mean(precision), np.mean(recall)
+
+	f.write("\naverage\t{}\t{}\n".format(pre, rec))
+	f.close()
+
+	print(missing, len_vocab)
+	return pre, rec
 
 
 def random_cluster(vocab, num_clusters=900) :
@@ -394,13 +469,15 @@ if __name__ == "__main__" :
 	# print(browns(debug=False, num_clusters=25))
 	# load_glove()
 
-	vocab = get_brown_vocab()
-	print(kmeans(vocab, k=900, r=25))
+	# vocab = get_brown_vocab()
+	# print(kmeans(vocab, k=900, r=25))
 
 	# print(kmeans(["hungry", "thirsty", "hello"], k=1, r=1))
 
 	# print(random_cluster(["hungry", "thirsty", "hello", "goodbye"], num_clusters=2))
 #	random_cluster(get_brown_vocab(), num_clusters=900)
+
+	print(agglom(["hungry", "thirsty", "hello", "goodbye"], num_clusters=2))
 
 
 
