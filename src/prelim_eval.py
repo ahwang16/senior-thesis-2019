@@ -247,7 +247,7 @@ def kmeans(vocab, k=25, r=25) :
 
 		# accumulate gold cluster for v with WordNet
 		gold = []
-		for syn in wordnet.synsets(v) :
+		for syn in wordnet.synsets(w) :
 			for l in syn.lemmas() :
 				gold.append(l.name())
 		gold = set(gold)
@@ -263,7 +263,7 @@ def kmeans(vocab, k=25, r=25) :
 		except:
 			continue
 
-		f.write("{}\t{}\t{}\n".format(v, p, r))
+		f.write("{}\t{}\t{}\n".format(w, p, r))
 
 		count += 1
 		if count % 10 == 0 :
@@ -324,6 +324,7 @@ def random_cluster(vocab, num_clusters=900) :
 		recall (float)
 	"""
 	clusters = [[] for i in range(num_clusters)]
+	len_vocab = len(vocab)
 
 	print("clustering")
 	for v in vocab :
@@ -362,7 +363,7 @@ def random_cluster(vocab, num_clusters=900) :
 			except:
 				continue
 
-		f.write("{}\t{}\t{}\n".format(v, p, r))
+			f.write("{}\t{}\t{}\n".format(w, p, r))
 
 		count += 1
 		if count % 10 == 0 :
@@ -393,13 +394,13 @@ if __name__ == "__main__" :
 	# print(browns(debug=False, num_clusters=25))
 	# load_glove()
 
-	# vocab = get_brown_vocab()
-	# print(kmeans(vocab, k=900, r=25))
+	vocab = get_brown_vocab()
+	print(kmeans(vocab, k=900, r=25))
 
 	# print(kmeans(["hungry", "thirsty", "hello"], k=1, r=1))
 
 	# print(random_cluster(["hungry", "thirsty", "hello", "goodbye"], num_clusters=2))
-	random_cluster(get_brown_vocab, num_clusters=900)
+#	random_cluster(get_brown_vocab(), num_clusters=900)
 
 
 
