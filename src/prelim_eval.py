@@ -318,15 +318,19 @@ def agglom(vocab, affinity="cosine", linkage="average", num_clusters=900) :
 
 	### CLUSTERING #############################################################
 	print("clustering")
-	clusters = AgglomerativeClustering(n_clusters=num_clusters, affinity="cosine", linkage=linkage).fit(embeds)
+	clusters = AgglomerativeClustering(n_clusters=num_clusters, affinity=affinity, linkage=linkage).fit(embeds)
 
 	print("enumerating")
 	cluster_dict = { i : [] for i in range(num_clusters) }
 	word_to_cluster = {}
 
-	for i, v in enumerate(words):
-		cluster_dict[clusters[i]].append(v)
-		word_to_cluster[v] = clusters[i]
+	# for i, v in enumerate(words):
+	# 	cluster_dict[clusters[i]].append(v)
+	# 	word_to_cluster[v] = clusters[i]
+
+	for x in range(len(embeds)) :
+		cluster_dict[clusters.labels_[x]].append(words[x])
+		word_to_cluster[words[x]] = clusters.labels_[x]
 
 	for c in cluster_dict :
 		cluster_dict[c] = set(cluster_dict[c])
@@ -478,6 +482,10 @@ if __name__ == "__main__" :
 #	random_cluster(get_brown_vocab(), num_clusters=900)
 
 #	print(agglom(["hungry", "thirsty", "hello", "goodbye"], num_clusters=2))
+	# print(agglom(["hungry", "thirsty", "hello", "goodbye"], num_clusters=2))
+
+	vocab = get_brown_vocab()
+	print(agglom(vocab))
 
 
 
