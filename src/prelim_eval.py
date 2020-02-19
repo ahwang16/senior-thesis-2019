@@ -186,7 +186,7 @@ def browns(debug=True, num_clusters=900, file_num=0) :
 			pre_.append(p)
 			rec_.append(r)
 
-		scores.write("{}\t{}\t{}".format(cluster_id, np.mean(pre_), np.mean(rec_)))
+		scores.write("{}\t{}\t{}\n".format(cluster_id, np.mean(pre_), np.mean(rec_)))
 		cluster_id += 1
 
 	pre, rec = np.mean(precision), np.mean(recall)
@@ -491,7 +491,7 @@ def random_cluster(vocab, num_clusters=900, file_num=0) :
 			r_cluster.append(r)
 			f.write("{}\t{}\t{}\n".format(w, p, r))
 
-		scores.write("{}\t{}\t{}".format(count, np.mean(p_cluster), np.mean(r_cluster)))
+		scores.write("{}\t{}\t{}\n".format(count, np.mean(p_cluster), np.mean(r_cluster)))
 
 		count += 1
 		if count % 10 == 0 :
