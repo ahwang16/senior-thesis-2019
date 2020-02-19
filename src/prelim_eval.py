@@ -19,6 +19,7 @@ from nltk.cluster.util import cosine_distance
 from nltk.corpus import brown
 from nltk.corpus import wordnet
 
+from collections import defaultdict
 import numpy as np
 import pickle as pkl
 from random import randint
@@ -102,7 +103,7 @@ def get_brown_vocab() :
 	return set(brown.words(categories=['fiction']))
 
 
-def browns(debug=True, num_clusters=25) :
+def browns(debug=True, num_clusters=900, file_num=0) :
 	"""
 	Train Brown's clustering algorithm on Brown corpus (fiction) and
 	calculate precision (number of correct synonyms / total in cluster). Write
@@ -124,65 +125,83 @@ def browns(debug=True, num_clusters=25) :
 	# Brown's clustering training
 	corpus = Corpus(data)
 	clustering = BrownClustering(corpus, num_clusters)
-	clustering.train()
+	clusters = clustering.train()
 
 	precision, recall = [], [] # precision and recall for each vocab
+	# pre, rec = defaultdict(list), defaultdict(list)
 
 	# write individual precision and recall scores to text file
-	f = open("../data/browns.txt", "w")
+	f = open("../data/browns_{}.txt".format(file_num), "w")
 	f.write("vocab\tprecision\trecall\n")
+	scores = open("../data/browns_scores_{}.txt".format(file_num), "w")
+	scores.write("cluster\tprecision\trecall\n")
 
 	count = 0 # print for sanity check
 	len_vocab = len(clustering.vocabulary)
 
 	# iterate through vocabulary to find synonym sets through WordNet
-	for v in clustering.vocabulary :
-		
+	# for v in clustering.vocabulary :
+	cluster_dict = defaultdict(list)
 
-		p, r = 0.0, 0.0
+	for cluster in clusters :
+		pre_, rec_ = [], []
+		cluster_id = 0
+		cluster = set(cluster)
 
-		# Brown's implementation gives clusters of (word, cluster_id) tuples
-		cluster = set(c[0] for c in clustering.get_similar(v, cap=1000))
+		for word in cluster:
+			p, r = 0.0, 0.0
+			cluster_dict[cluster_id].append(word)
 
-		# accumulate gold cluster for v with WordNet
-		gold = []
-		for syn in wordnet.synsets(v) :
-			for l in syn.lemmas() :
-				gold.append(l.name())
-		gold = set(gold)
+			# Brown's implementation gives clusters of (word, cluster_id) tuples
+			# cluster = set(clustering.helper.get_cluster)
 
-		intersection = cluster.intersection(gold) # true positive
-		
-		try:
-			p = len(intersection) / (len(intersection) + len(cluster.difference(gold)))
-		except:
-			continue
-		try:
-			r = len(intersection) / (len(intersection) + len(gold.difference(cluster)))
-		except:
-			continue
+			# accumulate gold cluster for v with WordNet
+			gold = []
+			for syn in wordnet.synsets(word) :
+				for l in syn.lemmas() :
+					gold.append(l.name())
+			gold = set(gold)
 
-		f.write("{}\t{}\t{}\n".format(v, p, r))
+			intersection = cluster.intersection(gold) # true positive
+			
+			try:
+				p = len(intersection) / (len(intersection) + len(cluster.difference(gold)))
+			except:
+				continue
+			try:
+				r = len(intersection) / (len(intersection) + len(gold.difference(cluster)))
+			except:
+				continue
 
-		count += 1
-		if count % 10 == 0 :
-			print("{}/{}".format(count, len_vocab))
-			print(p, r)
+			f.write("{}\t{}\t{}\n".format(word, p, r))
+
+			count += 1
+			if count % 10 == 0 :
+				print("{}/{}".format(count, len_vocab))
+				print(p, r)
 
 
-		precision.append(p)
-		recall.append(r)
+			precision.append(p)
+			recall.append(r)
+			pre_.append(p)
+			rec_.append(r)
 
+		scores.write("{}\t{}\t{}".format(cluster_id, np.mean(pre_), np.mean(rec_)))
+		cluster_id += 1
 
 	pre, rec = np.mean(precision), np.mean(recall)
 
 	f.write("\naverage\t{}\t{}\n".format(pre, rec))
 	f.close()
+	scores.close()
+
+	with open("browns_clusters_{}.pkl".format(file_num), "wb") as fname :
+		pkl.dump(cluster_dict, fname)
 
 	return pre, rec
 
 
-def kmeans(vocab, k=900, r=25) :
+def kmeans(vocab, k=900, r=25, file_num=0) :
 	"""
 	Use k-means clustering with cosine similarity as the distance metric to
 	cluster the data into k groups.
@@ -229,16 +248,17 @@ def kmeans(vocab, k=900, r=25) :
 		cluster_dict[c] = set(cluster_dict[c])
 
 	print("pickling")
-	with open("../data/kmeans_clusters.pkl", "wb") as p :
+	with open("../data/kmeans_clusters_{}.pkl".format(file_num), "wb") as p :
 		pkl.dump(cluster_dict, p)
 
 	############################################################################
 
 	# write individual precision and recall scores to text file
-	f = open("../data/kmeans.txt", "w")
+	f = open("../data/kmeans_{}.txt".format(file_num), "w")
 	f.write("vocab\tprecision\trecall\n")
 
 	precision, recall = [], [] # precision and recall for each word
+	pre, rec = { i : [] for i in range(k)}, { i : [] for i in range(k)} # cluster to score mapping
 	count = 0 # print for sanity check
 	for w in words :
 		p, r = 0.0, 0.0
@@ -273,14 +293,24 @@ def kmeans(vocab, k=900, r=25) :
 
 		precision.append(p)
 		recall.append(r)
+		pre[word_to_cluster[w]].append(p)
+		rec[word_to_cluster[w]].append(r)
 
-	pre, rec = np.mean(precision), np.mean(recall)
+	p_bar, r_bar = np.mean(precision), np.mean(recall)
 
-	f.write("\naverage\t{}\t{}\n".format(pre, rec))
+	f.write("\naverage\t{}\t{}\n".format(p_bar, r_bar))
 	f.close()
 
+	scores = open("../data/kmeans_scores_{}.txt".format(file_num), "w")
+	scores.write("cluster\tprecision\trecall\n")
+	for i in range(k) :
+		scores.write("{}\t{}\t{}\n".format(i, np.mean(pre[i]), np.mean(rec[i])))
+
+	scores.close()
+
+
 	print(missing, len_vocab)
-	return pre, rec
+	return p_bar, r_bar
 
 
 def get_cluster(word, clusters, word2cluster):
@@ -301,7 +331,7 @@ def get_cluster(word, clusters, word2cluster):
         print("Word \"{}\" not seen in dataset".format(word))
 
 
-def agglom(vocab, affinity="cosine", linkage="average", num_clusters=900) :
+def agglom(vocab, affinity="cosine", linkage="average", num_clusters=900, file_num=0) :
 	print("loading glove")
 	load_glove()
 
@@ -336,16 +366,17 @@ def agglom(vocab, affinity="cosine", linkage="average", num_clusters=900) :
 		cluster_dict[c] = set(cluster_dict[c])
 
 	print("pickling")
-	with open("../data/agglom_clusters.pkl", "wb") as p :
+	with open("../data/agglom_clusters_{}.pkl".format(file_num), "wb") as p :
 		pkl.dump(cluster_dict, p)
 
 	############################################################################
 
 	# write individual precision and recall scores to text file
-	f = open("../data/agglom.txt", "w")
+	f = open("../data/agglom_{}.txt".format(file_num), "w")
 	f.write("vocab\tprecision\trecall\n")
 
 	precision, recall = [], [] # precision and recall for each vocab
+	pre, rec = { i : [] for i in range(num_clusters)}, { i : [] for i in range(num_clusters)} # cluster to score mapping
 	count = 0 # print for sanity check
 
 	for w in words :
@@ -381,17 +412,27 @@ def agglom(vocab, affinity="cosine", linkage="average", num_clusters=900) :
 
 		precision.append(p)
 		recall.append(r)
+		pre[word_to_cluster[w]].append(p)
+		rec[word_to_cluster[w]].append(r)
 
-	pre, rec = np.mean(precision), np.mean(recall)
+	p_bar, r_bar = np.mean(precision), np.mean(recall)
 
-	f.write("\naverage\t{}\t{}\n".format(pre, rec))
+	f.write("\naverage\t{}\t{}\n".format(p_bar, r_bar))
 	f.close()
 
+	scores = open("../data/agglom_scores_{}.txt".format(file_num), "w")
+	scores.write("cluster\tprecision\trecall\n")
+	for i in range(num_clusters) :
+		scores.write("{}\t{}\t{}\n".format(i, np.mean(pre[i]), np.mean(rec[i])))
+
+	scores.close()
+
+
 	print(missing, len_vocab)
-	return pre, rec
+	return p_bar, r_bar
 
 
-def random_cluster(vocab, num_clusters=900) :
+def random_cluster(vocab, num_clusters=900, file_num=0) :
 	"""
 	Random baseline for clustering precision and recall
 
@@ -416,11 +457,15 @@ def random_cluster(vocab, num_clusters=900) :
 	precision, recall = [], []
 
 	# write individual precision and recall scores to text file
-	f = open("../data/random.txt", "w")
+	f = open("../data/random_{}.txt".format(file_num), "w")
 	f.write("vocab\tprecision\trecall\n")
+
+	scores = open("../data/random_scores_{}.txt".format(file_num), "w")
+	scores.write("cluster\tprecision\trecall\n")
 
 	count = 0
 	for c in clusters :
+		p_cluster, r_cluster = [], []
 		for w in c :
 			p, r = 0.0, 0.0
 
@@ -442,7 +487,11 @@ def random_cluster(vocab, num_clusters=900) :
 			except:
 				continue
 
+			p_cluster.append(p)
+			r_cluster.append(r)
 			f.write("{}\t{}\t{}\n".format(w, p, r))
+
+		scores.write("{}\t{}\t{}".format(count, np.mean(p_cluster), np.mean(r_cluster)))
 
 		count += 1
 		if count % 10 == 0 :
@@ -469,23 +518,34 @@ def eval(clusters):
 
 
 if __name__ == "__main__" :
+	# arguments: clustering method, file_num
+	method, num = sys.argv[1], sys.argv[2]
+	if method == "random" :
+		random_cluster(get_brown_vocab(), num_clusters=900, file_num=num)
+	elif method == "browns" :
+		browns(debug=False, num_clusters=900, file_num=num)
+	elif method == "kmeans" :
+		kmeans(get_brown_vocab(), k=900, r=25, file_num=num)
+	elif method == "agglom" :
+		agglom(get_brown_vocab(), num_clusters=900, file_num=num)
+
 	# print(get_full_vocab(["big", "small", "good"]))
-	# print(browns(debug=False, num_clusters=25))
+	# print(browns(debug=True, num_clusters=2))
 	# load_glove()
 
-	vocab = get_brown_vocab()
-	print(kmeans(vocab, k=900, r=25))
+	# vocab = get_brown_vocab()
+	# print(kmeans(vocab, k=900, r=25))
 
-	# print(kmeans(["hungry", "thirsty", "hello"], k=1, r=1))
+	# print(kmeans(["hungry", "thirsty", "hello"], k=1, r=1, file_num="test"))
 
-	# print(random_cluster(["hungry", "thirsty", "hello", "goodbye"], num_clusters=2))
+	# print(random_cluster(["hungry", "thirsty", "hello", "goodbye"], num_clusters=2, file_num="test"))
 #	random_cluster(get_brown_vocab(), num_clusters=900)
 
-#	print(agglom(["hungry", "thirsty", "hello", "goodbye"], num_clusters=2))
+	# print(agglom(["hungry", "thirsty", "hello", "goodbye"], num_clusters=2, file_num="test"))
 	# print(agglom(["hungry", "thirsty", "hello", "goodbye"], num_clusters=2))
 
-	vocab = get_brown_vocab()
-	print(agglom(vocab))
+	# vocab = get_brown_vocab()
+	# print(agglom(vocab))
 
 
 
