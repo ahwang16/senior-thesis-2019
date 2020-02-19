@@ -19,6 +19,8 @@ from nltk.cluster.util import cosine_distance
 from nltk.corpus import brown
 from nltk.corpus import wordnet
 
+from nltk.stem import WordNetLemmatizer
+
 from collections import defaultdict
 import numpy as np
 import pickle as pkl
@@ -142,6 +144,7 @@ def browns(debug=True, num_clusters=900, file_num=0) :
 	# iterate through vocabulary to find synonym sets through WordNet
 	# for v in clustering.vocabulary :
 	cluster_dict = defaultdict(list)
+	unknown = 0
 
 	for cluster in clusters :
 		pre_, rec_ = [], []
@@ -161,17 +164,25 @@ def browns(debug=True, num_clusters=900, file_num=0) :
 				for l in syn.lemmas() :
 					gold.append(l.name())
 			gold = set(gold)
+			if len(gold) == 0:
+				unknown += 1
+				continue
+
+			gold.add(word)
 
 			intersection = cluster.intersection(gold) # true positive
+
+			p = len(intersection) / (len(intersection) + len(cluster.difference(gold)))
+			r = len(intersection) / (len(intersection) + len(gold.difference(cluster)))
 			
-			try:
-				p = len(intersection) / (len(intersection) + len(cluster.difference(gold)))
-			except:
-				continue
-			try:
-				r = len(intersection) / (len(intersection) + len(gold.difference(cluster)))
-			except:
-				continue
+			# try:
+			# 	p = len(intersection) / (len(intersection) + len(cluster.difference(gold)))
+			# except:
+			# 	continue
+			# try:
+			# 	r = len(intersection) / (len(intersection) + len(gold.difference(cluster)))
+			# except:
+			# 	continue
 
 			f.write("{}\t{}\t{}\n".format(word, p, r))
 
@@ -198,6 +209,9 @@ def browns(debug=True, num_clusters=900, file_num=0) :
 	with open("browns_clusters_{}.pkl".format(file_num), "wb") as fname :
 		pkl.dump(cluster_dict, fname)
 
+	print(missing, len_vocab)
+	print(p_bar, r_bar)
+	print(unknown)
 	return pre, rec
 
 
@@ -260,6 +274,7 @@ def kmeans(vocab, k=900, r=25, file_num=0) :
 	precision, recall = [], [] # precision and recall for each word
 	pre, rec = { i : [] for i in range(k)}, { i : [] for i in range(k)} # cluster to score mapping
 	count = 0 # print for sanity check
+	unknown = 0
 	for w in words :
 		p, r = 0.0, 0.0
 
@@ -271,17 +286,25 @@ def kmeans(vocab, k=900, r=25, file_num=0) :
 			for l in syn.lemmas() :
 				gold.append(l.name())
 		gold = set(gold)
+		if len(gold) == 0 :
+			unknown += 1
+			continue
+
+		gold.add(w)
 
 		intersection = cluster.intersection(gold) # true positive
+
+		p = len(intersection) / (len(intersection) + len(cluster.difference(gold)))
+		r = len(intersection) / (len(intersection) + len(gold.difference(cluster)))
 		
-		try:
-			p = len(intersection) / (len(intersection) + len(cluster.difference(gold)))
-		except:
-			continue
-		try:
-			r = len(intersection) / (len(intersection) + len(gold.difference(cluster)))
-		except:
-			continue
+		# try:
+		# 	p = len(intersection) / (len(intersection) + len(cluster.difference(gold)))
+		# except:
+		# 	continue
+		# try:
+		# 	r = len(intersection) / (len(intersection) + len(gold.difference(cluster)))
+		# except:
+		# 	continue
 
 		f.write("{}\t{}\t{}\n".format(w, p, r))
 
@@ -310,6 +333,8 @@ def kmeans(vocab, k=900, r=25, file_num=0) :
 
 
 	print(missing, len_vocab)
+	print(p_bar, r_bar)
+	print(unknown)
 	return p_bar, r_bar
 
 
@@ -378,6 +403,9 @@ def agglom(vocab, affinity="cosine", linkage="average", num_clusters=900, file_n
 	precision, recall = [], [] # precision and recall for each vocab
 	pre, rec = { i : [] for i in range(num_clusters)}, { i : [] for i in range(num_clusters)} # cluster to score mapping
 	count = 0 # print for sanity check
+	unknown = 0
+
+	lemmatizer = WordNetLemmatizer()
 
 	for w in words :
 		p, r = 0.0, 0.0
@@ -390,21 +418,33 @@ def agglom(vocab, affinity="cosine", linkage="average", num_clusters=900, file_n
 			for l in syn.lemmas() :
 				gold.append(l.name())
 		gold = set(gold)
+		if len(gold) == 0 :
+			unknown += 1
+			continue
+
+		# cluster.add(lemmatizer.lemmatize(w))
+		gold.add(w)
 
 		intersection = cluster.intersection(gold) # true positive
+
+
+		p = len(intersection) / (len(intersection) + len(cluster.difference(gold)))
+		r = len(intersection) / (len(intersection) + len(gold.difference(cluster)))
+
+		# if p == 0 or r == 0:
+		# 	print(w, lemmatizer.lemmatize(w))
+		# 	print(cluster)
+		# 	print(gold)
+
 		
-		try:
-			p = len(intersection) / (len(intersection) + len(cluster.difference(gold)))
-		except:
-			print(cluster)
-			print(gold)
-			continue
-		try:
-			r = len(intersection) / (len(intersection) + len(gold.difference(cluster)))
-		except:
-			print(cluster)
-			print(gold)
-			continue
+		# try:
+		# 	p = len(intersection) / (len(intersection) + len(cluster.difference(gold)))
+		# except:
+		# 	continue
+		# try:
+		# 	r = len(intersection) / (len(intersection) + len(gold.difference(cluster)))
+		# except:
+		# 	continue
 
 		f.write("{}\t{}\t{}\n".format(w, p, r))
 
@@ -433,6 +473,8 @@ def agglom(vocab, affinity="cosine", linkage="average", num_clusters=900, file_n
 
 
 	print(missing, len_vocab)
+	print(p_bar, r_bar)
+	print(uknown)
 	return p_bar, r_bar
 
 
@@ -479,17 +521,25 @@ def random_cluster(vocab, num_clusters=900, file_num=0) :
 				for l in syn.lemmas() :
 					gold.append(l.name())
 			gold = set(gold)
+			if len(gold) == 0 :
+				unknown += 1
+				continue
+
+			gold.add(w)
 
 			intersection = c.intersection(gold) # true positive
+
+			p = len(intersection) / (len(intersection) + len(c.difference(gold)))
+			r = len(intersection) / (len(intersection) + len(gold.difference(c)))
 		
-			try:
-				p = len(intersection) / (len(intersection) + len(c.difference(gold)))
-			except:
-				continue
-			try:
-				r = len(intersection) / (len(intersection) + len(gold.difference(c)))
-			except:
-				continue
+			# try:
+			# 	p = len(intersection) / (len(intersection) + len(c.difference(gold)))
+			# except:
+			# 	continue
+			# try:
+			# 	r = len(intersection) / (len(intersection) + len(gold.difference(c)))
+			# except:
+			# 	continue
 
 			p_cluster.append(p)
 			r_cluster.append(r)
@@ -509,6 +559,11 @@ def random_cluster(vocab, num_clusters=900, file_num=0) :
 
 	f.write("\naverage\t{}\t{}\n".format(pre, rec))
 	f.close()
+	scores.close()
+
+	print(missing, len_vocab)
+	print(p_bar, r_bar)
+	print(uknown)
 
 	return pre, rec
 
