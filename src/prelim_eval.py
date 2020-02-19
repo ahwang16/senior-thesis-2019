@@ -19,8 +19,6 @@ from nltk.cluster.util import cosine_distance
 from nltk.corpus import brown
 from nltk.corpus import wordnet
 
-from nltk.stem import WordNetLemmatizer
-
 from collections import defaultdict
 import numpy as np
 import pickle as pkl
@@ -310,7 +308,7 @@ def kmeans(vocab, k=900, r=25, file_num=0) :
 
 		count += 1
 		if count % 10 == 0 :
-			print("{}/{}".format(count, len_vocab))
+			rint("{}/{}".format(count, len_vocab))
 			print(p, r)
 
 
@@ -404,8 +402,6 @@ def agglom(vocab, affinity="cosine", linkage="average", num_clusters=900, file_n
 	pre, rec = { i : [] for i in range(num_clusters)}, { i : [] for i in range(num_clusters)} # cluster to score mapping
 	count = 0 # print for sanity check
 	unknown = 0
-
-	lemmatizer = WordNetLemmatizer()
 
 	for w in words :
 		p, r = 0.0, 0.0
@@ -501,6 +497,7 @@ def random_cluster(vocab, num_clusters=900, file_num=0) :
 		clusters[x] = set(clusters[x])
 
 	precision, recall = [], []
+	unknown = 0
 
 	# write individual precision and recall scores to text file
 	f = open("../data/random_{}.txt".format(file_num), "w")
@@ -560,10 +557,9 @@ def random_cluster(vocab, num_clusters=900, file_num=0) :
 	f.write("\naverage\t{}\t{}\n".format(pre, rec))
 	f.close()
 	scores.close()
-
-	print(missing, len_vocab)
-	print(p_bar, r_bar)
-	print(uknown)
+	
+	print(pre, rec)
+	print(unknown)
 
 	return pre, rec
 
