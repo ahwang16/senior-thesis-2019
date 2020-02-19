@@ -396,10 +396,14 @@ def agglom(vocab, affinity="cosine", linkage="average", num_clusters=900, file_n
 		try:
 			p = len(intersection) / (len(intersection) + len(cluster.difference(gold)))
 		except:
+			print(cluster)
+			print(gold)
 			continue
 		try:
 			r = len(intersection) / (len(intersection) + len(gold.difference(cluster)))
 		except:
+			print(cluster)
+			print(gold)
 			continue
 
 		f.write("{}\t{}\t{}\n".format(w, p, r))
