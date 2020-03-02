@@ -19,7 +19,7 @@ from nltk.cluster.util import cosine_distance
 from nltk.corpus import brown
 from nltk.corpus import wordnet
 
-from collections import defaultdict
+# from collections import defaultdict
 import numpy as np
 import pickle as pkl
 from random import randint
@@ -329,8 +329,6 @@ def kmeans(vocab, k=900, r=25, file_num=0) :
 
 	scores.close()
 
-
-	print(missing, len_vocab)
 	print(p_bar, r_bar)
 	print(unknown)
 	return p_bar, r_bar
