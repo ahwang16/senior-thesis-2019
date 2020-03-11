@@ -55,6 +55,7 @@ def kmeans(embeds, vocab, k=900, r=25, file_num=0) :
 	pre, rec = { i : [] for i in range(k)}, { i : [] for i in range(k)} # cluster to score mapping
 	count = 0 # print for sanity check
 	unknown = 0
+	len_vocab = len(vocab)
 	for w in vocab :
 		p, r = 0.0, 0.0
 
@@ -168,6 +169,9 @@ def agglom(embeds, vocab, affinity="cosine", linkage="average", num_clusters=900
 			continue
 
 		gold.add(w)
+
+		print(gold)
+		print(cluster)
 
 		intersection = cluster.intersection(gold) # true positive
 
