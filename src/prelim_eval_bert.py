@@ -54,37 +54,45 @@ def get_embeddings() :
 	tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
 
 	corpus = brown.sents(categories=['fiction'])
-	tokenized_text = [tokenizer.tokenize("[CLS] " + " ".join(c) + " [SEP]") for c in corpus]
-
-	# print(tokenized_text[1])
 
 	maxlen = 0
 	for i in tokenized_text :
 		if len(i) > maxlen :
 			maxlen = len(i)
+	maxlen += 2
 
-	padded_text = [i + ["[PAD]"] * (maxlen - len(i)) for i in tokenized_text]
+	tokenized_text = [tokenizer.encode(c, add_special_tokens=True, max_length=maxlen) for c in corpus]
+	ids = [nn.function.pad(t, (0, maxlen - len(t)), value=tokenizer.pad_token_id) for t in tokenized_text]
+	ids = torch.stack(ids)
+
+	attn_mask = (ids != 0).float()
+
+	# print(tokenized_text[1])
+
+	
+
+	# padded_text = [i + ["[PAD]"] * (maxlen - len(i)) for i in tokenized_text]
 	# print(padded_text[1])
 	# attn_mask = [1 if word != "[PAD]" else 0 for sent in tokenized_text for word in sent]
-	attn_mask = []
-	for sent in padded_text :
-		attn_mask.append([1 if word != "[PAD]" else 0 for word in sent])
+	# attn_mask = tensor()
+	# for sent in tokenized_text :
+	# 	attn_mask.append([1 if word != 0 else 0 for word in sent])
 	# print(attn_mask[1])
 
 	# print(sum([len(padded_text[x]) != len(attn_mask[x]) for x in range(len(padded_text))]))
 
 	# tokenized_text = tokenizer.tokenize("[CLS]" + " ".join(brown.sents(categories=["fiction"])[1]) + "[SEP]")
-	indexed_text = [tokenizer.convert_tokens_to_ids(sent) for sent in padded_text]
+	# indexed_text = [tokenizer.convert_tokens_to_ids(sent) for sent in padded_text]
 
 	# indexed_tokens = tokenizer.convert_tokens_to_ids(tokenized_text)
 
-	segments_ids = []
-	for text in indexed_text :
-		segments_ids.append([1] * len(text))
+	# segments_ids = []
+	# for text in indexed_text :
+	# 	segments_ids.append([1] * len(text))
 
-	input_ids = torch.tensor(indexed_text)
-	attn_tensor = torch.tensor(attn_mask)
-	segments_tensor = torch.tensor(segments_ids)
+	# input_ids = torch.tensor(indexed_text)
+	# attn_tensor = torch.tensor(attn_mask)
+	# segments_tensor = torch.tensor(segments_ids)
 
 	# segments_ids = [1] * len(tokenized_text)
 
@@ -95,14 +103,24 @@ def get_embeddings() :
 	# print(tokens_tensor)
 
 	# print(input_ids.shape)
-	config = BertConfig()
-	config.output_hidden_states = True
-	# model = BertModel.from_pretrained("bert-base-uncased")
-	model = BertModel(config)
+	# config = BertConfig(output_hidden_states=True)
+	# config.output_hidden_states = True
+	model = BertModel.from_pretrained("bert-base-uncased")
+	# model = BertModel(config)
 	model.eval()
 
 
 	with torch.no_grad() :
+		out = model(ids, attn_mask)
+		embeddings = out[0]
+		print(embeddings.shape)
+
+
+		# embeddings will match up with the token ids
+		# DON'T USE CLS, SEP, PAD
+
+
+
 		# encoded_layers, _ = model(input_ids, attention_mask=attn_mask)
 		# encoded_layers, _ = model(torch.tensor(tokenizer.convert_tokens_to_ids(['[CLS]', 'why', 'does', 'this', 'not', 'work', '[SEP]', '[PAD]'])))
 
@@ -112,8 +130,8 @@ def get_embeddings() :
 
 		# encoded_layers, _ = model(input_ids[1].unsqueeze(0), attention_mask=attn_tensor[1].unsqueeze(0))
 		# _, _, hidden_states = model(input_ids[1].unsqueeze(0), attn_tensor[1].unsqueeze(0))
-		_ = model(input_ids[1].unsqueeze(0), attn_tensor[1].unsqueeze(0))
-		print(model.get_input_embeddings().shape)
+		# _ = model(input_ids[1].unsqueeze(0), attn_tensor[1].unsqueeze(0))
+		# print(model.get_input_embeddings().shape)
 
 
 		# print(hidden_states[0].shape, hidden_states[1].shape) # number of examples, number of tokens, number of hidden states

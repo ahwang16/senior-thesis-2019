@@ -61,6 +61,7 @@ def kmeans(embeds, vocab, k=900, r=25, file_num=0) :
 	pre, rec = { i : [] for i in range(k)}, { i : [] for i in range(k)} # cluster to score mapping
 	count = 0 # print for sanity check
 	unknown = 0
+	len_vocab = len(vocab)
 	for w in vocab :
 		p, r = 0.0, 0.0
 
@@ -172,6 +173,9 @@ def agglom(embeds, vocab, affinity="cosine", linkage="average", num_clusters=900
 
 		gold.add(w)
 
+		print(gold)
+		print(cluster)
+
 		intersection = cluster.intersection(gold) # true positive
 
 		p = len(intersection) / (len(intersection) + len(cluster.difference(gold)))
@@ -253,9 +257,9 @@ if __name__ == "__main__" :
 	method, num = sys.argv[1], sys.argv[2]
 
 	if method == "kmeans" :
-		kmeans(embeds, vocab, k=900, r=25, file_num=num)
+		kmeans(w2v.wv[w2v.wv.vocab], vocab, k=900, r=25, file_num=num)
 	elif method == "agglom" :
-		agglom(w2v, vocab, num_clusters=900, file_num=num)
+		agglom(w2v.wv[w2v.wv.vocab], vocab, num_clusters=900, file_num=num)
 	else :
 		print("Usage: kmeans/agglom filenum")
 
