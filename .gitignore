@@ -1,3 +1,4 @@
+env.yml
 pickle*
 TwitterAAE*
 *.pkl
@@ -5,3 +6,4 @@ TwitterAAE*
 __MACOSX
 .ipynb_checkpoints
 glove*
+Miniconda*

@@ -1,12 +1,5 @@
 # prelim_eval_w2v.py
 
-import sys
-sys.path.append("../brown_clustering")
-
-from brownclustering import Corpus
-from brownclustering import BrownClustering
-from brownclustering.validation import BrownClusteringValidation
-
 from gensim.models import Word2Vec
 
 from nltk.cluster import KMeansClusterer
@@ -18,6 +11,7 @@ from nltk.corpus import wordnet
 import numpy as np
 import pickle as pkl
 from random import randint
+import sys
 
 from sklearn.cluster import AgglomerativeClustering
 
@@ -34,7 +28,7 @@ def kmeans(embeds, vocab, k=900, r=25, file_num=0) :
 	### CLUSTER ################################################################
 	print("clustering")
 	clusterer = KMeansClusterer(k, distance=cosine_distance, repeats=r)
-	clusters = clusterer.cluster(data, assign_clusters=True)
+	clusters = clusterer.cluster(embeds, assign_clusters=True)
 
 	print("enumerating")
 	cluster_dict = { i : [] for i in range(k) }
@@ -96,7 +90,7 @@ def kmeans(embeds, vocab, k=900, r=25, file_num=0) :
 
 		count += 1
 		if count % 10 == 0 :
-			rint("{}/{}".format(count, len_vocab))
+			print("{}/{}".format(count, len_vocab))
 			print(p, r)
 
 
@@ -153,7 +147,10 @@ def agglom(embeds, vocab, affinity="cosine", linkage="average", num_clusters=900
 	precision, recall = [], [] # precision and recall for each vocab
 	pre, rec = { i : [] for i in range(num_clusters)}, { i : [] for i in range(num_clusters)} # cluster to score mapping
 	count = 0 # print for sanity check
+	len_vocab = len(vocab)
 	unknown = 0
+	
+	print("evaluating")
 
 	for w in vocab :
 		p, r = 0.0, 0.0
@@ -202,10 +199,8 @@ def agglom(embeds, vocab, affinity="cosine", linkage="average", num_clusters=900
 
 	scores.close()
 
-
-	print(missing, len_vocab)
-	print(p_bar, r_bar)
 	print(unknown)
+	print(p_bar, r_bar)
 	return p_bar, r_bar
 
 
@@ -246,16 +241,16 @@ def get_brown_vocab() :
 
 if __name__ == "__main__" :
 	w2v = load_w2v()
-	vocab = get_brown_vocab()
+	vocab = list(get_brown_vocab())
 
 	# arguments: clustering method, file_num
 	# don't need to run browns or random again because they don't depend on embeddings
 	method, num = sys.argv[1], sys.argv[2]
 
 	if method == "kmeans" :
-		kmeans(embeds, vocab, k=900, r=25, file_num=num)
+		kmeans(w2v.wv[w2v.wv.vocab], vocab, k=900, r=25, file_num=num)
 	elif method == "agglom" :
-		agglom(w2v, vocab, num_clusters=900, file_num=num)
+		agglom(w2v.wv[w2v.wv.vocab], vocab, num_clusters=900, file_num=num)
 	else :
 		print("Usage: kmeans/agglom filenum")
 
