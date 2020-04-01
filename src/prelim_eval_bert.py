@@ -56,16 +56,19 @@ def get_embeddings() :
 	corpus = brown.sents(categories=['fiction'])
 
 	maxlen = 0
-	for i in tokenized_text :
+	for i in corpus :
 		if len(i) > maxlen :
 			maxlen = len(i)
 	maxlen += 2
 
-	tokenized_text = [tokenizer.encode(c, add_special_tokens=True, max_length=maxlen) for c in corpus]
-	ids = [nn.function.pad(t, (0, maxlen - len(t)), value=tokenizer.pad_token_id) for t in tokenized_text]
-	ids = torch.stack(ids)
+	tokenized_text = [tokenizer.encode(c, add_special_tokens=True, max_length=maxlen, pad_to_max_length=True, return_tensors="pt") for c in corpus]
+	# ids = [nn.functional.pad(t, (0, maxlen - len(t)), value=tokenizer.pad_token_id, ) for t in tokenized_text]
+	ids = torch.stack(tokenized_text)
 
 	attn_mask = (ids != 0).float()
+
+	# print(ids.shape)
+	# print(attn_mask.shape)
 
 	# print(tokenized_text[1])
 
@@ -111,7 +114,7 @@ def get_embeddings() :
 
 
 	with torch.no_grad() :
-		out = model(ids, attn_mask)
+		out = model(ids.squeeze(1), attn_mask.squeeze(1))
 		embeddings = out[0]
 		print(embeddings.shape)
 
@@ -150,3 +153,5 @@ def get_embeddings() :
 
 if __name__ == "__main__" :
 	get_embeddings()
+
+
