@@ -78,6 +78,6 @@ def get_related(vocab_name, outname):
 
 
 if __name__ == "__main__":
-	vocab = brown.words(category=["fiction"])
+	vocab = brown.words(categories=["fiction"])
 	get_related(vocab, "brown_cn_gold.txt")
 

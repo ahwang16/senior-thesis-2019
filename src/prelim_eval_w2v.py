@@ -170,8 +170,6 @@ def agglom(embeds, vocab, affinity="cosine", linkage="average", num_clusters=900
 
 		gold.add(w)
 
-		print(gold)
-		print(cluster)
 
 		intersection = cluster.intersection(gold) # true positive
 
