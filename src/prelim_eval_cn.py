@@ -4,7 +4,8 @@ import sys, os, requests, time, json
 from IPython import embed
 from nltk.corpus import brown
 
-CORPORA_PATH = '/Users/alyssahwang/Documents/workspace2/seniorthesis/data'
+# CORPORA_PATH = '/Users/alyssahwang/Documents/workspace2/seniorthesis/data'
+CORPORA_PATH = "../data/"
 
 def check_and_sleep(start_time, curr_call_ct):
 	if curr_call_ct % 120 == 0:  # every 120 sleep for a minute

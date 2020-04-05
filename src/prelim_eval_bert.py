@@ -54,6 +54,7 @@ def get_embeddings() :
 	tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
 
 	corpus = brown.sents(categories=['fiction'])
+	print("corpus length", len(corpus))
 
 	maxlen = 0
 	for i in corpus :
@@ -61,7 +62,10 @@ def get_embeddings() :
 			maxlen = len(i)
 	maxlen += 2
 
+	print("max len", maxlen)
+
 	tokenized_text = [tokenizer.encode(c, add_special_tokens=True, max_length=maxlen, pad_to_max_length=True, return_tensors="pt") for c in corpus]
+	# ids = [tokenizer.encode(c, add_special_tokens=True, max_length=maxlen, pad_to_max_length=True, return_tensors="pt") for c in corpus]
 	# ids = [nn.functional.pad(t, (0, maxlen - len(t)), value=tokenizer.pad_token_id, ) for t in tokenized_text]
 	ids = torch.stack(tokenized_text)
 
@@ -114,7 +118,8 @@ def get_embeddings() :
 
 
 	with torch.no_grad() :
-		out = model(ids.squeeze(1), attn_mask.squeeze(1))
+		print(ids.shape, attn_mask.shape)
+		out = model(ids, attention_mask=attn_mask)
 		embeddings = out[0]
 		print(embeddings.shape)
 
