@@ -37,7 +37,10 @@ def query_conceptnet(w, rel, curr_call_ct, start_time):
 
 def run_query(w, rel, rel_nodes, page_info):
 	obj = requests.get('http://api.conceptnet.io{}'.format(page_info))
-	obj = obj.json()
+	try:
+		obj = obj.json()
+	except:
+		print(obj)
 	edges = obj['edges']
 	for e in edges:
 		if e['rel']['label'] != rel: continue
@@ -68,10 +71,14 @@ def get_related(vocab_name, outname):
 	# print("need {} words".format(len(lines)))
 	start_time = time.time()
 	i = 0
+	count = 0
 	for w in vocab_name:
-		# start_time = check_and_sleep(start_time, i)
+		if count % 100 == 0 : print(count)
+		count += 1
 
-		start_time = time.time()
+		start_time = check_and_sleep(start_time, i)
+
+		# start_time = time.time()
 
 		# w = l.strip()
 		r, i, start_time = query_conceptnet(w, 'RelatedTo', i, start_time)
@@ -79,6 +86,7 @@ def get_related(vocab_name, outname):
 
 
 if __name__ == "__main__":
-	vocab = brown.words(category=["fiction"])
-	get_related(vocab, "brown_cn_gold.txt")
+	vocab = set(brown.words(category=["fiction"]))
+	print(len(vocab))
+	get_related(vocab, "brown_cn_gold_1.txt")
 
