@@ -156,7 +156,36 @@ def get_embeddings() :
 	# print(len(vecs), len(vecs[0]))
 
 
+def get_embeddings2():
+	tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
+
+	corpus = brown.sents(categories=['fiction'])
+
+	maxlen = 0
+	for i in corpus :
+		if len(i) > maxlen :
+			maxlen = len(i)
+	maxlen += 2
+
+	tokenized_text = [torch.tensor(tokenizer.encode(c, add_special_tokens=True, max_length=maxlen, pad_to_max_length=True)) for c in corpus]
+	print(tokenized_text[:2])
+
+	ids = torch.stack(tokenized_text)
+	print(ids.shape)
+
+	attn_mask = (ids != 0).float()
+
+	model = BertModel.from_pretrained("bert-base-uncased")
+	model.eval()
+
+	with torch.no_grad() :
+		print(ids.shape, attn_mask.shape)
+		out = model(ids, attention_mask=attn_mask) # errors out here
+		embeddings = out[0]
+		print(embeddings.shape)
+
+
 if __name__ == "__main__" :
-	get_embeddings()
+	get_embeddings2()
 
 
