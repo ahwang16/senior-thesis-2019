@@ -5,6 +5,7 @@ sys.settrace
 from bert_embedding import BertEmbedding
 from collections import defaultdict
 from nltk.corpus import brown
+import numpy as np
 import pickle as pkl
 from transformers import BertModel, BertTokenizer, BertConfig
 import torch
