@@ -1,4 +1,6 @@
 # prelim_eval_bert.py
+import sys
+sys.settrace
 
 from bert_embedding import BertEmbedding
 from collections import defaultdict
@@ -159,10 +161,9 @@ def get_embeddings() :
 
 
 def get_embeddings2():
-	batch_size = 32
-
+	print('tokenizer')
 	tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
-
+	print('corpus')
 	corpus = brown.sents(categories=['fiction'])
 
 	maxlen = 0
@@ -170,12 +171,12 @@ def get_embeddings2():
 		if len(i) > maxlen :
 			maxlen = len(i)
 	maxlen += 2
-
+	print('config')
 	config = BertConfig(output_hidden_states=True)
 	model = BertModel(config)
 	# model = BertModel.from_pretrained("bert-base-uncased")
 	model.eval()
-
+	print('embeddings_dict')
 	embeddings_dict = defaultdict(list)
 
 
