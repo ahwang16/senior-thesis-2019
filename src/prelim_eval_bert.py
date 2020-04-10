@@ -91,7 +91,7 @@ def get_embeddings2():
 	# 	print(embeddings.shape)
 
 
-def load_bert(path):
+def load_bert(path="../data"):
 	with open(path, "rb") as f:
 		return pkl.load(f)
 
@@ -353,5 +353,11 @@ def agglom(vocab, affinity="cosine", linkage="average", num_clusters=900, file_n
 
 if __name__ == "__main__" :
 	# get_embeddings2()
+
+	method, num = sys.argv[1], sys.argv[2]
+	if method == "kmeans" :
+		kmeans(get_brown_vocab(), k=900, r=25, file_num=num)
+	elif method == "agglom" :
+		agglom(get_brown_vocab(), num_clusters=900, file_num=num)
 
 
