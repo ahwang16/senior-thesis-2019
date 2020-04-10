@@ -161,7 +161,6 @@ def get_embeddings() :
 
 
 def get_embeddings2():
-	print('tokenizer')
 	tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
 	print('corpus')
 	corpus = brown.sents(categories=['fiction'])
@@ -187,7 +186,6 @@ def get_embeddings2():
 		attn_mask = (ids != 0).float()
 
 		with torch.no_grad() :
-			print(ids.shape, attn_mask.shape)
 			out = model(ids, attention_mask=attn_mask)
 			# embeddings = out[2]
 
@@ -197,7 +195,6 @@ def get_embeddings2():
 
 			token_embeddings = torch.squeeze(torch.stack(out[2][1:], dim=0), dim=1).permute(1, 0, 2)
 			# token_embeddings = torch.squeeze(token_embeddings, dim=1)
-			print(token_embeddings.size())
 
 			s = ["CLS"] + sent + ["SEP"] + ["PAD"] * (maxlen - len(sent) - 2)
 
@@ -210,7 +207,7 @@ def get_embeddings2():
 				elif s[idx] == "SEP":
 					break
 
-				embeddings_dict[s[idx]] = sum_vec
+				embeddings_dict[s[idx]].append(sum_vec)
 				idx += 1
 
 	print(len(embeddings_dict))
