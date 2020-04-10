@@ -63,7 +63,7 @@ def get_embeddings2():
 		pkl.dump(embeddings_dict, f)
 
 
-def load_bert(path="../data"):
+def load_bert(path="../data/bert_embeddings.pkl"):
 	with open(path, "rb") as f:
 		return pkl.load(f)
 
