@@ -10,173 +10,27 @@ import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
 # from pytorch_pretrained_bert import BertTokenizer
 
-
-class BrownDataset(Dataset) :
-	def __init__(self, maxlen) :
-		self.tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
-
-		self.corpus = brown.sents(categories=["fiction"])
-		# The Brown Corpus comes pre-tokenized. join() to use BertTokenizer.
-		for x in range(len(self.corpus)) :
-			self.corpus[x] = " ".join(corpus[x])
-
-		self.maxlen = maxlen
-
-
-	def __len__(self) :
-		return len(self.corpus)
-
-
-	def __getitem__(self, index) :
-
-		# select sentence at index
-		sentence = self.corpus[index]
-
-		# preprocessing for BERT
-		tokens = self.tokenizer.tokenize(sentence)
-		tokens = ['[CLS]'] + tokens + ['SEP']
-
-		# padding
-		if len(tokens) < self.maxlen :
-			tokens += ['[PAD]' for _ in range(self.maxlen - len(tokens))]
-		else :
-			tokens = tokens[:self.maxlen-1] + ['[SEP]']
-
-		tokens_ids = self.tokenizer.convert_tokens_to_ids(tokens)
-		tokens_ids_tensor = torch.tensor(tokens_ids)
-
-		attn_mask = (tokens_ids_tensor != 0).long()
-
-		return tokens_ids_tensor, attn_mask
-
-# dim: layer number, batch number, word/token number, hidden unit/feature number
-# expected dim: [12, 1, num_tok, num_unit]
-def get_embeddings() :
-
-	tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
-
-	corpus = brown.sents(categories=['fiction'])
-	print("corpus length", len(corpus))
-
-	maxlen = 0
-	for i in corpus :
-		if len(i) > maxlen :
-			maxlen = len(i)
-	maxlen += 2
-
-	print("max len", maxlen)
-
-	tokenized_text = [tokenizer.encode(c, add_special_tokens=True, max_length=maxlen, pad_to_max_length=True, return_tensors="pt") for c in corpus]
-	# ids = [tokenizer.encode(c, add_special_tokens=True, max_length=maxlen, pad_to_max_length=True, return_tensors="pt") for c in corpus]
-	# ids = [nn.functional.pad(t, (0, maxlen - len(t)), value=tokenizer.pad_token_id, ) for t in tokenized_text]
-	ids = torch.stack(tokenized_text)
-
-	attn_mask = (ids != 0).float()
-
-	# print(ids.shape)
-	# print(attn_mask.shape)
-
-	# print(tokenized_text[1])
-
-	
-
-	# padded_text = [i + ["[PAD]"] * (maxlen - len(i)) for i in tokenized_text]
-	# print(padded_text[1])
-	# attn_mask = [1 if word != "[PAD]" else 0 for sent in tokenized_text for word in sent]
-	# attn_mask = tensor()
-	# for sent in tokenized_text :
-	# 	attn_mask.append([1 if word != 0 else 0 for word in sent])
-	# print(attn_mask[1])
-
-	# print(sum([len(padded_text[x]) != len(attn_mask[x]) for x in range(len(padded_text))]))
-
-	# tokenized_text = tokenizer.tokenize("[CLS]" + " ".join(brown.sents(categories=["fiction"])[1]) + "[SEP]")
-	# indexed_text = [tokenizer.convert_tokens_to_ids(sent) for sent in padded_text]
-
-	# indexed_tokens = tokenizer.convert_tokens_to_ids(tokenized_text)
-
-	# segments_ids = []
-	# for text in indexed_text :
-	# 	segments_ids.append([1] * len(text))
-
-	# input_ids = torch.tensor(indexed_text)
-	# attn_tensor = torch.tensor(attn_mask)
-	# segments_tensor = torch.tensor(segments_ids)
-
-	# segments_ids = [1] * len(tokenized_text)
-
-	# tokens_tensor = torch.tensor([indexed_tokens])
-	# segments_tensor = torch.tensor([segments_ids])
-
-	# print(tokenized_text)
-	# print(tokens_tensor)
-
-	# print(input_ids.shape)
-	# config = BertConfig(output_hidden_states=True)
-	# config.output_hidden_states = True
-	model = BertModel.from_pretrained("bert-base-uncased")
-	# model = BertModel(config)
-	model.eval()
-
-
-	with torch.no_grad() :
-		print(ids.shape, attn_mask.shape)
-		out = model(ids, attention_mask=attn_mask)
-		embeddings = out[0]
-		print(embeddings.shape)
-
-
-		# embeddings will match up with the token ids
-		# DON'T USE CLS, SEP, PAD
-
-
-
-		# encoded_layers, _ = model(input_ids, attention_mask=attn_mask)
-		# encoded_layers, _ = model(torch.tensor(tokenizer.convert_tokens_to_ids(['[CLS]', 'why', 'does', 'this', 'not', 'work', '[SEP]', '[PAD]'])))
-
-		# sentence = "the red cube is at your left"
-		# tokens = ["[CLS]"] + tokenizer.tokenize(sentence) + ["[SEP]"] 
-		# input_ids = torch.tensor(tokenizer.convert_tokens_to_ids(tokens))
-
-		# encoded_layers, _ = model(input_ids[1].unsqueeze(0), attention_mask=attn_tensor[1].unsqueeze(0))
-		# _, _, hidden_states = model(input_ids[1].unsqueeze(0), attn_tensor[1].unsqueeze(0))
-		# _ = model(input_ids[1].unsqueeze(0), attn_tensor[1].unsqueeze(0))
-		# print(model.get_input_embeddings().shape)
-
-
-		# print(hidden_states[0].shape, hidden_states[1].shape) # number of examples, number of tokens, number of hidden states
-
-		# embeddings = torch.stack(encoded_layers, dim=0)
-		# embeddings = torch.squeeze(embeddings, dim=1)
-		# embeddings = embeddings.permute(1, 0, 2)
-
-	# vecs = []
-	# embeddings = torch.squeeze(encoded_layers, dim=0)
-	# print(embeddings.shape)
-
-
-	# print(len(vecs), len(vecs[0]))
-
-
 def get_embeddings2():
 	tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
 
 	corpus = brown.sents(categories=['fiction'])
 
+	# max length of sequence for padding
 	maxlen = 0
 	for i in corpus :
 		if len(i) > maxlen :
 			maxlen = len(i)
 	maxlen += 2
 
+	# default is bert-base-uncased, edit config to return all layers
 	config = BertConfig(output_hidden_states=True)
 	model = BertModel(config)
-	# model = BertModel.from_pretrained("bert-base-uncased")
 	model.eval()
 
+	# token : [vectors] (each vector is 1x768 and sum of last 4 layers, one vector for each appearance of token)
 	embeddings_dict = defaultdict(list)
 
-
+	# run one sentence at a time through encoder and bert
 	for sent in corpus :
 		print(sent)
 		ids = tokenizer.encode(sent, add_special_tokens=True, max_length=maxlen, pad_to_max_length=True, return_tensors="pt")
@@ -185,14 +39,7 @@ def get_embeddings2():
 
 		with torch.no_grad() :
 			out = model(ids, attention_mask=attn_mask)
-			# embeddings = out[2]
-
-			# # print(len(out))
-			# print(len(embeddings))
-			# print(embeddings[0].shape)
-
 			token_embeddings = torch.squeeze(torch.stack(out[2][1:], dim=0), dim=1).permute(1, 0, 2)
-			# token_embeddings = torch.squeeze(token_embeddings, dim=1)
 
 			s = ["CLS"] + sent + ["SEP"] + ["PAD"] * (maxlen - len(sent) - 2)
 
@@ -244,7 +91,267 @@ def get_embeddings2():
 	# 	print(embeddings.shape)
 
 
+def load_bert(path):
+	with open(path, "rb") as f:
+		return pkl.load(f)
+
+
+# Get vocabulary from fiction set of Brown corpus
+def get_brown_vocab() :
+	return set(brown.words(categories=['fiction']))
+
+
+def kmeans(vocab, k=900, r=25, file_num=0) :
+	"""
+	Use k-means clustering with cosine similarity as the distance metric to
+	cluster the data into k groups.
+	    
+    Params:
+        k (int): number of clusters
+        vocab (list/dict): text vocabulary of dataset
+        r (int): number of randominzed cluster trials (optional parameter for KMeansClusterer)
+        
+    Returns:
+        cluster_dict (dict): cluster index (int) mapping to cluster (set)
+        word_to_cluster (dict): vocab index mapping word (string) to cluster number (int)
+	"""
+	print("loading bert")
+	bert = load_bert()
+
+	# bert word embeddings
+	print("berting vocab")
+	embeds, words = [], []
+	len_vocab = len(vocab)
+	for v in vocab:
+		embeds.append(np.average(bert[v], axis=0))
+		words.append(v)
+
+	### CLUSTER ################################################################
+	print("clustering")
+	clusterer = KMeansClusterer(k, distance=cosine_distance, repeats=r)
+	clusters = clusterer.cluster(embeds, assign_clusters=True)
+
+	print("enumerating")
+	cluster_dict = { i : [] for i in range(k) }
+	word_to_cluster = {}
+
+	for i, v in enumerate(words):
+		cluster_dict[clusters[i]].append(v)
+		word_to_cluster[v] = clusters[i]
+
+	for c in cluster_dict :
+		cluster_dict[c] = set(cluster_dict[c])
+
+	print("pickling")
+	with open("../data/bert_clusters_{}.pkl".format(file_num), "wb") as p :
+		pkl.dump(cluster_dict, p)
+
+	############################################################################
+
+	# write individual precision and recall scores to text file
+	f = open("../data/bert_{}.txt".format(file_num), "w")
+	f.write("vocab\tprecision\trecall\n")
+
+	precision, recall = [], [] # precision and recall for each word
+	pre, rec = { i : [] for i in range(k)}, { i : [] for i in range(k)} # cluster to score mapping
+	count = 0 # print for sanity check
+	unknown = 0
+	for w in words :
+		p, r = 0.0, 0.0
+
+		cluster = get_cluster(w, cluster_dict, word_to_cluster)
+
+		# accumulate gold cluster for v with WordNet
+		gold = []
+		for syn in wordnet.synsets(w) :
+			for l in syn.lemmas() :
+				gold.append(l.name())
+		gold = set(gold)
+		if len(gold) == 0 :
+			unknown += 1
+			continue
+
+		gold.add(w)
+
+		intersection = cluster.intersection(gold) # true positive
+
+		p = len(intersection) / (len(intersection) + len(cluster.difference(gold)))
+		r = len(intersection) / (len(intersection) + len(gold.difference(cluster)))
+		
+		# try:
+		# 	p = len(intersection) / (len(intersection) + len(cluster.difference(gold)))
+		# except:
+		# 	continue
+		# try:
+		# 	r = len(intersection) / (len(intersection) + len(gold.difference(cluster)))
+		# except:
+		# 	continue
+
+		f.write("{}\t{}\t{}\n".format(w, p, r))
+
+		count += 1
+		if count % 10 == 0 :
+			rint("{}/{}".format(count, len_vocab))
+			print(p, r)
+
+
+		precision.append(p)
+		recall.append(r)
+		pre[word_to_cluster[w]].append(p)
+		rec[word_to_cluster[w]].append(r)
+
+	p_bar, r_bar = np.mean(precision), np.mean(recall)
+
+	f.write("\naverage\t{}\t{}\n".format(p_bar, r_bar))
+	f.close()
+
+	scores = open("../data/kmeans_scores_{}.txt".format(file_num), "w")
+	scores.write("cluster\tprecision\trecall\n")
+	for i in range(k) :
+		scores.write("{}\t{}\t{}\n".format(i, np.mean(pre[i]), np.mean(rec[i])))
+
+	scores.close()
+
+	print(p_bar, r_bar)
+	print(unknown)
+	return p_bar, r_bar
+
+
+def get_cluster(word, clusters, word2cluster):
+    """
+    Get the entire cluster associated with the given word (helper function for kmeans).
+    
+    Params:
+        word (string): the word to find the cluster of
+        clusters (dict): cluster index (int) to cluster (set/list) mapping
+        word2cluster (dict): word (string) to cluster index (int) mapping
+    
+    Returns:
+        cluster (set/list) or error message (if word not in vocab)
+    """
+    try:
+        return clusters[word2cluster[word]]
+    except KeyError:
+        print("Word \"{}\" not seen in dataset".format(word))
+
+
+def agglom(vocab, affinity="cosine", linkage="average", num_clusters=900, file_num=0) :
+	print("loading bert")
+	bert = load_bert()
+
+	print("berting vocab")
+	embeds, words  = [], []
+	len_vocab = len(vocab)
+	for v in vocab :
+		embeds.append(np.average(bert[v], axis=0))
+		words.append(v)
+
+	### CLUSTERING #############################################################
+	print("clustering")
+	clusters = AgglomerativeClustering(n_clusters=num_clusters, affinity=affinity, linkage=linkage).fit(embeds)
+
+	print("enumerating")
+	cluster_dict = { i : [] for i in range(num_clusters) }
+	word_to_cluster = {}
+
+	# for i, v in enumerate(words):
+	# 	cluster_dict[clusters[i]].append(v)
+	# 	word_to_cluster[v] = clusters[i]
+
+	for x in range(len(embeds)) :
+		cluster_dict[clusters.labels_[x]].append(words[x])
+		word_to_cluster[words[x]] = clusters.labels_[x]
+
+	for c in cluster_dict :
+		cluster_dict[c] = set(cluster_dict[c])
+
+	print("pickling")
+	with open("../data/bert_agglom_clusters_{}.pkl".format(file_num), "wb") as p :
+		pkl.dump(cluster_dict, p)
+
+	############################################################################
+
+	# write individual precision and recall scores to text file
+	f = open("../data/bert_agglom_{}.txt".format(file_num), "w")
+	f.write("vocab\tprecision\trecall\n")
+
+	precision, recall = [], [] # precision and recall for each vocab
+	pre, rec = { i : [] for i in range(num_clusters)}, { i : [] for i in range(num_clusters)} # cluster to score mapping
+	count = 0 # print for sanity check
+	unknown = 0
+
+	for w in words :
+		p, r = 0.0, 0.0
+
+		cluster = get_cluster(w, cluster_dict, word_to_cluster)
+
+		# accumulate gold cluster for v with WordNet
+		gold = []
+		for syn in wordnet.synsets(w) :
+			for l in syn.lemmas() :
+				gold.append(l.name())
+		gold = set(gold)
+		if len(gold) == 0 :
+			unknown += 1
+			continue
+
+		# cluster.add(lemmatizer.lemmatize(w))
+		gold.add(w)
+
+		intersection = cluster.intersection(gold) # true positive
+
+
+		p = len(intersection) / (len(intersection) + len(cluster.difference(gold)))
+		r = len(intersection) / (len(intersection) + len(gold.difference(cluster)))
+
+		# if p == 0 or r == 0:
+		# 	print(w, lemmatizer.lemmatize(w))
+		# 	print(cluster)
+		# 	print(gold)
+
+		
+		# try:
+		# 	p = len(intersection) / (len(intersection) + len(cluster.difference(gold)))
+		# except:
+		# 	continue
+		# try:
+		# 	r = len(intersection) / (len(intersection) + len(gold.difference(cluster)))
+		# except:
+		# 	continue
+
+		f.write("{}\t{}\t{}\n".format(w, p, r))
+
+		count += 1
+		if count % 10 == 0 :
+			print("{}/{}".format(count, len_vocab))
+			print(p, r)
+
+
+		precision.append(p)
+		recall.append(r)
+		pre[word_to_cluster[w]].append(p)
+		rec[word_to_cluster[w]].append(r)
+
+	p_bar, r_bar = np.mean(precision), np.mean(recall)
+
+	f.write("\naverage\t{}\t{}\n".format(p_bar, r_bar))
+	f.close()
+
+	scores = open("../data/bert_agglom_scores_{}.txt".format(file_num), "w")
+	scores.write("cluster\tprecision\trecall\n")
+	for i in range(num_clusters) :
+		scores.write("{}\t{}\t{}\n".format(i, np.mean(pre[i]), np.mean(rec[i])))
+
+	scores.close()
+
+
+	print(len_vocab)
+	print(p_bar, r_bar)
+	print(unknown)
+	return p_bar, r_bar
+
+
 if __name__ == "__main__" :
-	get_embeddings2()
+	# get_embeddings2()
 
 
