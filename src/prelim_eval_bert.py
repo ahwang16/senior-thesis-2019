@@ -1,7 +1,9 @@
 # prelim_eval_bert.py
 
 from bert_embedding import BertEmbedding
+from collections import defaultdict
 from nltk.corpus import brown
+import pickle as pkl
 from transformers import BertModel, BertTokenizer, BertConfig
 import torch
 import torch.nn as nn
@@ -157,6 +159,8 @@ def get_embeddings() :
 
 
 def get_embeddings2():
+	batch_size = 32
+
 	tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
 
 	corpus = brown.sents(categories=['fiction'])
@@ -167,22 +171,81 @@ def get_embeddings2():
 			maxlen = len(i)
 	maxlen += 2
 
-	tokenized_text = [torch.tensor(tokenizer.encode(c, add_special_tokens=True, max_length=maxlen, pad_to_max_length=True)) for c in corpus]
-	print(tokenized_text[:2])
-
-	ids = torch.stack(tokenized_text)
-	print(ids.shape)
-
-	attn_mask = (ids != 0).float()
-
-	model = BertModel.from_pretrained("bert-base-uncased")
+	config = BertConfig(output_hidden_states=True)
+	model = BertModel(config)
+	# model = BertModel.from_pretrained("bert-base-uncased")
 	model.eval()
 
-	with torch.no_grad() :
-		print(ids.shape, attn_mask.shape)
-		out = model(ids, attention_mask=attn_mask) # errors out here
-		embeddings = out[0]
-		print(embeddings.shape)
+	embeddings_dict = defaultdict(list)
+
+
+	for sent in corpus :
+		print(sent)
+		ids = tokenizer.encode(sent, add_special_tokens=True, max_length=maxlen, pad_to_max_length=True, return_tensors="pt")
+		# ids = torch.stack(tokenized_text)
+		attn_mask = (ids != 0).float()
+
+		with torch.no_grad() :
+			print(ids.shape, attn_mask.shape)
+			out = model(ids, attention_mask=attn_mask)
+			# embeddings = out[2]
+
+			# # print(len(out))
+			# print(len(embeddings))
+			# print(embeddings[0].shape)
+
+			token_embeddings = torch.squeeze(torch.stack(out[2][1:], dim=0), dim=1).permute(1, 0, 2)
+			# token_embeddings = torch.squeeze(token_embeddings, dim=1)
+			print(token_embeddings.size())
+
+			s = ["CLS"] + sent + ["SEP"] + ["PAD"] * (maxlen - len(sent) - 2)
+
+			idx = 0
+			for token in token_embeddings :
+				sum_vec = torch.sum(token[-4:], dim=0)
+				if s[idx] == "CLS":
+					idx += 1
+					continue
+				elif s[idx] == "SEP":
+					break
+
+				embeddings_dict[s[idx]] = sum_vec
+				idx += 1
+
+	print(len(embeddings_dict))
+
+	with open("../data/bert_embeddings.pkl", "wb") as f:
+		pkl.dump(embeddings_dict, f)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	# tokenized_text = [torch.tensor(tokenizer.encode(c, add_special_tokens=True, max_length=maxlen, pad_to_max_length=True)) for c in corpus]
+
+	# ids = torch.stack(tokenized_text)
+	# print(ids.shape)
+
+	# attn_mask = (ids != 0).float()
+
+	# model = BertModel.from_pretrained("bert-base-uncased")
+	# model.eval()
+
+	# with torch.no_grad() :
+	# 	print(ids.shape, attn_mask.shape)
+	# 	out = model(ids, attention_mask=attn_mask) # errors out here
+	# 	embeddings = out[0]
+	# 	print(embeddings.shape)
 
 
 if __name__ == "__main__" :
