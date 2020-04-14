@@ -5,6 +5,7 @@ sys.settrace
 from bert_embedding import BertEmbedding
 from collections import defaultdict
 from nltk.corpus import brown
+import numpy as np
 import pickle as pkl
 from transformers import BertModel, BertTokenizer, BertConfig
 import torch
@@ -63,7 +64,7 @@ def get_embeddings2():
 		pkl.dump(embeddings_dict, f)
 
 
-def load_bert(path="../data"):
+def load_bert(path="../data/bert_embeddings.pkl"):
 	with open(path, "rb") as f:
 		return pkl.load(f)
 
