@@ -85,8 +85,21 @@ def get_related(vocab_name, outname):
 		outf.write('{},{}\n'.format(w, json.dumps(list(r))))
 
 
+def load_cn():
+	cn = {}
+	with open("../data/brown_cn_gold_1.txt", "r") as infile:
+		next(infile)
+		for line in infile:
+			l = line.split(',')
+			cn[l[0]] = json.loads(l[1])
+
+	return cn
+
+
 if __name__ == "__main__":
-	vocab = set(brown.words(categories=["fiction"]))
-	print(len(vocab))
-	get_related(vocab, "brown_cn_gold_1.txt")
+	# vocab = set(brown.words(categories=["fiction"]))
+	# print(len(vocab))
+	# get_related(vocab, "brown_cn_gold_1.txt")
+
+	print(load_cn().keys()[:10])
 

@@ -1,17 +1,18 @@
 # prelim_eval_bert.py
-import sys
-sys.settrace
-
 from bert_embedding import BertEmbedding
 from collections import defaultdict
-from nltk.corpus import brown
+from nltk.cluster import KMeansClusterer
+from nltk.cluster.util import cosine_distance
+from nltk.corpus import brown, wordnet
 import numpy as np
 import pickle as pkl
+from sklearn.cluster import AgglomerativeClustering
+import sys
 from transformers import BertModel, BertTokenizer, BertConfig
 import torch
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
-# from pytorch_pretrained_bert import BertTokenizer
+
 
 def get_embeddings2():
 	tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
@@ -96,7 +97,7 @@ def kmeans(vocab, k=900, r=25, file_num=0) :
 	embeds, words = [], []
 	len_vocab = len(vocab)
 	for v in vocab:
-		embeds.append(np.average(bert[v], axis=0))
+		embeds.append(torch.mean(torch.stack(bert[v]), dim=0))
 		words.append(v)
 
 	### CLUSTER ################################################################
@@ -216,7 +217,7 @@ def agglom(vocab, affinity="cosine", linkage="average", num_clusters=900, file_n
 	embeds, words  = [], []
 	len_vocab = len(vocab)
 	for v in vocab :
-		embeds.append(np.average(bert[v], axis=0))
+		embeds.append(torch.mean(torch.stack(bert[v]), dim=0))
 		words.append(v)
 
 	### CLUSTERING #############################################################
