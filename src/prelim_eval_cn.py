@@ -4,6 +4,19 @@ import sys, os, requests, time, json
 from IPython import embed
 from nltk.corpus import brown
 
+import sys
+
+# from bert_embedding import BertEmbedding
+
+from nltk.cluster import KMeansClusterer
+from nltk.cluster.util import cosine_distance
+
+import numpy as np
+import pickle as pkl
+from random import randint
+
+from sklearn.cluster import AgglomerativeClustering
+
 # CORPORA_PATH = '/Users/alyssahwang/Documents/workspace2/seniorthesis/data'
 CORPORA_PATH = "../data/"
 GLOVE_50_DIR = "../glove.twitter.27B/glove.twitter.27B.50d.txt"
@@ -100,13 +113,15 @@ def load_cn():
 	with open("../data/brown_cn_gold_1.txt", "r") as infile:
 		next(infile)
 		for line in infile:
-			l = line.split(',')
-			print(l)
-			if l[0] == "": continue
-			cn[l[0]] = set(json.loads(", ".join(l[1:])))
+			l = line.split('[', 1)
+			if l[0] == "":
+				continue
+			cn[l[0]] = set(json.loads('['+l[1]))
 
-	return cn
+	with open("../data/brown_cn.pkl", "wb") as outfile:
+		pkl.dump(cn, outfile)
 
+	return None
 
 def load_glove(dir=GLOVE_50_DIR) :
 	with open(dir, "r") as glove_file:
@@ -374,7 +389,10 @@ if __name__ == "__main__":
 	# print(len(vocab))
 	# get_related(vocab, "brown_cn_gold_1.txt")
 
-	_cn = load_cn()
+	# load_cn()
+
+	with open("../data/brown_cn.pkl", "rb") as infile:
+		_cn = pkl.load(infile)
 
 	method, embed_type, num = sys.argv[1], sys.argv[2], sys.argv[3]
 	if method == "kmeans" :
