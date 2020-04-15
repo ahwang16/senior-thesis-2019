@@ -2,22 +2,16 @@
 
 import sys, os, requests, time, json
 from IPython import embed
-from nltk.corpus import brown
 
-import sys
-
-# from bert_embedding import BertEmbedding
-
+from gensim.models import Word2Vec
 from nltk.cluster import KMeansClusterer
 from nltk.cluster.util import cosine_distance
-
+from nltk.corpus import brown
 import numpy as np
 import pickle as pkl
 from random import randint
-
 from sklearn.cluster import AgglomerativeClustering
 
-# CORPORA_PATH = '/Users/alyssahwang/Documents/workspace2/seniorthesis/data'
 CORPORA_PATH = "../data/"
 GLOVE_50_DIR = "../glove.twitter.27B/glove.twitter.27B.50d.txt"
 
@@ -136,6 +130,24 @@ def load_w2v() :
 
 def get_brown_vocab() :
 	return set(brown.words(categories=['fiction']))
+
+
+def get_cluster(word, clusters, word2cluster) :
+	"""
+	Get the entire cluster associated with the given word (helper function for kmeans).
+
+	Params:
+		word (string): the word to find the cluster of
+		clusters (dict): cluster index (int) to cluster (set/list) mapping
+		word2cluster (dict): word (string) to cluster index (int) mapping
+
+	Returns:
+		cluster (set/list) or error message (if word not in vocab)
+	"""
+	try:
+		return clusters[word2cluster[word]]
+	except KeyError:
+		print("Word \"{}\" not seen in dataset".format(word))
 
 
 def kmeans(vocab, embed_type, k=900, r=25, file_num=0) :
