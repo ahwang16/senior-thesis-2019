@@ -375,7 +375,7 @@ if __name__ == "__main__":
 	_cn = load_cn()
 
 	method, embed_type, num = sys.argv[1], sys.argv[2], sys.argv[3]
-	elif method == "kmeans" :
+	if method == "kmeans" :
 		kmeans(get_brown_vocab(), embed_type, k=900, r=25, file_num=num)
 	elif method == "agglom" :
 		agglom(get_brown_vocab(), embed_type, num_clusters=900, file_num=num)
