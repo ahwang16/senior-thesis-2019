@@ -94,6 +94,9 @@ def kmeans(embeds, vocab, k=900, r=25, file_num=0) :
 		count += 1
 		if count % 10 == 0 :
 			print("{}/{}".format(count, len_vocab))
+			print(len(intersection), len(gold), len(cluster))
+			print(gold)
+			print(cluster)
 			print(p, r)
 
 
@@ -180,6 +183,9 @@ def agglom(embeds, vocab, affinity="cosine", linkage="average", num_clusters=900
 		count += 1
 		if count % 10 == 0 :
 			print("{}/{}".format(count, len_vocab))
+			print(len(intersection), len(gold), len(cluster))
+			print(gold)
+			print(cluster)
 			print(p, r)
 
 
