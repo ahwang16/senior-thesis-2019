@@ -101,6 +101,8 @@ def load_cn():
 		next(infile)
 		for line in infile:
 			l = line.split(',')
+			print(l)
+			if l[0] == "": continue
 			cn[l[0]] = set(json.loads(", ".join(l[1:])))
 
 	return cn
