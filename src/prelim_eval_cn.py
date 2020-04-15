@@ -164,13 +164,13 @@ def kmeans(vocab, embed_type, k=900, r=25, file_num=0) :
         cluster_dict (dict): cluster index (int) mapping to cluster (set)
         word_to_cluster (dict): vocab index mapping word (string) to cluster number (int)
 	"""
+	embeds, words = [], []
 	if embed_type == "glove":
 		print("loading glove")
 		load_glove()
 
 		# get GloVe word embeddings and number of missing words
 		print("gloving vocab")
-		embeds, words  = [], []
 		missing = 0
 		len_vocab = len(vocab)
 		for v in vocab :
@@ -183,6 +183,7 @@ def kmeans(vocab, embed_type, k=900, r=25, file_num=0) :
 	elif embed_type == "w2v":
 		w2v = load_w2v()
 		embeds = w2v.wv[w2v.wv.vocab]
+		words = vocab
 
 	elif embed_type == "bert":
 		print("loading bert")
@@ -190,7 +191,6 @@ def kmeans(vocab, embed_type, k=900, r=25, file_num=0) :
 
 		# bert word embeddings
 		print("berting vocab")
-		embeds, words = [], []
 		len_vocab = len(vocab)
 		for v in vocab:
 			embeds.append(torch.mean(torch.stack(bert[v]), dim=0))
@@ -277,13 +277,13 @@ def kmeans(vocab, embed_type, k=900, r=25, file_num=0) :
 
 
 def agglom(vocab, embed_type, affinity="cosine", linkage="average", num_clusters=900, file_num=0) :
+	embeds, words = [], []
 	if embed_type == "glove":
 		print("loading glove")
 		load_glove()
 
 		# get GloVe word embeddings and number of missing words
 		print("gloving vocab")
-		embeds, words  = [], []
 		missing = 0
 		len_vocab = len(vocab)
 		for v in vocab :
@@ -296,6 +296,7 @@ def agglom(vocab, embed_type, affinity="cosine", linkage="average", num_clusters
 	elif embed_type == "w2v":
 		w2v = load_w2v()
 		embeds = w2v.wv[w2v.wv.vocab]
+		words = vocab
 
 	elif embed_type == "bert":
 		print("loading bert")
@@ -303,7 +304,6 @@ def agglom(vocab, embed_type, affinity="cosine", linkage="average", num_clusters
 
 		# bert word embeddings
 		print("berting vocab")
-		embeds, words = [], []
 		len_vocab = len(vocab)
 		for v in vocab:
 			embeds.append(torch.mean(torch.stack(bert[v]), dim=0))
