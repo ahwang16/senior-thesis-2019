@@ -117,7 +117,7 @@ def kmeans(embeds, vocab, k=900, r=25, file_num=0) :
 
 	scores.close()
 
-	print(missing, len_vocab)
+	print(len_vocab)
 	print(p_bar, r_bar)
 	print(unknown)
 	return p_bar, r_bar
