@@ -250,7 +250,7 @@ def kmeans(vocab, embed_type, k=900, r=25, file_num=0) :
 
 		count += 1
 		if count % 10 == 0 :
-			rint("{}/{}".format(count, len_vocab))
+			print("{}/{}".format(count, len_vocab))
 			print(p, r)
 
 
@@ -403,7 +403,7 @@ if __name__ == "__main__":
 
 	# load_cn()
 
-	with open("../data/brown_cn.pkl", "rb") as infile:
+	with open("../data/brown_cn_new.pkl", "rb") as infile:
 		_cn = pkl.load(infile)
 
 	method, embed_type, num = sys.argv[1], sys.argv[2], sys.argv[3]

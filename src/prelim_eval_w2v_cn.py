@@ -17,7 +17,7 @@ import sys
 
 from sklearn.cluster import AgglomerativeClustering
 
-with open("../data/brown_cn.pkl", "rb") as infile:
+with open("../data/brown_cn_new.pkl", "rb") as infile:
 		_cn = pkl.load(infile)
 
 
