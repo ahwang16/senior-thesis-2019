@@ -250,7 +250,7 @@ def kmeans(vocab, embed_type, k=900, r=25, file_num=0) :
 
 		count += 1
 		if count % 10 == 0 :
-			rint("{}/{}".format(count, len_vocab))
+			print("{}/{}".format(count, len_vocab))
 			print(p, r)
 
 
