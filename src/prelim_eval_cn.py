@@ -397,7 +397,7 @@ def agglom(vocab, embed_type, affinity="cosine", linkage="average", num_clusters
 
 
 if __name__ == "__main__":
-	with open("../gv_vocab.pkl", rb) as p:
+	with open("../gv_vocab.pkl", "rb") as p:
 		vocab = pkl.load(p)
 
 	get_related(vocab, "gv_cn_gold.txt")
