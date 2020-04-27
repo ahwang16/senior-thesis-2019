@@ -81,12 +81,7 @@ GLOVE_50_DIR = "../glove.twitter.27B/glove.twitter.27B.50d.txt"
 # 	return v
 
 
-# Load 50-dim pretrained GloVe embeddings from text file
-def load_glove(dir=GLOVE_50_DIR) :
-	with open(dir, "r") as glove_file:
-	    for line in glove_file:
-	        l = line.split()
-	        _glove_50[l[0]] = np.asarray(l[1:], dtype="float32")
+
 
 
 # Retrieve GloVe embeddings for given words

@@ -94,7 +94,7 @@ def get_related(vocab_name, outname):
 
 		# w = l.strip()
 		r, i, start_time = query_conceptnet(w, 'RelatedTo', i, start_time)
-		outf.write('{},{}\n'.format(w, json.dumps(list(r))))
+		outf.write('{}\t{}\n'.format(w, json.dumps(list(r))))
 
 
 def load_bert(path="../data/bert_embeddings.pkl"):
@@ -397,18 +397,23 @@ def agglom(vocab, embed_type, affinity="cosine", linkage="average", num_clusters
 
 
 if __name__ == "__main__":
+	with open("../gv_vocab.pkl", rb) as p:
+		vocab = pkl.load(p)
+
+	get_related(vocab, "gv_cn_gold.txt")
+
 	# vocab = set(brown.words(categories=["fiction"]))
 	# print(len(vocab))
 	# get_related(vocab, "brown_cn_gold_1.txt")
 
 	# load_cn()
 
-	with open("../data/brown_cn_new.pkl", "rb") as infile:
-		_cn = pkl.load(infile)
+	# with open("../data/brown_cn_new.pkl", "rb") as infile:
+	# 	_cn = pkl.load(infile)
 
-	method, embed_type, num = sys.argv[1], sys.argv[2], sys.argv[3]
-	if method == "kmeans" :
-		kmeans(get_brown_vocab(), embed_type, k=900, r=25, file_num=num)
-	elif method == "agglom" :
-		agglom(get_brown_vocab(), embed_type, num_clusters=900, file_num=num)
+	# method, embed_type, num = sys.argv[1], sys.argv[2], sys.argv[3]
+	# if method == "kmeans" :
+	# 	kmeans(get_brown_vocab(), embed_type, k=900, r=25, file_num=num)
+	# elif method == "agglom" :
+	# 	agglom(get_brown_vocab(), embed_type, num_clusters=900, file_num=num)
 
