@@ -23,15 +23,17 @@ GLOVE_50_DIR = "../glove.twitter.27B/glove.twitter.27B.50d.txt"
 
 # load datasets (GV and AAE)
 def load_aae(path="../data/"):
-	_aae_vocab = pkl.load(os.path.join(path, "aae_vocab.txt"))
+	with open(os.path.join(path, "aae_vocab.txt"), "rb") as infile:
+		_aae_vocab = pkl.load(infile)
 
 
 def load_gv(path="../data/"):
-	_gv_vocab = pkl.load(os.path.join(path, "gv_vocab.pkl"))
+	with open(os.path.join(path, "gv_vocab.pkl"), "rb") as infile:
+		_gv_vocab = pkl.load()
 
 
 def load_cn(data, path="../data/"):
-	with open(os.path.join(path, data)) as infile:
+	with open(os.path.join(path, data), "r") as infile:
 		next(infile)
 		for line in infile:
 			l = line.split("\t")
@@ -218,6 +220,8 @@ if __name__ == "__main__":
 		print(k)
 		print("clustering")
 		kmeans(_gv_vocab, data, k=k, file_num=file_num)
+		print("evaluating")
+		load_cn("gv_cn_gold.txt")
 	elif data == "aae":
 		print("loading aae")
 		load_aae()
@@ -225,9 +229,9 @@ if __name__ == "__main__":
 		print(k)
 		print("clustering")
 		kmeans(_aae_vocab, data, k=k, file_num=file_num)
-
-	print("evaluating")
-	load_cn("gv_cn_gold.txt")
+		print("evaluating")
+		load_cn("aae_cn_gold.txt")
+	
 	eval("../data/kmeans_clusters_{}_{}.pkl".format(data, file_num))
 
 
