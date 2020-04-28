@@ -29,7 +29,7 @@ def load_aae(path="../data/"):
 
 def load_gv(path="../data/"):
 	with open(os.path.join(path, "gv_vocab.pkl"), "rb") as infile:
-		_gv_vocab = pkl.load()
+		_gv_vocab = pkl.load(infile)
 
 
 def load_cn(data, path="../data/"):
