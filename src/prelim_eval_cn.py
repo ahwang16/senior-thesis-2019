@@ -53,7 +53,11 @@ def run_query(w, rel, rel_nodes, page_info):
 		obj = obj.json()
 	except:
 		print(obj)
-	edges = obj['edges']
+	try:
+		edges = obj['edges']
+	except:
+		return None
+		
 	for e in edges:
 		if e['rel']['label'] != rel: continue
 		if e['start']['label'] != w and e['start']['@id'].startswith('/c/en/'):
