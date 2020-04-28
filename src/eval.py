@@ -11,9 +11,7 @@ from sklearn.cluster import AgglomerativeClustering
 import sys
 
 # datasets
-_aae = None
 _aae_vocab = None
-_gv = None
 _gv_vocab = None
 
 # embeddings
@@ -32,7 +30,7 @@ def load_gv(path="../data/"):
 	_gv_vocab = pkl.load(os.join(path, "gv_vocab.pkl"))
 
 
-def load_cn(path="../data/", data):
+def load_cn(data, path="../data/"):
 	with open(os.join(path, data)) as infile:
 		next(infile)
 		for line in infile:
@@ -229,7 +227,7 @@ if __name__ == "__main__":
 		kmeans(_aae_vocab, data, k=k, file_num=file_num)
 
 	print("evaluating")
-	load_cn()
+	load_cn("gv_cn_gold.txt")
 	eval("../data/kmeans_clusters_{}_{}.pkl".format(data, file_num))
 
 
