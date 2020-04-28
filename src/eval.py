@@ -23,15 +23,15 @@ GLOVE_50_DIR = "../glove.twitter.27B/glove.twitter.27B.50d.txt"
 
 # load datasets (GV and AAE)
 def load_aae(path="../data/"):
-	_aae_vocab = pkl.load(os.join(path, "aae_vocab.txt"))
+	_aae_vocab = pkl.load(os.path.join(path, "aae_vocab.txt"))
 
 
 def load_gv(path="../data/"):
-	_gv_vocab = pkl.load(os.join(path, "gv_vocab.pkl"))
+	_gv_vocab = pkl.load(os.path.join(path, "gv_vocab.pkl"))
 
 
 def load_cn(data, path="../data/"):
-	with open(os.join(path, data)) as infile:
+	with open(os.path.join(path, data)) as infile:
 		next(infile)
 		for line in infile:
 			l = line.split("\t")
