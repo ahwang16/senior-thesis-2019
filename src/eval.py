@@ -10,8 +10,8 @@ from sklearn.cluster import AgglomerativeClustering
 import sys
 
 # datasets
-_aae_vocab = []
-_gv_vocab = []
+_aae_vocab = set()
+_gv_vocab = set()
 
 # embeddings
 _glove_50 = {}
@@ -28,7 +28,7 @@ def load_aae():
 
 
 def load_gv():
-	global gv_vocab
+	global _gv_vocab
 	with open("../gv_vocab.pkl", "rb") as infile:
 		_gv_vocab = pkl.load(infile)
 
@@ -217,7 +217,7 @@ if __name__ == "__main__":
 	if data == "gv":
 		print("loading gv")
 		load_gv()
-		k = len(_gv_vocab) / 10
+		k = int(len(_gv_vocab) / 10)
 		print(k)
 		print("clustering")
 		kmeans(_gv_vocab, data, k=k, file_num=file_num)
@@ -226,7 +226,7 @@ if __name__ == "__main__":
 	elif data == "aae":
 		print("loading aae")
 		load_aae()
-		k = len(_aae_vocab) / 10
+		k = int(len(_aae_vocab) / 10)
 		print(k)
 		print("clustering")
 		kmeans(_aae_vocab, data, k=k, file_num=file_num)
