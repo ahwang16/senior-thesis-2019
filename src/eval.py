@@ -4,7 +4,6 @@ from nltk.cluster import KMeansClusterer
 from nltk.cluster.util import cosine_distance
 from nltk.corpus import wordnet
 import numpy as np
-import os
 import pandas as pd
 import pickle as pkl
 from sklearn.cluster import AgglomerativeClustering
@@ -22,13 +21,13 @@ _cn = {}
 GLOVE_50_DIR = "../glove.twitter.27B/glove.twitter.27B.50d.txt"
 
 # load datasets (GV and AAE)
-def load_aae(path="../data/"):
-	with open(os.path.join(path, "aae_vocab.txt"), "rb") as infile:
+def load_aae():
+	with open("../data/aae_vocab.pkl", "rb") as infile:
 		_aae_vocab = pkl.load(infile)
 
 
-def load_gv(path="../data/"):
-	with open(os.path.join(path, "gv_vocab.pkl"), "rb") as infile:
+def load_gv():
+	with open("../gv_vocab.pkl", "rb") as infile:
 		_gv_vocab = pkl.load(infile)
 
 
