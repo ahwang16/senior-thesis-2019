@@ -10,8 +10,8 @@ from sklearn.cluster import AgglomerativeClustering
 import sys
 
 # datasets
-_aae_vocab = None
-_gv_vocab = None
+_aae_vocab = []
+_gv_vocab = []
 
 # embeddings
 _glove_50 = {}
@@ -23,12 +23,12 @@ GLOVE_50_DIR = "../glove.twitter.27B/glove.twitter.27B.50d.txt"
 # load datasets (GV and AAE)
 def load_aae():
 	with open("../data/aae_vocab.pkl", "rb") as infile:
-		_aae_vocab = pkl.load(infile)
+		_aae_vocab += pkl.load(infile)
 
 
 def load_gv():
 	with open("../gv_vocab.pkl", "rb") as infile:
-		_gv_vocab = pkl.load(infile)
+		_gv_vocab += pkl.load(infile)
 
 
 def load_cn(data, path="../data/"):
