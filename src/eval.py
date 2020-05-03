@@ -105,7 +105,7 @@ def load_w2v(corpus):
 
 # get embeddings
 def get_embeddings(vocab, embed_type):
-	if embed == "w2v":
+	if embed_type == "w2v":
 		with open("../data/twitteraae_aa.txt", "r") as infile:
 			w2v = load_w2v(infile.readlines())
 			return w2v.wv[w2v.wv.vocab], list(vocab), None
