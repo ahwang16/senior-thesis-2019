@@ -276,7 +276,7 @@ if __name__ == "__main__":
 		k = int(len(_gv_vocab) / 10)
 		print(k)
 		print("clustering")
-		kmeans(_gv_vocab, data, embed_type k=k, file_num=file_num)
+		kmeans(_gv_vocab, data, embed_type, k=k, file_num=file_num)
 		print("evaluating")
 		load_cn("gv_cn_gold.txt")
 	elif data == "aae":
@@ -285,7 +285,7 @@ if __name__ == "__main__":
 		k = int(len(_aae_vocab) / 10)
 		print(k)
 		print("clustering")
-		kmeans(_aae_vocab, data, embed_type k=k, file_num=file_num)
+		kmeans(_aae_vocab, data, embed_type, k=k, file_num=file_num)
 		print("evaluating")
 		load_cn("aae_cn_gold.txt")
 	
