@@ -99,6 +99,7 @@ def load_w2v(corpus):
 	sents = []
 	for c in corpus:
 		doc = nlp(c)
+		sents.append(d.text for d in doc if not d.is_punct)
 	model = Word2Vec(sents, min_count=1)
 	return model
 
