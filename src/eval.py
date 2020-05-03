@@ -145,7 +145,7 @@ def kmeans(vocab, data, embed_type, k=900, r=25, file_num=0):
 	"""
 	### CLUSTERING #############################################################
 	print("clustering")
-	embeds, words, missing = get_embeddings(vocab, embed)
+	embeds, words, missing = get_embeddings(vocab, embed_type)
 	print("missing from glove:", missing)
 
 	clusterer = KMeansClusterer(k, distance=cosine_distance, repeats=r)
