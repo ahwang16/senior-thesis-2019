@@ -99,7 +99,7 @@ def load_w2v(corpus):
 	sents = []
 	for c in corpus:
 		doc = nlp(c)
-	model = Word2Vec(sents)
+	model = Word2Vec(sents, min_count=1)
 	return model
 
 
