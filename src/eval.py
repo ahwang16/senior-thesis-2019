@@ -1,12 +1,18 @@
 # eval.py
+from gensim.models import Word2Vec
+import itertools
 import json
+from mittens import GloVe
+from nltk import bigrams
 from nltk.cluster import KMeansClusterer
 from nltk.cluster.util import cosine_distance
 from nltk.corpus import wordnet
 import numpy as np
 import pandas as pd
 import pickle as pkl
+import re
 from sklearn.cluster import AgglomerativeClustering
+import spacy
 import sys
 
 # datasets
@@ -41,7 +47,6 @@ def load_cn(data, path="../data/"):
 			_cn[l[0]] = json.loads(l[1])
 
 
-
 # Load 50-dim pretrained GloVe embeddings from text file
 def load_glove(dir=GLOVE_50_DIR) :
 	with open(dir, "r") as glove_file:
@@ -49,12 +54,63 @@ def load_glove(dir=GLOVE_50_DIR) :
 			l = line.split()
 			_glove_50[l[0]] = np.asarray(l[1:], dtype="float32")
 
+
+# https://codereview.stackexchange.com/questions/235633/generating-a-co-occurrence-matrix
+def by_indexes(iterable):
+    output = {}
+    for index, key in enumerate(iterable):
+        output.setdefault(key, []).append(index)
+    return output
+
+
+# https://codereview.stackexchange.com/questions/235633/generating-a-co-occurrence-matrix
+def co_occurrence_matrix(corpus, vocabulary, window_size=2):
+    def split_tokens(tokens):
+        for token in tokens:
+            indexs = vocabulary_indexes.get(token)
+            if indexs is not None:
+                yield token, indexs[0]
+
+    matrix = np.zeros((len(vocabulary), len(vocabulary)), np.float64)
+    vocabulary_indexes = by_indexes(vocabulary)
+
+    for sent in corpus:
+        tokens = by_indexes(split_tokens(sent.split())).items()
+        for ((word_1, x), indexes_1), ((word_2, y), indexes_2) in itertools.permutations(tokens, 2):
+            for k in indexes_1:
+                for l in indexes_2:
+                    if abs(l - k) <= window_size:
+                        matrix[x, y] += 1
+    return matrix
+
+
+
 # finetune GloVe
-# idk
+# https://github.com/ashutoshsingh0223/mittens
+def finetune_glove(corpus, vocab):
+	cooc = co_occurrence_matrix(corpus, vocab)
+	glove = GloVe(n=2, max_iter=100)
+	embeddings = glove.fit(cooc)
+
+
+# https://www.shanelynn.ie/word-embeddings-in-python-with-spacy-and-gensim/
+def load_w2v(corpus):
+	nlp = spacy.load('en_core_web_sm')
+	sents = []
+	for c in corpus:
+		doc = nlp(c)
+	model = Word2Vec(sents)
+	return model
 
 
 # get embeddings
-def get_embeddings(vocab):
+def get_embeddings(vocab, embed_type):
+	if embed == "w2v":
+		with open("../data/twitteraae_aa.txt", "r") as infile:
+			w2v = load_w2v(infile.readlines())
+			return w2v.wv[w2v.wv.vocab], list(vocab), None
+
+
 	print("loading glove")
 	load_glove()
 
@@ -73,7 +129,7 @@ def get_embeddings(vocab):
 
 
 # cluster (kmeans)
-def kmeans(vocab, data, k=900, r=25, file_num=0):
+def kmeans(vocab, data, embed_type, k=900, r=25, file_num=0):
 	"""
 	Cluster glove embeddings with kmeans algorithm
 
@@ -89,7 +145,7 @@ def kmeans(vocab, data, k=900, r=25, file_num=0):
 	"""
 	### CLUSTERING #############################################################
 	print("clustering")
-	embeds, words, missing = get_embeddings(vocab)
+	embeds, words, missing = get_embeddings(vocab, embed)
 	print("missing from glove:", missing)
 
 	clusterer = KMeansClusterer(k, distance=cosine_distance, repeats=r)
@@ -114,7 +170,7 @@ def kmeans(vocab, data, k=900, r=25, file_num=0):
 	############################################################################
 
 
-def eval(path_to_cluster):
+def eval(path_to_cluster, data, embed_type, file_num):
 	words = []
 	words_idx = []
 	clusters = []
@@ -165,8 +221,8 @@ def eval(path_to_cluster):
 						 "precision_cn" : np.mean(precision_cn),
 						 "recall_cn" : np.mean(recall_cn)})
 
-	pd.DataFrame(words, index=words_idx).to_csv("gv_words.csv")
-	pd.DataFrame(clusters).to_csv("gv_clusters.csv")
+	pd.DataFrame(words, index=words_idx).to_csv("gv_words_{}_{}_{}.csv".format(data, embed_type, file_num))
+	pd.DataFrame(clusters).to_csv("gv_clusters{}_{}_{}.csv".format(data, embed_type, file_num))
 	
 
 '''
@@ -212,7 +268,7 @@ def get_gold_wn(word):
 
 
 if __name__ == "__main__":
-	data, file_num = sys.argv[1], sys.argv[2]
+	data, file_num, embed_type = sys.argv[1], sys.argv[2], sys.argv[3]
 
 	if data == "gv":
 		print("loading gv")
@@ -220,7 +276,7 @@ if __name__ == "__main__":
 		k = int(len(_gv_vocab) / 10)
 		print(k)
 		print("clustering")
-		kmeans(_gv_vocab, data, k=k, file_num=file_num)
+		kmeans(_gv_vocab, data, embed_type k=k, file_num=file_num)
 		print("evaluating")
 		load_cn("gv_cn_gold.txt")
 	elif data == "aae":
@@ -229,11 +285,11 @@ if __name__ == "__main__":
 		k = int(len(_aae_vocab) / 10)
 		print(k)
 		print("clustering")
-		kmeans(_aae_vocab, data, k=k, file_num=file_num)
+		kmeans(_aae_vocab, data, embed_type k=k, file_num=file_num)
 		print("evaluating")
 		load_cn("aae_cn_gold.txt")
 	
-	eval("../data/kmeans_clusters_{}_{}.pkl".format(data, file_num))
+	eval("../data/kmeans_clusters_{}_{}_{}.pkl".format(data, embed_type, file_num), data, embed_type, file_num)
 
 
 
