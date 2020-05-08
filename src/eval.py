@@ -226,6 +226,14 @@ def eval(path_to_cluster, data, embed_type, file_num):
 	pd.DataFrame(clusters).to_csv("gv_clusters{}_{}_{}.csv".format(data, embed_type, file_num))
 	
 
+def get_gold_wn(word):
+	gold = set()
+	for syn in wordnet.synsets(word):
+		for l in syn.lemmas():
+			gold.add(l.name())
+	gold.add(word)
+	return gold
+
 '''
 ### UNECESSARY FUNCTIONS ######################################################
 # eval with CN
