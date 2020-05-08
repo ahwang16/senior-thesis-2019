@@ -40,7 +40,7 @@ def load_gv():
 
 
 def load_cn(data, path="../data/"):
-	with open(os.path.join(path, data), "r") as infile:
+	with open("../data/gv_cn_gold.txt", "r") as infile:
 		next(infile)
 		for line in infile:
 			l = line.split("\t")
