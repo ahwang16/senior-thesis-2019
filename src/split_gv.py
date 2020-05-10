@@ -1,7 +1,7 @@
 # split_gv.py
 
 import eval
-import pickle
+import pickle as pkl
 from multiprocessing import Process
 
 if __name__ == "__main__":
