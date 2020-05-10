@@ -222,8 +222,8 @@ def eval(path_to_cluster, data, embed_type, file_num):
 						 "precision_cn" : np.mean(precision_cn),
 						 "recall_cn" : np.mean(recall_cn)})
 
-	pd.DataFrame(words, index=words_idx).to_csv("gv_words_{}_{}_{}.csv".format(data, embed_type, file_num))
-	pd.DataFrame(clusters).to_csv("gv_clusters{}_{}_{}.csv".format(data, embed_type, file_num))
+	pd.DataFrame(words, index=words_idx).to_csv("{}_words_{}_{}.csv".format(data, embed_type, file_num))
+	pd.DataFrame(clusters).to_csv("{}_clusters_{}_{}.csv".format(data, embed_type, file_num))
 	
 
 def get_gold_wn(word):
