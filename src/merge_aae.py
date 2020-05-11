@@ -7,9 +7,9 @@ import pickle as pkl
 
 glove = {}
 with open("../glove.twitter.27B/glove.twitter.27B.50d.txt") as infile:
-    for line in infile:
-        l = line.split('\t')
-        glove[l[0]] = np.asarray(l[1:], dtype="float32")
+	for line in infile:
+		l = line.split('\t')
+		glove[l[0]] = np.asarray(l[1:], dtype="float32")
 print("glove loaded")
 
 cn_gold = {}
@@ -37,17 +37,17 @@ def create_missing_words_df(df):
 	missing = []
 	for word in df["Unnamed: 0"]:
 		print(word)
-	    word_idx.append(word)
-	    missing_glove = int(word not in glove)
-	    missing_cn = int(len(cn_gold[word]) == 0)
-	    missing_wn = int(len(get_gold_wn(word)) == 1)
-	    
-	    missing.append({
-	        "missing_glove" : missing_glove,
-	        "missing_cn" : missing_cn,
-	        "missing_wn":  missing_wn
-	    })
-	    
+		word_idx.append(word)
+		missing_glove = int(word not in glove)
+		missing_cn = int(len(cn_gold[word]) == 0)
+		missing_wn = int(len(get_gold_wn(word)) == 1)
+		
+		missing.append({
+			"missing_glove" : missing_glove,
+			"missing_cn" : missing_cn,
+			"missing_wn":  missing_wn
+		})
+		
 	brown_missing = pd.DataFrame(missing, index=word_idx)
 
 
