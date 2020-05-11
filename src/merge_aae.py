@@ -1,6 +1,25 @@
 # merge_aae.py
+import json
+from nltk.corpus import wordnet
 import pandas as pd
 import pickle as pkl
+
+cn_gold = {}
+with open("../data/aae_cn_gold.txt", "r") as infile:
+	next(infile)
+	for line in infile:
+		l = line.split('\t')
+		cn_gold[l[0]] = json.loads(l[1])
+
+
+def get_gold_wn(word):
+	gold = set()
+	for syn in wordnet.synsets(word):
+		for l in syn.lemmas():
+			gold.add(l.name())
+	gold.add(word)
+	return gold
+
 
 def create_missing_words_df(df):
 	word_idx = []
@@ -34,4 +53,3 @@ if __name__ == "__main__":
 	words = pd.concat(words_dfs, axis=0)
 	words.to_csv("aae_words.csv")
 
-	
