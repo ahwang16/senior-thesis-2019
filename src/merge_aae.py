@@ -9,7 +9,7 @@ with open("../data/aae_cn_gold.txt", "r") as infile:
 	next(infile)
 	for line in infile:
 		l = line.split('\t')
-		print(l)
+		print(len(l), l[0])
 		cn_gold[l[0]] = json.loads(l[1])
 
 
