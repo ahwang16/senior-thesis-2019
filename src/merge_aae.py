@@ -6,7 +6,7 @@ import pandas as pd
 import pickle as pkl
 
 glove = {}
-with open("../glove.twitter.27B/glove.twitter.27b.50d.txt") as infile:
+with open("../glove.twitter.27B/glove.twitter.27B.50d.txt") as infile:
     for line in infile:
         l = line.split('\t')
         glove[l[0]] = np.asarray(l[1:], dtype="float32")
