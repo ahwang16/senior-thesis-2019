@@ -33,22 +33,19 @@ def create_missing_words_df(df):
 	word_idx = []
 	missing = []
 	for word in df["Unnamed: 0"]:
-		print(word)
 		word_idx.append(word)
-		print("append")
 		missing_glove = int(word not in glove)
-		print('missing glove')
-		missing_cn = int(len(cn_gold[word]) == 0)
-		print("missing cn")
+		try:
+			missing_cn = int(len(cn_gold[word]) == 0)
+		except:
+			missing_cn = 1
 		missing_wn = int(len(get_gold_wn(word)) == 1)
-		print("missing wn")
 		
 		missing.append({
 			"missing_glove" : missing_glove,
 			"missing_cn" : missing_cn,
 			"missing_wn":  missing_wn
 		})
-		print("append missing")
 		
 	return pd.DataFrame(missing, index=word_idx)
 
