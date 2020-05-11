@@ -10,7 +10,6 @@ with open("../glove.twitter.27B/glove.twitter.27B.50d.txt") as infile:
 	for line in infile:
 		l = line.split('\t')
 		glove[l[0]] = np.asarray(l[1:], dtype="float32")
-print("glove loaded")
 
 cn_gold = {}
 with open("../data/aae_cn_gold.txt", "r") as infile:
@@ -19,7 +18,6 @@ with open("../data/aae_cn_gold.txt", "r") as infile:
 		l = line.split('\t')
 		if len(l) == 2:
 			cn_gold[l[0]] = json.loads(l[1])
-print("cn loaded")
 
 
 def get_gold_wn(word):
@@ -32,23 +30,27 @@ def get_gold_wn(word):
 
 
 def create_missing_words_df(df):
-	print("hello")
 	word_idx = []
 	missing = []
 	for word in df["Unnamed: 0"]:
 		print(word)
 		word_idx.append(word)
+		print("append")
 		missing_glove = int(word not in glove)
+		print('missing glove')
 		missing_cn = int(len(cn_gold[word]) == 0)
+		print("missing cn")
 		missing_wn = int(len(get_gold_wn(word)) == 1)
+		print("missing wn")
 		
 		missing.append({
 			"missing_glove" : missing_glove,
 			"missing_cn" : missing_cn,
 			"missing_wn":  missing_wn
 		})
+		print("append missing")
 		
-	brown_missing = pd.DataFrame(missing, index=word_idx)
+	return pd.DataFrame(missing, index=word_idx)
 
 
 if __name__ == "__main__":
