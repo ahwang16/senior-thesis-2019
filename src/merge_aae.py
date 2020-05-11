@@ -1,8 +1,15 @@
 # merge_aae.py
 import json
 from nltk.corpus import wordnet
+import numpy as np
 import pandas as pd
 import pickle as pkl
+
+glove = {}
+with open("../glove.twitter.27B/glove.twitter.27b.50d.txt") as infile:
+    for line in infile:
+        l = line.split('\t')
+        glove[l[0]] = np.asarray(l[1:], dtype="float32")
 
 cn_gold = {}
 with open("../data/aae_cn_gold.txt", "r") as infile:
