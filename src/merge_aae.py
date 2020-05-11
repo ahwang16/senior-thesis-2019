@@ -44,9 +44,8 @@ if __name__ == "__main__":
 	words_dfs = []
 	for x in range(55):
 		try:
-			with open("aae_words_glove_{}.csv".format(x), "rb") as infile:
-				words = pkl.load(infile)
-			words_dfs.append(create_missing_words_df(words))
+			df = pd.read_csv("aae_words_glove_{}.csv".format(x))
+			words_dfs.append(create_missing_words_df(df))
 			print(x, "works")
 		except:
 			print(x, "does not work")
