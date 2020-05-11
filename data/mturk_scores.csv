@@ -1,0 +1,899 @@
+,Input.index,Input.words,Answer.clusters,Answer.num_clusters,size,score
+0,780,detectives tragedies witnesses murderers picket culprits witness scandals gangs,"detectives, tragedies, witnesses, murderers, culprits, witness, scandalspickets, gangs",2,9,0.9890130573694068
+1,780,detectives tragedies witnesses murderers picket culprits witness scandals gangs,detectives tragedies witnesses murderers picket culprits witness scandals gangs,1,9,0.9998766054240137
+2,780,detectives tragedies witnesses murderers picket culprits witness scandals gangs,detectives tragedies witnesses murderers picket culprits witness scandals gangs,1,9,0.9998766054240137
+3,3,hospital port terminal,port terminal;hospital,2,3,0.8175744761936437
+4,3,hospital port terminal,hospitalport terminal,2,3,0.8175744761936437
+5,3,hospital port terminal,hospital;port terminal;,2,3,0.8175744761936437
+6,850,ladder plank sock knot knife cuff anchor tail rope buckle knuckle cuffs skates roller leash,ladder plank sock knot knife cuff anchor tail rope buckle knuckle cuffs skates roller leash,1,15,0.999999694097773
+7,850,ladder plank sock knot knife cuff anchor tail rope buckle knuckle cuffs skates roller leash,"ladder, plank, anchor, ropesock, knot, cuff, buckle, cuffs, skates, leashknife, rollertail",4,15,0.9770226300899744
+8,850,ladder plank sock knot knife cuff anchor tail rope buckle knuckle cuffs skates roller leash,ladder plank knot;sock cuff cuffs;anchor rope leash tail buckle;skates roller;knife;knuckle;,6,15,0.9241418199787566
+9,191,colleagues member staff members veterans volunteers,colleagues staff members member veterans volunteers;,1,6,0.9975273768433653
+10,191,colleagues member staff members veterans volunteers,colleagues member staff members veterans volunteers;,1,6,0.9975273768433653
+11,191,colleagues member staff members veterans volunteers,colleagues member staff members veterans volunteers,1,6,0.9975273768433653
+12,888,sealing cleft decorator wrapper connoisseur pail parlor stamping corkscrew,sealingdecorator wrapper connoiseur stampingpail corkscrewparlor cleft,5,9,0.8581489350995123
+13,888,sealing cleft decorator wrapper connoisseur pail parlor stamping corkscrew,sealing cleft decorator wrapper connoisseur pail parlor stamping corkscrew,1,9,0.9998766054240137
+14,888,sealing cleft decorator wrapper connoisseur pail parlor stamping corkscrew,"sealing, wrapper, stamping, corkscrew, decoratorcleft, pailconnoisseur, parlor",3,9,0.9525741268224331
+15,495,ring door hole cross hand lift arm,ring door ;hand arm lift,2,7,0.9706877692486436
+16,495,ring door hole cross hand lift arm,hand arm;lift door;ring;cross;hole,5,7,0.8021838885585817
+17,495,ring door hole cross hand lift arm,ring door;hole;cross;hand lift arm;,4,7,0.8519528019683106
+18,311,avoided informed backed deliberately recall claimed warn warned blamed spies refused threatening claiming,avoided refused informed backed deliberately claimed claiming recallwarn warned blamed spies threatening,4,13,0.9626731126558706
+19,311,avoided informed backed deliberately recall claimed warn warned blamed spies refused threatening claiming,avoided informed backed recall claimed warn warned blamed refused threatening claiming;deliberately;spies,3,13,0.9870462724693041
+20,311,avoided informed backed deliberately recall claimed warn warned blamed spies refused threatening claiming,avoided informed backed deliberately recall claimed warn warned blamed refused threatening claimingspies,2,13,0.998498817743263
+21,658,flopped swerved ticked bounced slid sped swung,flopped swerved ticked bounced slid sped swung;,1,7,0.9990889488055994
+22,658,flopped swerved ticked bounced slid sped swung,flopped swerved ticked bounced slid sped swung,1,7,0.9990889488055994
+23,658,flopped swerved ticked bounced slid sped swung,flopped swerved bounced slid sped swung;ticked,2,7,0.9706877692486436
+24,376,length flat bottom height inches upper below broad,length height inches broadflat bottom below,2,8,0.9820137900379085
+25,376,length flat bottom height inches upper below broad,length flat bottom height inches upper below broad,1,8,0.9996646498695336
+26,376,length flat bottom height inches upper below broad,length flat bottom height inches upper below broad;,1,8,0.9996646498695336
+27,294,minds soul brain mind heart deep life thoughts blood,minds brain mind thoughts;soul heart deep life blood;,2,9,0.9890130573694068
+28,294,minds soul brain mind heart deep life thoughts blood,minds would brain mindheart blood lifedeep thoughts,3,9,0.9525741268224331
+29,294,minds soul brain mind heart deep life thoughts blood,minds soul brain mind heart life thoughts blood;deep,2,9,0.9890130573694068
+30,305,complex immediate physical condition neutral critical concentration experience,physical condition;complex critical immediate;experience;neutral;concentration,5,8,0.8320183851339245
+31,305,complex immediate physical condition neutral critical concentration experience,complex physical neutral critical experience immediate;condition concentration,2,8,0.9820137900379085
+32,305,complex immediate physical condition neutral critical concentration experience,complex immediate physical neutral critical; condition concentration experience,2,8,0.9820137900379085
+33,845,hook roll stick whip bend scratch pull swing slide choke burn lean strip knock hold squeeze dirt jump shake blow loose push throw tap bump shove,"hook, roll, stick, whip, scratch, swing, slide, strip, tap, bumpbench, pull choke, burn, lean, knock, hold, squeeze, jump, shake, blow, loose, push, throw, shovedirt",3,26,0.9998277974028811
+34,845,hook roll stick whip bend scratch pull swing slide choke burn lean strip knock hold squeeze dirt jump shake blow loose push throw tap bump shove,hook roll stick whip bend scratch pull swing slide choke burn lean strip knock hold squeeze dirt jump shake blow loose push throw tap bump shove,1,26,0.999999999994891
+35,845,hook roll stick whip bend scratch pull swing slide choke burn lean strip knock hold squeeze dirt jump shake blow loose push throw tap bump shove,hook roll stick whip bend scratch pull swing slide choke burn lean strip knock hold squeeze dirt jump shake blow loose push throw tap bump shove,1,26,0.999999999994891
+36,891,circumstances overcome ultimately circumstance determine necessity discern outcome overcoming unlikely merely invariably,circumstances overcome ultimately circumstance determine necessity discern outcome overcoming unlikely merely invariably,1,12,0.9999938558253978
+37,891,circumstances overcome ultimately circumstance determine necessity discern outcome overcoming unlikely merely invariably,"circumstances, overcome, circumstance, determine, outcome overcomingultimately, unlikely, merely, invariablynecessity, discern",3,12,0.9820137900379085
+38,891,circumstances overcome ultimately circumstance determine necessity discern outcome overcoming unlikely merely invariably,circumstances outcome;determine overcome discern ; ultimately circumstance  necessity  overcoming unlikely merely invariably,3,12,0.9820137900379085
+39,29,etes vous voulez,etes vous voulez,1,3,0.9525741268224331
+40,29,etes vous voulez,etes;vous;voulez;,3,3,0.7310585786300049
+41,29,etes vous voulez,etes vous voulez,1,3,0.9525741268224331
+42,436,churches neighborhoods acres boroughs cabins roads suburb towns countryside,churches neighborhoods acres boroughs cabins roads suburb towns countryside;,1,9,0.9998766054240137
+43,436,churches neighborhoods acres boroughs cabins roads suburb towns countryside,churches neighborhoods acres boroughs cabins roads suburb towns countryside,1,9,0.9998766054240137
+44,436,churches neighborhoods acres boroughs cabins roads suburb towns countryside,neighborhoods boroughs suburb towns countryside acres roads ;churches cabins neighborhoods,2,9,0.9890130573694068
+45,617,tollgate mackinaw headland semper beech granary,tollgate mackinaw headland;semper;beech;granary;,4,6,0.8175744761936437
+46,617,tollgate mackinaw headland semper beech granary,tollgate mackinaw headland semper beech granary,1,6,0.9975273768433653
+47,617,tollgate mackinaw headland semper beech granary,tollgate mackinaw headland semper beech granary,1,6,0.9975273768433653
+48,154,disclosures exploits assurances authorship furor,disclosures assurances exploits;furor;authorship,3,5,0.8411308951190849
+49,154,disclosures exploits assurances authorship furor,disclosures exploits assurances authorship furor,1,5,0.9933071490757153
+50,154,disclosures exploits assurances authorship furor,disclosures exploits;assurances authorship;furor;,3,5,0.8411308951190849
+51,819,rhythm timber gravity euphoria climax symphony clarity,rhythm symphony;timber gravity;euphoria climax clarity;,3,7,0.9116003227929417
+52,819,rhythm timber gravity euphoria climax symphony clarity,rhythm symphonytimbergravityeuphoria climaxclarity,5,7,0.8021838885585817
+53,819,rhythm timber gravity euphoria climax symphony clarity,rhythm timber gravity euphoria climax symphony clarity,1,7,0.9990889488055994
+54,35,kidney malaria hepatitis tuberculosis tumor rut,kidney malaria hepatitis tuberculosis tumor,1,6,0.9975273768433653
+55,35,kidney malaria hepatitis tuberculosis tumor rut,kidney malaria hepatitis tuberculosis tumor rut,1,6,0.9975273768433653
+56,35,kidney malaria hepatitis tuberculosis tumor rut,kidney malaria hepatitis tuberculosis tumor;rut;,2,6,0.9525741268224331
+57,844,squires timbers betties skippers colonials pipers,"squires, colonialstimbers, pipersbetties, skippers",3,6,0.8807970779778823
+58,844,squires timbers betties skippers colonials pipers,squires betties skippers colonials pipers;timbers;,2,6,0.9525741268224331
+59,844,squires timbers betties skippers colonials pipers,squires timbers betties skippers colonials pipers,1,6,0.9975273768433653
+60,732,athlete task becoming promising career opportunity become success greatest leading successful addition,"athlete, career, task, opportunity, additionbecoming, become promising, success, greatest, leading successful",3,12,0.9820137900379085
+61,732,athlete task becoming promising career opportunity become success greatest leading successful addition,athlete;task becoming career opportunity become leading audition;promising success greatest successful;,3,12,0.9820137900379085
+62,732,athlete task becoming promising career opportunity become success greatest leading successful addition,athlete becoming promising career opportunity become success greatest leading successful;task addition;,2,12,0.9975273768433653
+63,696,university college state county,university college state ;state county,2,4,0.8807970779778823
+64,696,university college state county,university college state county,1,4,0.9820137900379085
+65,696,university college state county,"university, collegestate, county",2,4,0.8807970779778823
+66,32,unavailable grounded disconnected,unavailable disconnected;grounded,2,3,0.8175744761936437
+67,32,unavailable grounded disconnected,unavailable grounded disconnected,1,3,0.9525741268224331
+68,32,unavailable grounded disconnected,unavailable grounded disconnected;,1,3,0.9525741268224331
+69,324,adolescent cathedrals rhythms denting,adolescent;cathedralsrhythms;denting,4,4,0.7310585786300049
+70,324,adolescent cathedrals rhythms denting,adolescent cathedrals rhythms; denting,2,4,0.8807970779778823
+71,324,adolescent cathedrals rhythms denting,adolescent; cathedrals; rhythms; denting,4,4,0.7310585786300049
+72,451,immense expression emotion nature happiness passion courage illusion vision imagination desire,immense expression emotion nature happiness passion courage illusion vision imagination desire,1,11,0.999983298578152
+73,451,immense expression emotion nature happiness passion courage illusion vision imagination desire,immense; expression emotion nature happiness passion courage illusion vision imagination desire,2,11,0.995929862284104
+74,451,immense expression emotion nature happiness passion courage illusion vision imagination desire,"immenseexpression, emotion, nature, happiness, passion, couragevision, illusion, imagination",3,11,0.975075573352886
+75,729,unfair deserving obvious,unfair deserving obvious,1,3,0.9525741268224331
+76,729,unfair deserving obvious,unfair;deserving;obvious,3,3,0.7310585786300049
+77,729,unfair deserving obvious,"unfairdeserving, obvious",2,3,0.8175744761936437
+78,62,king sir drew mark rob pat gates rocky ivy ray,king sir;drew mark rob pat gates rocky ivy ray;,2,10,0.9933071490757153
+79,62,king sir drew mark rob pat gates rocky ivy ray,king sirdrew rocky ivy ray mark rob patgates,3,10,0.9655548043337889
+80,62,king sir drew mark rob pat gates rocky ivy ray,king sir drew mark rob pat gates rocky ivy ray,1,10,0.9999546021312976
+81,550,seafarers adopting quarreling unwed courting abandoning high-school,seafarersadoptingquarrelingunwed courtingabandoninghigh-school,6,7,0.7625419716560975
+82,550,seafarers adopting quarreling unwed courting abandoning high-school,seafarers; adopting;quarreling;unwed courting abandoning;high school,5,7,0.8021838885585817
+83,550,seafarers adopting quarreling unwed courting abandoning high-school,seafarers; unwed  high-school;adopting quarreling courting abandoning,3,7,0.9116003227929417
+84,626,tiring surprising intense hectic unexpected interesting exciting entertaining,tiring surprising intense hectic unexpected interesting exciting entertaining,2,8,0.9820137900379085
+85,626,tiring surprising intense hectic unexpected interesting exciting entertaining,,1,8,0.9996646498695336
+86,626,tiring surprising intense hectic unexpected interesting exciting entertaining,tiring surprising intense hectic unexpected interesting exciting entertaining,1,8,0.9996646498695336
+87,598,reread errors preceding counted centuries sentences repeated,reread errors counted sentences repeated;preceding;centuries;,3,7,0.9116003227929417
+88,598,reread errors preceding counted centuries sentences repeated,reread preceding counted  repeated;errors centuries sentences;,2,7,0.9706877692486436
+89,598,reread errors preceding counted centuries sentences repeated,reread sentences errors; preceding repeated counted centuries;,2,7,0.9706877692486436
+90,675,fleck wattles sterns,fleck;wattles;sterns,3,3,0.7310585786300049
+91,675,fleck wattles sterns,fleck wattles sterns,1,3,0.9525741268224331
+92,675,fleck wattles sterns,fleckwattlessterns,3,3,0.7310585786300049
+93,51,searched stalked paused stumbled clicked commented briefly,"searched, stalked, paused, stumbled, brieflyclicked, commented",3,7,0.9116003227929417
+94,51,searched stalked paused stumbled clicked commented briefly,searched stalked;paused;stumbled;clicked;commented;briefly,6,7,0.7625419716560975
+95,51,searched stalked paused stumbled clicked commented briefly,searched stalked paused stumbled clicked commented; briefly,2,7,0.9706877692486436
+96,40,fused scrawled crudely circulated scanned stemmed circled underlined,fused scrawled circulated scanned stemmed circled underlined;crudely,2,8,0.9820137900379085
+97,40,fused scrawled crudely circulated scanned stemmed circled underlined,"fused, circulated, scanned, stemmedscrawled, crudely, circled, underlined",2,8,0.9820137900379085
+98,40,fused scrawled crudely circulated scanned stemmed circled underlined,fused scrawled circulated scanned stemmed circled underlined;crudely,2,8,0.9820137900379085
+99,707,setting clearing shift clock,setting clearing shift clock,1,4,0.9820137900379085
+100,707,setting clearing shift clock,setting clearing ;shift clock,2,4,0.8807970779778823
+101,707,setting clearing shift clock,setting clearing;shift clock,2,4,0.8807970779778823
+102,221,enjoy wish friendly busy excited nice good friends thanks guys fun,enjoy wish busy excited fun;friendly nice good friends thanks guys;,2,11,0.995929862284104
+103,221,enjoy wish friendly busy excited nice good friends thanks guys fun,enjoy excited nice good fun;wish;friendly busy;thanks;guys friends,5,11,0.9002495108803148
+104,221,enjoy wish friendly busy excited nice good friends thanks guys fun,enjoy wish;friendly busy excited nice good fun;friends thanks guys,3,11,0.975075573352886
+105,584,priming premonitions dramatics childishness clump frise lowdown births grownups beatings,"priming, premonitions, lowdowndramatics, childishness, births, grownups, beatingsclump, frise",3,10,0.9655548043337889
+106,584,priming premonitions dramatics childishness clump frise lowdown births grownups beatings,priming childishness clump frise lowdown; births grownups beatings premonitions dramatics,2,10,0.9933071490757153
+107,584,priming premonitions dramatics childishness clump frise lowdown births grownups beatings,priming premonitionsdramatics childishness lowdownclump births grownupsbeatingsfrise,6,10,0.8411308951190849
+108,519,wash laundry tub shower clean bathe bath cane washing,,2,9,0.9890130573694068
+109,519,wash laundry tub shower clean bathe bath cane washing,wash laundry tub shower clean bathe bath washingcane,2,9,0.9890130573694068
+110,519,wash laundry tub shower clean bathe bath cane washing,laundry tub shower cane; bathe bath washing wash clean,2,9,0.9890130573694068
+111,117,trusted shared share recommended tips recommend sharing,"trusted, recommended, recommend, tipsshare, shared, sharing",2,7,0.9706877692486436
+112,117,trusted shared share recommended tips recommend sharing,trusted shared share recommended recommend sharing;tips,2,7,0.9706877692486436
+113,117,trusted shared share recommended tips recommend sharing,shared share sharing;recommend recommended;tips;trusted,4,7,0.8519528019683106
+114,575,attitude personality attitudes,"attitude, personality, attitudes",1,3,0.9525741268224331
+115,575,attitude personality attitudes,attitude personality attitudes,1,3,0.9525741268224331
+116,575,attitude personality attitudes,attitude personality attitudes,1,3,0.9525741268224331
+117,619,glare coffin burst walls weeds scar flesh wipe holes burning dust bones,scar flesh bones;holes dust weeds;coffin walls;burst wipe glare;burning,5,12,0.9168273035060777
+118,619,glare coffin burst walls weeds scar flesh wipe holes burning dust bones,glare;coffin scar flesh dust bones;burst walls wipe holes burning;weeds;,4,12,0.9525741268224331
+119,619,glare coffin burst walls weeds scar flesh wipe holes burning dust bones,glare coffin burst walls weeds scar flesh wipe holes dust bones;burning,2,12,0.9975273768433653
+120,368,timidity afflicted adulterers rationed sired sufferings nourished chiefly unafraid brigadier,afflicted rationed sired nourished; adulterers sufferings brigadier;chiefly unafraid timidity,3,10,0.9655548043337889
+121,368,timidity afflicted adulterers rationed sired sufferings nourished chiefly unafraid brigadier,timidity afflicted sufferings rationed; adulterers sired; nourished chiefly unafraid brigadier;,3,10,0.9655548043337889
+122,368,timidity afflicted adulterers rationed sired sufferings nourished chiefly unafraid brigadier,"timidity, unafraidafflicted, rationed, sufferings, nourishedadulterers, sired, chiefly, brigadier",3,10,0.9655548043337889
+123,175,idols fans angels brothers lovers heroes,idols fans angels brothers lovers heroes,1,6,0.9975273768433653
+124,175,idols fans angels brothers lovers heroes,idols fans;angels heroes;lovers brothers;,3,6,0.8807970779778823
+125,175,idols fans angels brothers lovers heroes,idols fans angels brothers lovers heroes,2,6,0.9525741268224331
+126,130,toast candies blueberry peanut eggs olive biscuits dough sticks slice waffles corn cookies butter rolls bread flakes toffee,toast biscuits dough sticks slice waffles rolls break flakescandies toffee cookiesblueberry olive cornpeanut eggs butter,4,18,0.9890130573694068
+127,130,toast candies blueberry peanut eggs olive biscuits dough sticks slice waffles corn cookies butter rolls bread flakes toffee,toast candies blueberry peanut eggs olive biscuits dough sticks slice waffles corn cookies butter rolls bread flakes toffee,1,18,0.9999999847700205
+128,130,toast candies blueberry peanut eggs olive biscuits dough sticks slice waffles corn cookies butter rolls bread flakes toffee,toast candies blueberry peanut eggs olive biscuits dough sticks slice waffles corn cookies butter rolls bread flakes toffee,1,18,0.9999999847700205
+129,874,maniacal configurations premonition involuntary altercation,configurations premonition altercation;maniacal involuntary,2,5,0.9241418199787566
+130,874,maniacal configurations premonition involuntary altercation,maniacal involuntary;configurations altercation premonition;,2,5,0.9241418199787566
+131,874,maniacal configurations premonition involuntary altercation,"maniacal, involuntaryconfigurations, premonitionaltercation",3,5,0.8411308951190849
+132,302,reloaded defiance unmasked unleashed,unmasked unleashed;reloaded;defiance,3,4,0.791391472673955
+133,302,reloaded defiance unmasked unleashed,reloaded defiance unmasked unleashed;,1,4,0.9820137900379085
+134,302,reloaded defiance unmasked unleashed,reloaded unmasked unleashed;defiance,2,4,0.8807970779778823
+135,106,widowed extracted disclosed modeled examined,widowed extracted disclosed modeled examined,1,5,0.9933071490757153
+136,106,widowed extracted disclosed modeled examined,widowed;extracted disclosed;modeled examined;,3,5,0.8411308951190849
+137,106,widowed extracted disclosed modeled examined,widowedextracted disclosed modeled examined,2,5,0.9241418199787566
+138,409,alter comfort divine outer delicate inner,outer inner;alter;comfort;delicate;divine,5,6,0.7685247834990175
+139,409,alter comfort divine outer delicate inner,divine outer delicate inner;alter comfort,2,6,0.9525741268224331
+140,409,alter comfort divine outer delicate inner,alter divine;comfort delicate; outer inner;,3,6,0.8807970779778823
+141,370,restrain awaken compelled mentally attempting disturbed unable,"restrain, mentally, attempting, unableawaken, compelled, disturbed",2,7,0.9706877692486436
+142,370,restrain awaken compelled mentally attempting disturbed unable,restrain awaken attempting disturbed compelled; unable mentally,2,7,0.9706877692486436
+143,370,restrain awaken compelled mentally attempting disturbed unable,restrain unableawaken compelled mentally attemptingdisturbed,3,7,0.9116003227929417
+144,620,games player record bowl game football beat baseball season team points won ball sports play score title squad caps lead win,games player record bowl game football beat baseball season team points won ball sports play score title squad caps lead win,1,21,0.9999999992417439
+145,620,games player record bowl game football beat baseball season team points won ball sports play score title squad caps lead win,games player record bowl game football baseball season team points ball sports play score title squad caps win; beat won lead,2,21,0.9999724643088853
+146,620,games player record bowl game football beat baseball season team points won ball sports play score title squad caps lead win,games player record bowl game football beat baseball season team points won ball sports play score title squad caps lead win,1,21,0.9999999992417439
+147,309,gleamed formed separated defeated remained placed intact ruled intertwined forming,gleamed formed separated defeated remained placed ruled  forming;intact intertwined;,2,10,0.9933071490757153
+148,309,gleamed formed separated defeated remained placed intact ruled intertwined forming,"gleamedformed, separated, remained, placed, intact, intertwined, formingdefeated, ruled",3,10,0.9655548043337889
+149,309,gleamed formed separated defeated remained placed intact ruled intertwined forming,gleamed formed remained placed intact ruled intertwined formingseparated defeated,3,10,0.9655548043337889
+150,783,thankfulness righteousness haughty boldness salvation abundance,thankfulness righteousness salvation abundance;haughty boldness;,2,6,0.9525741268224331
+151,783,thankfulness righteousness haughty boldness salvation abundance,thankfulness righteousness haughty boldness salvation abundance,1,6,0.9975273768433653
+152,783,thankfulness righteousness haughty boldness salvation abundance,thankfulness righteousness haughty boldness;salvation abundance,2,6,0.9525741268224331
+153,760,chafe huddling chortling darkening disinterest knee-deep,chafe huddling chortling darkeningdisinterest knee-deep,2,6,0.9525741268224331
+154,760,chafe huddling chortling darkening disinterest knee-deep,chafe huddling chortling darkening;disinterest knee-deep,2,6,0.9525741268224331
+155,760,chafe huddling chortling darkening disinterest knee-deep,"chafe, knee-deephuddling, chortling, darkeningdisinterest",3,6,0.8807970779778823
+156,111,waxed eyebrows brushed braids stripped straightened curled hairs worn dyed stretched,waxed brushed stripped straightened curled worn dyed stretched;eyebrows braids hairs,2,11,0.995929862284104
+157,111,waxed eyebrows brushed braids stripped straightened curled hairs worn dyed stretched,waxed eyebrows brushed braids stripped straightened curled hairs dyed;worn stretched;,2,11,0.995929862284104
+158,111,waxed eyebrows brushed braids stripped straightened curled hairs worn dyed stretched,"waxed, brushed, stripped, straightened, curled, worn, dyed, stretchedeyebrows, braids, hairs",2,11,0.995929862284104
+159,473,contemplate synchronize gradually steadily unexpectedly effectively gracefully,gradually steadily effectively gracefully,1,7,0.9990889488055994
+160,473,contemplate synchronize gradually steadily unexpectedly effectively gracefully,gradually steadily unexpectedly effectively gracefully;synchronize;contemplate,3,7,0.9116003227929417
+161,473,contemplate synchronize gradually steadily unexpectedly effectively gracefully,contemplate synchronize; gradually steadily unexpectedly effectively gracefully,2,7,0.9706877692486436
+162,278,cove cemetery meadow colony harbor,"Cove, harborcolonycemetery, meadow",3,5,0.8411308951190849
+163,278,cove cemetery meadow colony harbor,cove cemetery meadow colony harbor,1,5,0.9933071490757153
+164,278,cove cemetery meadow colony harbor,cove cemetery meadow colony harbor,1,5,0.9933071490757153
+165,611,shivering pouring freezing soaked damp soaking dripping boiling sweating,shivering pouring freezing soaked damp soaking dripping boiling sweating,1,9,0.9998766054240137
+166,611,shivering pouring freezing soaked damp soaking dripping boiling sweating,shivering freezing; pouring soaked damp soaking dripping; boiling sweating;,3,9,0.9525741268224331
+167,611,shivering pouring freezing soaked damp soaking dripping boiling sweating,shivering freezing; pouring dripping soaked damp soaking;boiling sweating,3,9,0.9525741268224331
+168,672,movement peaceful surrounding environment politics,politics;peaceful;surrounding environment;movement,4,5,0.7772998611746911
+169,672,movement peaceful surrounding environment politics,movement surrounding;peaceful;environment;politics,4,5,0.7772998611746911
+170,672,movement peaceful surrounding environment politics,movement;peaceful surrounded environment;politics;,3,5,0.8411308951190849
+171,627,gentry barrack abbot greening rove crouch,gentry barrack abbot greening rove crouch,1,6,0.9975273768433653
+172,627,gentry barrack abbot greening rove crouch,abbot gentry;barrack;greening;rove crouch,4,6,0.8175744761936437
+173,627,gentry barrack abbot greening rove crouch,gentry barrack abbot greening;rove crouch,2,6,0.9525741268224331
+174,588,reprieve refusal proclamation remarks deathbed resignation,reprieve refusal proclamation remarks;deathbed resignation;,2,6,0.9525741268224331
+175,588,reprieve refusal proclamation remarks deathbed resignation,"reprieve, refusal, proclamation, remarks, resignationdeathbed",3,6,0.8807970779778823
+176,588,reprieve refusal proclamation remarks deathbed resignation,reprieve refusal proclamation remarks deathbed resignation,1,6,0.9975273768433653
+177,817,torment strife emptiness amidst anguish wrath bosom gloom perpetual judgment mischief,torment strife emptiness anguish wrath bosom gloom judgment mischief;amidst perpetual,2,11,0.995929862284104
+178,817,torment strife emptiness amidst anguish wrath bosom gloom perpetual judgment mischief,torment strife emptiness anguish wrath gloom mischiefamidst perpetualjudgmentbosom,5,11,0.9002495108803148
+179,817,torment strife emptiness amidst anguish wrath bosom gloom perpetual judgment mischief,torment strife emptiness amidst anguish wrath gloom mischief judgment;bosom,2,11,0.995929862284104
+180,336,roughed ducked jabbed booted waked yanked slurped hawked scooped flamed lumped gobbled goofed crunched sketched patched swooped hauled dripped shacked,roughed ducked jabbed booted waked yanked slurped hawked scooped flamed lumped gobbled goofed crunched sketched patched swooped hauled dripped shacked,1,20,0.9999999979388463
+181,336,roughed ducked jabbed booted waked yanked slurped hawked scooped flamed lumped gobbled goofed crunched sketched patched swooped hauled dripped shacked,roughed ducked jabbed booted waked yanked slurped hawked scooped flamed lumped gobbled goofed crunched sketched patched swooped hauled dripped shacked,1,20,0.9999999979388463
+182,336,roughed ducked jabbed booted waked yanked slurped hawked scooped flamed lumped gobbled goofed crunched sketched patched swooped hauled dripped shacked,roughed ducked jabbed booted yanked;waked;slurped scooped flamed lumped gobbled crunched dripped;hawked goofed sketched swooped hauled shacked;patched,5,20,0.9820137900379085
+183,204,intuitions attentions reins,intuitions attentionsreins,2,3,0.8175744761936437
+184,204,intuitions attentions reins,intuitions attentions reins,1,3,0.9525741268224331
+185,204,intuitions attentions reins,intuitions;attentions;reins,3,3,0.7310585786300049
+186,115,are they needs only were helped agree also both could will should would wants be who used must being not have wanted us can,are were could will should would wants must have can be beingthey who usalso bothhelped agree used wanted needsnot,5,24,0.9918374288468401
+187,115,are they needs only were helped agree also both could will should would wants be who used must being not have wanted us can,needs wanted,1,24,0.9999999999622486
+188,115,are they needs only were helped agree also both could will should would wants be who used must being not have wanted us can,must also are were will can;should would could;needs wants being agree used be;wanted helped have;they us who;only both not;,6,24,0.9820137900379085
+189,459,overboard rehearse nightingale comfortably tame unnoticed,overboardrehearsenightingalecomfortably tame unnoticed,4,6,0.8175744761936437
+190,459,overboard rehearse nightingale comfortably tame unnoticed,"overboardrehearse, comfortably, tame, unnoticednightingale",3,6,0.8807970779778823
+191,459,overboard rehearse nightingale comfortably tame unnoticed,overboard  comfortably tame unnoticed;rehearse; nightingale,3,6,0.8807970779778823
+192,805,divide continent divided opponents defenses,divide divided opponents defenses,1,5,0.9933071490757153
+193,805,divide continent divided opponents defenses,divide divided;continent opponents defenses,2,5,0.9241418199787566
+194,805,divide continent divided opponents defenses,divide divided;continent;opponents;defenses,4,5,0.7772998611746911
+195,59,portraits photograph unseen images scenes photographs viewed captured paintings,portraits photograph images scenes photographs viewed captured paintings unseen,1,9,0.9998766054240137
+196,59,portraits photograph unseen images scenes photographs viewed captured paintings,"portraits, photograph, images, scenes, photographs, paintingsunseen, viewed, captured",2,9,0.9890130573694068
+197,59,portraits photograph unseen images scenes photographs viewed captured paintings,portraits photograph images scenes photographs paintings;unseen;viewed captured;,3,9,0.9525741268224331
+198,46,exercised revived mutilated bathed discharged frees indefinitely undergoing freed maimed healed declared resurrected fled recovered,exercised revived mutilated bathed discharged freed maimed healed declared resurrected fled recovered;frees undergoing;indefinitely,3,15,0.9933071490757153
+199,46,exercised revived mutilated bathed discharged frees indefinitely undergoing freed maimed healed declared resurrected fled recovered,exercised revived bathed healed resurrected recovered;mutilated maimed undergoing;discharged frees freed declared fled indefinitely;,3,15,0.9933071490757153
+200,46,exercised revived mutilated bathed discharged frees indefinitely undergoing freed maimed healed declared resurrected fled recovered,exercised revived mutilated bathed discharged frees undergoing freed maimed healed declared resurrected fled recovered;indefinitely,2,15,0.9994472213630764
+201,30,latest project page check review guide new novel daily copy post book news,project page check review guide  copy post book news;latest new novel daily;,2,13,0.998498817743263
+202,30,latest project page check review guide new novel daily copy post book news,latest new;project;page novel post book;check review guide daily copy news;,4,13,0.9626731126558706
+203,30,latest project page check review guide new novel daily copy post book news,latest new news;project book novel page;check review,3,13,0.9870462724693041
+204,123,mist heel rot vast bent rooster rug toe,mist rot vast;heel toe;bent;rooster;rug;,5,8,0.8320183851339245
+205,123,mist heel rot vast bent rooster rug toe,mist heel rot vast bent rooster rug toe,1,8,0.9996646498695336
+206,123,mist heel rot vast bent rooster rug toe,mist;heel toe;rot;vast; bent;rooster;rug,7,8,0.75820382759259
+207,666,downpour flood approaching shocks storms warming fires floods storm,downpour flood  shocks storms warming fires floods storm;approaching,2,9,0.9890130573694068
+208,666,downpour flood approaching shocks storms warming fires floods storm,"downpour, flood, storms, floods, stormapproachingshocks, warming, fires",3,9,0.9525741268224331
+209,666,downpour flood approaching shocks storms warming fires floods storm,downpour flood storms floods storm ;warming fires,2,9,0.9890130573694068
+210,778,smothering stubbornly dwindling mistaking stooping clinging alarmingly rebelling severing,smothering dwindling mistaking stooping clinging alarmingly rebelling severing;stubbornly,2,9,0.9890130573694068
+211,778,smothering stubbornly dwindling mistaking stooping clinging alarmingly rebelling severing,smothering clinging ;stubbornly rebelling,2,9,0.9890130573694068
+212,778,smothering stubbornly dwindling mistaking stooping clinging alarmingly rebelling severing,"smothering, clinging, alarminglysevering, stubbornly, rebellingdwindlingmistakesstooping",5,9,0.8581489350995123
+213,800,disappear lest sometime sooner wherever,disappear;lest sometime sooner wherever,2,5,0.9241418199787566
+214,800,disappear lest sometime sooner wherever,disappear;lest;sometime sooner wherever,3,5,0.8411308951190849
+215,800,disappear lest sometime sooner wherever,disappear;lest;sometime sooner wherever;,3,5,0.8411308951190849
+216,748,geologist spectator traveler companion storyteller,geologist spectator traveler companion storyteller,1,5,0.9933071490757153
+217,748,geologist spectator traveler companion storyteller,geologist spectator traveler companion storyteller,1,5,0.9933071490757153
+218,748,geologist spectator traveler companion storyteller,geologist;spectator traveler companion storyteller;,2,5,0.9241418199787566
+219,647,inmates heroine prostitutes offender illegal defying prostitution,inmates prostitutes offender illegal prostitution defying,1,7,0.9990889488055994
+220,647,inmates heroine prostitutes offender illegal defying prostitution,inmates heroine prostitutes offender illegal defying prostitution;,1,7,0.9990889488055994
+221,647,inmates heroine prostitutes offender illegal defying prostitution,inmates heroine prostitutes offender prostitution;illegal; defying,3,7,0.9116003227929417
+222,400,grounds burial departure delayed,grounds burial;departure delayed,2,4,0.8807970779778823
+223,400,grounds burial departure delayed,grounds burial departure;delayed,2,4,0.8807970779778823
+224,400,grounds burial departure delayed,grounds burial departure;delayed,2,4,0.8807970779778823
+225,574,aware admit intimidated mistaken concerned disappointed embarrassed entitled amazed personally flattered ashamed impressed,aware admit intimidated mistaken concerned disappointed embarrassed entitled amazed flattered ashamed impressed;personally,2,13,0.998498817743263
+226,574,aware admit intimidated mistaken concerned disappointed embarrassed entitled amazed personally flattered ashamed impressed,"aware, amazed, flattered, impressed, entitled;admit, mistaken, disappointed, embarrassed, ashamed, intimidated, concerned;personally",3,13,0.9870462724693041
+227,574,aware admit intimidated mistaken concerned disappointed embarrassed entitled amazed personally flattered ashamed impressed,aware admit intimidated mistaken concerned disappointed embarrassed entitled amazed personally flattered ashamed impressed,1,13,0.999997739675702
+228,746,coherent plausible persuasive predicament precise discrete digestible,coherent plausible persuasive precise digestible,1,7,0.9990889488055994
+229,746,coherent plausible persuasive predicament precise discrete digestible,"coherent, plausible, persuasive, precise, discrete, digestiblepredicament",2,7,0.9706877692486436
+230,746,coherent plausible persuasive predicament precise discrete digestible,coherent plausible persuasive precise discrete digestible;predicament,2,7,0.9706877692486436
+231,834,embracing uniqueness midst embrace gratitude surroundings,embracing embrace gratitude;uniqueness;midst;surroundings,4,6,0.8175744761936437
+232,834,embracing uniqueness midst embrace gratitude surroundings,embracing embrace; uniqueness midst gratitude surroundings;,2,6,0.9525741268224331
+233,834,embracing uniqueness midst embrace gratitude surroundings,embracing embrace;gratitude;uniqueness;midst surroundings,4,6,0.8175744761936437
+234,678,frail lusty wrack overgrown lanky ragged feeble cockeyed muscled dingy crook fertile stocky cripple,"frail, wrack, cockeyed, cripple, ragged, feeble, dingy, crook, stocky, lankylusty, overgrown, muscled,fertile",2,14,0.9990889488055994
+235,678,frail lusty wrack overgrown lanky ragged feeble cockeyed muscled dingy crook fertile stocky cripple,frail lusty wrack overgrown lanky ragged feeble cockeyed muscled dingy crook fertile stocky; cripple,2,14,0.9990889488055994
+236,678,frail lusty wrack overgrown lanky ragged feeble cockeyed muscled dingy crook fertile stocky cripple,frail overgrown lanky ragged feeble cockeyed dingy crook stocky cripple;lusty muscled fertile;wrack;,3,14,0.9906840406549333
+237,540,divinely commanded reconciled employs applauded briefed administered sought subjected proclaimed instructed permitted patronized muskets demanded,divinely;employs sought;muskets;demanded commanded reconciled briefed administered applauded subjected proclaimed instructed permitted patronized,4,15,0.9770226300899744
+238,540,divinely commanded reconciled employs applauded briefed administered sought subjected proclaimed instructed permitted patronized muskets demanded,divinely commanded reconciled employs applauded briefed administered sought subjected proclaimed instructed permitted patronized demandedmuskets,3,15,0.9933071490757153
+239,540,divinely commanded reconciled employs applauded briefed administered sought subjected proclaimed instructed permitted patronized muskets demanded,commanded reconciled employs applauded briefed administered sought subjected proclaimed instructed permitted patronized demanded;divinely; muskets,3,15,0.9933071490757153
+240,315,awakened emerged bravely transformed summoned hardened banished manifested descended observed,awakened emerged summoned manifested descended observed;bravely transformed; hardened banished;,3,10,0.9655548043337889
+241,315,awakened emerged bravely transformed summoned hardened banished manifested descended observed,awakened emerged bravely transformed summoned observed manifestedhardened banished descended,2,10,0.9933071490757153
+242,315,awakened emerged bravely transformed summoned hardened banished manifested descended observed,awakened emerged transformed summoned hardened banished manifested descended observed;bravely,2,10,0.9933071490757153
+243,676,highschool graduate speeches teachers meetings sophomore schedules students administrators,highschool graduate speeches teachers meetings sophomore schedules students administrators;,1,9,0.9998766054240137
+244,676,highschool graduate speeches teachers meetings sophomore schedules students administrators,"highschool, graduate, speeches, teachers, meetings, sophmore, schedules, students, administrators",1,9,0.9998766054240137
+245,676,highschool graduate speeches teachers meetings sophomore schedules students administrators,highschool graduate speeches teachers meetings sophomore schedules students administrators,1,9,0.9998766054240137
+246,852,gasps sighs wails nods,gasps sighs wails ;nods,2,4,0.8807970779778823
+247,852,gasps sighs wails nods,gasps sighs wails nods;,1,4,0.9820137900379085
+248,852,gasps sighs wails nods,gasps sighs wails,1,4,0.9820137900379085
+249,457,arts sciences activities literature functions studies,arts sciences activities literature functions studies,1,6,0.9975273768433653
+250,457,arts sciences activities literature functions studies,arts sciences literature studies;activities functions,2,6,0.9525741268224331
+251,457,arts sciences activities literature functions studies,arts sciences literature studies; activities functions;,2,6,0.9525741268224331
+252,467,enquired bragged disapproved boasted relented inquired hesitated meditated,enquired bragged disapproved boasted relented inquired hesitated meditated,1,8,0.9996646498695336
+253,467,enquired bragged disapproved boasted relented inquired hesitated meditated,enquired bragged disapproved boasted relented inquired hesitated meditated,1,8,0.9996646498695336
+254,467,enquired bragged disapproved boasted relented inquired hesitated meditated,enquired bragged disapproved boasted relented inquired hesitated meditated,1,8,0.9996646498695336
+255,636,rolling blowing smashing kicking dropping knocking popping spinning hitting rocking beating jumping,rolling blowing smashing kicking dropping knocking popping spinning hitting rocking beating jumping,1,12,0.9999938558253978
+256,636,rolling blowing smashing kicking dropping knocking popping spinning hitting rocking beating jumping,,1,12,0.9999938558253978
+257,636,rolling blowing smashing kicking dropping knocking popping spinning hitting rocking beating jumping,rolling blowing smashing kicking dropping knocking popping spinning hitting rocking beating jumping,1,12,0.9999938558253978
+258,381,occupy turkey protest,occupy protest;turkey,2,3,0.8175744761936437
+259,381,occupy turkey protest,occupy turkey protest;,1,3,0.9525741268224331
+260,381,occupy turkey protest,occupy;turkey;protest,3,3,0.7310585786300049
+261,529,traitors persecuted worshippers cronies slaves decrees servants,"traitors, persecuted, decreesworshippers, cronies, slaves, servants",2,7,0.9706877692486436
+262,529,traitors persecuted worshippers cronies slaves decrees servants,traitors worshippers cronies slaves decrees servants;persecuted,2,7,0.9706877692486436
+263,529,traitors persecuted worshippers cronies slaves decrees servants,traitors persecuted worshippers cronies slaves decrees servants;,1,7,0.9990889488055994
+264,526,physicians owners hospitals positions landlord tenants movers elderly hire doctors professionals,physicians hospitals elderly positions hire doctors professionals;landlord owners tenants movers;,2,11,0.995929862284104
+265,526,physicians owners hospitals positions landlord tenants movers elderly hire doctors professionals,physicians hospitals elderly doctors professionals;owners positions landlord tenants movers hire;,2,11,0.995929862284104
+266,526,physicians owners hospitals positions landlord tenants movers elderly hire doctors professionals,physicians owners hospitals positions landlord tenants movers doctors professionals;elderly; hire,3,11,0.975075573352886
+267,225,just besides probably trying if except saying why how guess actually knew thinking supposed about wrong cause told having does instead either know wonder talking when suppose where meant remember glad still thing she think thought because mean am say did really said seeing hate what fact doing clue,just probably trying supposed wonder suppose guess still really clue;if why how when where does because what besides except instead either;wrong mean hate;saying thinking told having talking glad think thought am say did said seeing doing;actually knew about know meant remember fact thing;she,6,49,0.999716117628182
+268,225,just besides probably trying if except saying why how guess actually knew thinking supposed about wrong cause told having does instead either know wonder talking when suppose where meant remember glad still thing she think thought because mean am say did really said seeing hate what fact doing clue,thinking remember think,1,49,1.0
+269,225,just besides probably trying if except saying why how guess actually knew thinking supposed about wrong cause told having does instead either know wonder talking when suppose where meant remember glad still thing she think thought because mean am say did really said seeing hate what fact doing clue,,1,49,1.0
+270,737,veils headlights curtains wires lids branches blinds sidewalks clocks shutters hinge coverings,"Since veils headlights curtains wires lids branches blinds sidewalks clocks shutter hinge coverings are all types of covers and household is a type of class amongst furniture , you can group all of these words in the same cluster.",12,12,0.7310585786300049
+271,737,veils headlights curtains wires lids branches blinds sidewalks clocks shutters hinge coverings,curtains blinds shutters coverings ;veils coverings,2,12,0.9975273768433653
+272,737,veils headlights curtains wires lids branches blinds sidewalks clocks shutters hinge coverings,veils curtains lids blinds clocks shutters hinge coverings;branches sidewalks;headlights wires,3,12,0.9820137900379085
+273,328,fierce gentle sensitive,fierce;gentle sensitive;,2,3,0.8175744761936437
+274,328,fierce gentle sensitive,fierce;gentle sensitive;,2,3,0.8175744761936437
+275,328,fierce gentle sensitive,fierce gentle sensitive,1,3,0.9525741268224331
+276,565,shyly grinned grinning furiously nodding sighed thrusting panting nodded sighing weakly excitedly muttering tiredly,"shyly, furiously, weakly, excitedly, tiredlygrinned, grinning, nodded, sighed, thrusting, panting, nodded, sighing, muttering",2,14,0.9990889488055994
+277,565,shyly grinned grinning furiously nodding sighed thrusting panting nodded sighing weakly excitedly muttering tiredly,shyly furiously  weakly excitedly  tiredly; grinned grinning nodding sighed thrusting panting nodded sighing muttering,2,14,0.9990889488055994
+278,565,shyly grinned grinning furiously nodding sighed thrusting panting nodded sighing weakly excitedly muttering tiredly,grinned grinning nodding sighed nodded sighing; shyly weakly tiredly;furiously thrusting panting excitedly muttering;,3,14,0.9906840406549333
+279,770,vase mounted antique oval brass mahogany polished chandelier,vase antique oval brass mahogany chandelier;mounted polished,2,8,0.9820137900379085
+280,770,vase mounted antique oval brass mahogany polished chandelier,vase mounted antique oval brass mahogany polished chandelier;,1,8,0.9996646498695336
+281,770,vase mounted antique oval brass mahogany polished chandelier,"vase, antique, brass, mahogany, polishedmounted, oval, chandelier",2,8,0.9820137900379085
+282,139,trip weekend met week,trip weekend met;week;,2,4,0.8807970779778823
+283,139,trip weekend met week,trip met;weekend week;,2,4,0.8807970779778823
+284,139,trip weekend met week,weekend week;trip;met,3,4,0.791391472673955
+285,374,unconcerned aghast elated displeased adamant consoled intimated hesitancy misjudged remorseful infuriated,unconcerned aghast elated displeased adamant consoled intimated hesitancy misjudged remorseful infuriated,1,11,0.999983298578152
+286,374,unconcerned aghast elated displeased adamant consoled intimated hesitancy misjudged remorseful infuriated,"unconcerned, consoledaghast, elated, displeased, adamant, intimidated, hesitancy, misjudged, remorseful, infuriated.",2,11,0.995929862284104
+287,374,unconcerned aghast elated displeased adamant consoled intimated hesitancy misjudged remorseful infuriated,unconcerned hesitancy misjudged remorseful;aghast displeased adamant infuriated;elated consoled intimated;,3,11,0.975075573352886
+288,821,hover handlebars barricade tangle strut chastity plaster muzzle,hover strut tangle paster muzzle barricadehandlebarschastity,3,8,0.935030830871336
+289,821,hover handlebars barricade tangle strut chastity plaster muzzle,hover handlebars barricade tangle strut chastity plaster muzzle,1,8,0.9996646498695336
+290,821,hover handlebars barricade tangle strut chastity plaster muzzle,hover tangle strut;handlebars barricade plaster muzzle;chastity,3,8,0.935030830871336
+291,825,chores piling commitments duties responsibilities successes,"chores, commitments, duties, responsibilitiessuccessespiling",3,6,0.8807970779778823
+292,825,chores piling commitments duties responsibilities successes,chores commitments duties responsibilities,1,6,0.9975273768433653
+293,825,chores piling commitments duties responsibilities successes,chores commitments duties responsibilities successes;piling,2,6,0.9525741268224331
+294,92,greeting greetings christening,greeting greetings,1,3,0.9525741268224331
+295,92,greeting greetings christening,"greetings, greetingchristening",2,3,0.8175744761936437
+296,92,greeting greetings christening,greeting greetings;chirstening,2,3,0.8175744761936437
+298,464,create developing pursuing experiences creating valuable importance essential develop focusing creative,create developing pursuing creating develop focusing creative;experiences;valuable importance essential;,3,11,0.975075573352886
+299,464,create developing pursuing experiences creating valuable importance essential develop focusing creative,create developing pursuing experiences creating valuable importance essential develop focusing creative,1,11,0.999983298578152
+0,765,no-nonsense grandiose eagerness,no-nonsense grandiose eagerness;,1,3,0.9525741268224331
+1,765,no-nonsense grandiose eagerness,no-nonsense grandiose eagerness,1,3,0.9525741268224331
+2,765,no-nonsense grandiose eagerness,no-nonsensegrandiose eagerness,2,3,0.8175744761936437
+3,472,bloom springtime dogwood gleam drizzle swirl dandelion blooming thorn blossoms,bloom springtime dogwood dandelion thorn blossoms;gleam drizzle swirl blooming,2,10,0.9933071490757153
+4,472,bloom springtime dogwood gleam drizzle swirl dandelion blooming thorn blossoms,bloom springtime dogwood dandelion blooming thorn blossoms;gleam swirl;drizzle;,3,10,0.9655548043337889
+5,472,bloom springtime dogwood gleam drizzle swirl dandelion blooming thorn blossoms,bloom springtime dogwood dandelion blooming thorn blossoms;gleam drizzle swirl;,2,10,0.9933071490757153
+6,453,grass trees mountains sand fields tree tropical flowers garden plants,grass trees mountains sand fields tree tropical flowers garden plants,1,10,0.9999546021312976
+7,453,grass trees mountains sand fields tree tropical flowers garden plants,grass trees mountains sand fields tree tropical flowers garden plants,1,10,0.9999546021312976
+8,453,grass trees mountains sand fields tree tropical flowers garden plants,grass trees tree tropical flowers garden plants;mountains sand fields;,2,10,0.9933071490757153
+9,358,wasting useless worth waste fuss junk amount,wasting useless worth;fuss junk amount waste,2,7,0.9706877692486436
+10,358,wasting useless worth waste fuss junk amount,wasting waste junk useless ;amount worth,2,7,0.9706877692486436
+11,358,wasting useless worth waste fuss junk amount,wasting waste junk useless;fuss;amount worth,3,7,0.9116003227929417
+12,654,happening happen happened planned,happening happen happened planned,1,4,0.9820137900379085
+13,654,happening happen happened planned,happening happen happened planned;,1,4,0.9820137900379085
+14,654,happening happen happened planned,happening happen happened;planned,2,4,0.8807970779778823
+15,28,sold tickets arrived purchased dates bought million,sold purchased bought tickets dates;million;arrived;,3,7,0.9116003227929417
+16,28,sold tickets arrived purchased dates bought million,sold arrived purchased bought;tickets dates;million;,3,7,0.9116003227929417
+17,28,sold tickets arrived purchased dates bought million,sold purchased bought ;tickets dates,2,7,0.9706877692486436
+18,505,waterfront cathedral monument landmark gardens branch estates terrace heritage borough residence headquarters oak,waterfront cathedral monument landmark gardens branch estates terrace heritage borough residence headquarters;oak,2,13,0.998498817743263
+19,505,waterfront cathedral monument landmark gardens branch estates terrace heritage borough residence headquarters oak,waterfront cathedral monument landmark gardens branch estates terrace heritage borough residence headquarters oak,1,13,0.999997739675702
+20,505,waterfront cathedral monument landmark gardens branch estates terrace heritage borough residence headquarters oak,waterfront cathedral monument landmark gardens branch estates terrace heritage borough residence headquarters oak,1,13,0.999997739675702
+21,388,encyclopedias bashful industrious showy resentful disorganized thoughtless old-fashioned jaded unqualified bewilderment overbearing callous,encyclopedias old fashioned jaded industrious unqualified; bashful bewilderment; showy resentful thoughtless overbearing callous; disorganized,4,13,0.9626731126558706
+22,388,encyclopedias bashful industrious showy resentful disorganized thoughtless old-fashioned jaded unqualified bewilderment overbearing callous,"resentful, thoughtless, jaded, callous, overbearing, showyencyclopedias, old-fashioned, industriousbashful, disorganized, unqualified, bewilderment",3,13,0.9870462724693041
+23,388,encyclopedias bashful industrious showy resentful disorganized thoughtless old-fashioned jaded unqualified bewilderment overbearing callous,encyclopedias;bashful industrious;showy resentful disorganized thoughtless old-fashioned jaded unqualified overbearing callous;bewilderment;,4,13,0.9626731126558706
+24,174,wall tower image square view,wall tower;image view;square,3,5,0.8411308951190849
+25,174,wall tower image square view,"wall, tower, squareimage, view",2,5,0.9241418199787566
+26,174,wall tower image square view,wall tower square ;view image,2,5,0.9241418199787566
+27,287,tulips roofs feathers dots,tulips; roofs; feathers; dots,4,4,0.7310585786300049
+28,287,tulips roofs feathers dots,tulips;roofsfeathers;dots;,4,4,0.7310585786300049
+29,287,tulips roofs feathers dots,tulips roofs feathers dots,1,4,0.9820137900379085
+30,277,vacation shopping holiday travel packing festive,vacation shopping holiday travel packing festive,1,6,0.9975273768433653
+31,277,vacation shopping holiday travel packing festive,vacation travel packing holiday;shopping;festive,3,6,0.8807970779778823
+32,277,vacation shopping holiday travel packing festive,vacation  holiday travel packing festive;shopping,2,6,0.9525741268224331
+33,622,deference heroism camaraderie ensued loveliness undertakings forgetfulness,deference heroism camaraderie loveliness forgetfulness;ensued; undertakings,3,7,0.9116003227929417
+34,622,deference heroism camaraderie ensued loveliness undertakings forgetfulness,heroism camaraderie ensued;deference;loveliness;undertakings forgetfulness;,4,7,0.8519528019683106
+35,622,deference heroism camaraderie ensued loveliness undertakings forgetfulness,"deference,heroism, camaraderie, loveliness, forgetfulnessensued, undertakings",2,7,0.9706877692486436
+36,695,stairway pendulum eternity moonlight dimension staircase starlight echoes jagged,stairway staircase;pendulum;eternity moonlight dimension starlight echoes;jagged;,4,9,0.9046505351008904
+37,695,stairway pendulum eternity moonlight dimension staircase starlight echoes jagged,"stairway, staircase, jaggedpendulum, echoeseternity, dimensionmoonlight, starlight",4,9,0.9046505351008904
+38,695,stairway pendulum eternity moonlight dimension staircase starlight echoes jagged,stairway pendulum eternity moonlight dimension staircase starlight echoes; jagged,2,9,0.9890130573694068
+39,693,longing comforting persuading warmth affectionate,longing comforting persuading warmth affectionate,1,5,0.9933071490757153
+40,693,longing comforting persuading warmth affectionate,longing comforting affectionate warmth;persuading,2,5,0.9241418199787566
+41,693,longing comforting persuading warmth affectionate,comforting warmth affectionate,1,5,0.9933071490757153
+42,365,climbed leapt tumbled leaps crept leaped rowed seeped roared floated trotted glided peered plunged perseveres frantic clung wandered waded,"climbed, clung, perseveres, crept, peeredleapt, leaps, trotted, glided, wandered, leapedrowed, floated, waded, seepedtumbled, plunged, frantic, roared",4,19,0.991422514586288
+43,365,climbed leapt tumbled leaps crept leaped rowed seeped roared floated trotted glided peered plunged perseveres frantic clung wandered waded,climbed leapt tumbled leaps crept leaped rowed seeped roared floated trotted glided peered plunged perseveres frantic clung wandered waded,1,19,0.9999999943972036
+44,365,climbed leapt tumbled leaps crept leaped rowed seeped roared floated trotted glided peered plunged perseveres frantic clung wandered waded,climbed leapt tumbled leaps crept leaped rowed seeped roared floated trotted glided peered plunged perseveres frantic clung wandered waded,1,19,0.9999999943972036
+45,474,joys childhood generations nightmares,childhood generations;nightmares joys,2,4,0.8807970779778823
+46,474,joys childhood generations nightmares,childhood generations;joys;nightmares,3,4,0.791391472673955
+47,474,joys childhood generations nightmares,joys childhood generations nightmares,1,4,0.9820137900379085
+48,694,gently gaze softly resting tightly rubbing pokes caressing lightly,gently softly tightly lightly;gaze resting rubbing pokes caressing,2,9,0.9890130573694068
+49,694,gently gaze softly resting tightly rubbing pokes caressing lightly,"gently, softly, caressing, lightlygaze, rubbing, pokes, resting",2,9,0.9890130573694068
+50,694,gently gaze softly resting tightly rubbing pokes caressing lightly,gently softly caressing lightly;tightly rubbing pokes;gaze;resting,4,9,0.9046505351008904
+51,11,petit petits et pour fond fille repose merveilleux corps alors genre oui tout chambre plus week-end lit,petit petits et pour fond fille repose merveilleux corps alors genre oui tout chambre plus week-end lit,1,17,0.9999999586006244
+52,11,petit petits et pour fond fille repose merveilleux corps alors genre oui tout chambre plus week-end lit,petit petits et pour fond fille repose merveilleux corps alors genre oui tout chambre plus week-end lit,1,17,0.9999999586006244
+53,11,petit petits et pour fond fille repose merveilleux corps alors genre oui tout chambre plus week-end lit,petit petits et pour fille merveilleux corps alors oui tout chambre,1,17,0.9999999586006244
+54,668,manservant errand barren smallish seventy-five full-grown spurns middle-aged,full-grown middle-aged seventy-five ;manservant errand,2,8,0.9820137900379085
+55,668,manservant errand barren smallish seventy-five full-grown spurns middle-aged,manservant; errand barren smallish seventy-five full-grown spurns middle-aged,2,8,0.9820137900379085
+56,668,manservant errand barren smallish seventy-five full-grown spurns middle-aged,"manservant, errandbarren, smallish, full-grown, seventy-five, middle-agedspurns",3,8,0.935030830871336
+57,240,dreams imagine cruel moments words memories facts realize things ruin sometimes,dreams moments words memories facts  things;  imagine realize ruin;sometimes;cruel;,4,11,0.9399133498259924
+58,240,dreams imagine cruel moments words memories facts realize things ruin sometimes,dreams imagine memories realize;cruel ruin;moments sometimes;words facts things;,4,11,0.9399133498259924
+59,240,dreams imagine cruel moments words memories facts realize things ruin sometimes,"dreams, imagine, memories, realizecruel, ruinmoments, words, fact, things, sometimes",3,11,0.975075573352886
+60,715,inquisitor operetta expedition cadence crafter unbounded,inquisitor operetta expedition cadence crafter; unbounded,2,6,0.9525741268224331
+61,715,inquisitor operetta expedition cadence crafter unbounded,"inquisitor, expedition, crafteroperetta, cadenceunbounded",3,6,0.8807970779778823
+62,715,inquisitor operetta expedition cadence crafter unbounded,inquisitor;operetta cadence;expedition;crafter;unbounded;,5,6,0.7685247834990175
+63,180,encouragement regards efforts regard,"encouragement, regards, efforts, regard",1,4,0.9820137900379085
+64,180,encouragement regards efforts regard,encouragement;regards regard;efforts,3,4,0.791391472673955
+65,180,encouragement regards efforts regard,encouragement regards efforts regard,1,4,0.9820137900379085
+66,664,settling contemplation whereas carelessness separating advantages forbids trumps,settling separating contemplation carelessnessadvantages trumps forbids whereas,3,8,0.935030830871336
+67,664,settling contemplation whereas carelessness separating advantages forbids trumps,trumps advantages;separating forbids;whereas;carelessness;contemplation settling;,5,8,0.8320183851339245
+68,664,settling contemplation whereas carelessness separating advantages forbids trumps,"settlingcontemplationwhereascarelessness, forbidsseparatingadvantages, trumps",6,8,0.791391472673955
+69,83,organically anchored securely rebuilt populate incensed,"organicallyanchored, securely, rebuilt, populate, incensed",2,6,0.9525741268224331
+70,83,organically anchored securely rebuilt populate incensed,organically;anchored securely;rebuilt populate;incensed;,4,6,0.8175744761936437
+71,83,organically anchored securely rebuilt populate incensed,organically securely; rebuilt populate incensed anchored,2,6,0.9525741268224331
+72,321,magnet cleaner pouch protective wallet vacuum,pouch protective wallet ;vacuum cleaner,2,6,0.9525741268224331
+73,321,magnet cleaner pouch protective wallet vacuum,magnet cleaner pouch wallet vacuum;protective,2,6,0.9525741268224331
+74,321,magnet cleaner pouch protective wallet vacuum,magnet;cleaner pouch protective vacuum;wallet;,3,6,0.8807970779778823
+75,159,appetite irritability suffering nausea suffer diseases illness headaches withdrawal colds hangovers infectious unbearable anxiety,irritability suffering nausea suffer diseases illness headaches withdrawal colds hangovers infectious unbearable anxiety,1,14,0.9999991684719722
+76,159,appetite irritability suffering nausea suffer diseases illness headaches withdrawal colds hangovers infectious unbearable anxiety,appetite nausea diseases illness headaches withdrawal colds hangovers;irritability suffering suffer infectious unbearable anxiety,2,14,0.9990889488055994
+77,159,appetite irritability suffering nausea suffer diseases illness headaches withdrawal colds hangovers infectious unbearable anxiety,appetite;irritability suffering nausea suffer diseases illness headaches withdrawal colds hangovers infectious unbearable anxiety,2,14,0.9990889488055994
+78,103,enabled charging installed file handy device default remote wired reader,enabled charging installed file device default remote wired reader;handy,2,10,0.9933071490757153
+79,103,enabled charging installed file handy device default remote wired reader,enabled charging installed wired;handy  default remote; file device reader,3,10,0.9655548043337889
+80,103,enabled charging installed file handy device default remote wired reader,enabled charging installed file handy device default remote wired reader,1,10,0.9999546021312976
+81,73,cents fifty cent packs copies,cents cent fifty,1,5,0.9933071490757153
+82,73,cents fifty cent packs copies,cents fifty cent;pack;copies;,3,5,0.8411308951190849
+83,73,cents fifty cent packs copies,cents fifty cent packs copies,1,5,0.9933071490757153
+84,50,interior ideal natural sea,interior ideal natural sea,1,4,0.9820137900379085
+85,50,interior ideal natural sea,interior;ideal; natural sea,3,4,0.791391472673955
+86,50,interior ideal natural sea,interior;ideal natural sea;,2,4,0.8807970779778823
+87,359,here morning tonight coming night tomorrow soon today party afternoon evening buddy march,"here, partymorning, tonight, night, tomorrow, soon, today, afternoon,evening, marchcomingbuddy",4,13,0.9626731126558706
+88,359,here morning tonight coming night tomorrow soon today party afternoon evening buddy march,here morning tonight coming night tomorrow soon today afternoon evening marchparty buddy,2,13,0.998498817743263
+89,359,here morning tonight coming night tomorrow soon today party afternoon evening buddy march,here coming soon today;morning afternoon evening tonight night tomorrow;party buddy march;,3,13,0.9870462724693041
+90,721,hardest grow taught harder wise learn lessons easier fail teach ways learning easy learned,"hardest, harder, easier, easygrowtaught, wise, learn, lessons, fail, teach, ways, learning, learned",3,14,0.9906840406549333
+91,721,hardest grow taught harder wise learn lessons easier fail teach ways learning easy learned,hardest harder easiergrow taught wise learn lessons fail teach ways learning easy learned,2,14,0.9990889488055994
+92,721,hardest grow taught harder wise learn lessons easier fail teach ways learning easy learned,taught learn lessons teach learning learned;hardest harder easier easy;grow fail;wise ways;,4,14,0.9706877692486436
+93,757,wholly heartily wickedly infinitely deliciously enormously fearfully supremely exceedingly immensely,wholly heartily wickedly infinitely deliciously enormously fearfully supremely exceedingly immensely,1,10,0.9999546021312976
+94,757,wholly heartily wickedly infinitely deliciously enormously fearfully supremely exceedingly immensely,"Wholly, heartily, infinitely, enormously, supremely, exceedingly, immenselywickedly, deliciously fearfully",3,10,0.9655548043337889
+95,757,wholly heartily wickedly infinitely deliciously enormously fearfully supremely exceedingly immensely,"wholly heartily deliciously supremely exceedingly, wickedly fearfully immensely, infinitely enormously",3,10,0.9655548043337889
+96,237,growing stress problems fights stronger emotions relationship cancer feelings,"growing, strongerstress, problems, fights, emotions, relationship, feelingscancer",3,9,0.9525741268224331
+97,237,growing stress problems fights stronger emotions relationship cancer feelings,stress problems fights cancer;growing stronger emotions relationship feelings;,2,9,0.9890130573694068
+98,237,growing stress problems fights stronger emotions relationship cancer feelings,stress problems fights emotions relationship cancer feelings;stronger growing,2,9,0.9890130573694068
+99,153,protect support urgent help safe please join visit suspend save,protect support help safe save urgent ;join visit,2,10,0.9933071490757153
+100,153,protect support urgent help safe please join visit suspend save,protect support help;urgent safe;please;join visit suspend save,4,10,0.9241418199787566
+101,153,protect support urgent help safe please join visit suspend save,"protect, support, safe, saveurgent, help, joinplease, visit, suspend",3,10,0.9655548043337889
+102,320,club city grand river western bay international national west palace royal,"club, palacecity, river, baygrand, western, international, national, west, royal",3,11,0.975075573352886
+103,320,club city grand river western bay international national west palace royal,club city grand river western bay international national west palace royal,2,11,0.995929862284104
+104,320,club city grand river western bay international national west palace royal,club city grand river western bay;international national west palace royal,2,11,0.995929862284104
+105,373,collected baggage doubted misplaced borrowed,collected borrowed misplaced;doubted;baggage,3,5,0.8411308951190849
+106,373,collected baggage doubted misplaced borrowed,collected doubted misplaced borrowed;baggage,2,5,0.9241418199787566
+107,373,collected baggage doubted misplaced borrowed,collected borrowed baggage;doubted misplaced;,2,5,0.9241418199787566
+108,239,barges coils barge eruption chagrin,barges coils barge eruption chagrin,1,5,0.9933071490757153
+109,239,barges coils barge eruption chagrin,barges barge,1,5,0.9933071490757153
+110,239,barges coils barge eruption chagrin,barges barge;coils;eruption;chagrin,4,5,0.7772998611746911
+111,394,jabbing jiving churning munching rustling squashing hatching,"jabbing, churning, munching, rustling, squashing jiving, hatching",2,7,0.9706877692486436
+112,394,jabbing jiving churning munching rustling squashing hatching,jabbing jiving churning munching rustling squashing hatching,1,7,0.9990889488055994
+113,394,jabbing jiving churning munching rustling squashing hatching,jabbing jiving;churning rustling squashing;munching;hatching;,4,7,0.8519528019683106
+114,581,curving eyeing slapping jerking whooping snapping whipping,curving eyeing slapping jerking whooping snapping whipping,1,7,0.9990889488055994
+115,581,curving eyeing slapping jerking whooping snapping whipping,"curving, eyeing, slapping, jerking, whooping, snapping, whipping",1,7,0.9990889488055994
+116,581,curving eyeing slapping jerking whooping snapping whipping,curving eyeing slapping jerking whooping snapping whipping;,1,7,0.9990889488055994
+117,431,subjects recollection absent,subjects recollection;absent;,2,3,0.8175744761936437
+118,431,subjects recollection absent,subjects;recollection;absent,3,3,0.7310585786300049
+119,431,subjects recollection absent,subjects recollection; absent,2,3,0.8175744761936437
+120,144,untouched elapsed mercifully reigned,untouched elapsed reigned; mercifully,2,4,0.8807970779778823
+121,144,untouched elapsed mercifully reigned,untouched;elapsed;mercifully;reigned,4,4,0.7310585786300049
+122,144,untouched elapsed mercifully reigned,untouched;elapsed;mercifully;reigned;,4,4,0.7310585786300049
+123,531,nuts handful buncha bunch dozen,nuts; handful buncha bunch dozen,2,5,0.9241418199787566
+124,531,nuts handful buncha bunch dozen,nuts;handful buncha bunch dozen,2,5,0.9241418199787566
+125,531,nuts handful buncha bunch dozen,handful buncha bunch dozen ;nuts handful,2,5,0.9241418199787566
+126,856,birdbath rampart linoleum schoolroom pigskin vellum ashen trances,birdbath rampart linoleum schoolroom pigskin vellum ashen trances,1,8,0.9996646498695336
+127,856,birdbath rampart linoleum schoolroom pigskin vellum ashen trances,schoolroom;rampart linoleum pigskin vellum birdbath;ashen;trances,4,8,0.8807970779778823
+128,856,birdbath rampart linoleum schoolroom pigskin vellum ashen trances,birdbathrampart ashenlinoleum pigskin vellumtraces,4,8,0.8807970779778823
+129,774,erect gigantic enormous,erect gigantic enormous,1,3,0.9525741268224331
+130,774,erect gigantic enormous,erect gigantic enormous;,1,3,0.9525741268224331
+131,774,erect gigantic enormous,erect;gigantic enormous,2,3,0.8175744761936437
+132,429,warmer cooler hotter,warmer cooler hotter,1,3,0.9525741268224331
+133,429,warmer cooler hotter,warmer cooler hotter,1,3,0.9525741268224331
+134,429,warmer cooler hotter,warmer cooler hotter,1,3,0.9525741268224331
+135,500,shells planted loaves decorated erupted bushes planting,shells planted loaves decorated bushes planting;erupted,2,7,0.9706877692486436
+136,500,shells planted loaves decorated erupted bushes planting,shells planted bushes planting;loaves;decorated;erupted;,4,7,0.8519528019683106
+137,500,shells planted loaves decorated erupted bushes planting,"shells, loaves, bushesplanted, decorated, erupted, planting",2,7,0.9706877692486436
+138,471,mourning renewed awaiting remainder,mourning renewed awaiting;remainder,2,4,0.8807970779778823
+139,471,mourning renewed awaiting remainder,"mourningrenewed, awaiting, remainder",2,4,0.8807970779778823
+140,471,mourning renewed awaiting remainder,mourning; renewed; awaiting; remainder,4,4,0.7310585786300049
+141,829,fists horns flames jaws torches,fists horns jaws flames torches,2,5,0.9241418199787566
+142,829,fists horns flames jaws torches,fists horns jaws;flames torches;,2,5,0.9241418199787566
+143,829,fists horns flames jaws torches,fists horns flames jaws torches,1,5,0.9933071490757153
+144,382,measures marriage demands issues exposed appeal rules concern controversy demand privacy cuts signs threat threats despite,measures appeal rules;marriage privacy concern;demands issues exposed controversy demand;cuts signs threat threats;despite,5,16,0.9608342772032357
+145,382,measures marriage demands issues exposed appeal rules concern controversy demand privacy cuts signs threat threats despite,"measures, demands, issues, rules, demand, threat, threats, cuts, signsmarriage, privacyexposed, appeals, concern controversy, despite",3,16,0.9951952471128405
+146,382,measures marriage demands issues exposed appeal rules concern controversy demand privacy cuts signs threat threats despite,measures marriage issues appeal rules concern controversy demand privacy cuts signs threat threats ;demands exposed;despite,3,16,0.9951952471128405
+147,771,drunkard musket snarling gush crowing grumble belch croaking clucking cooing howls sneer,drunkard musket; snarling gush crowing grumble belch croaking clucking cooing howls sneer,2,12,0.9975273768433653
+148,771,drunkard musket snarling gush crowing grumble belch croaking clucking cooing howls sneer,drunkardmusketsnarling gush crowing grumble belch croaking clucking cooing howls sneer,3,12,0.9820137900379085
+149,771,drunkard musket snarling gush crowing grumble belch croaking clucking cooing howls sneer,"musketdrunkard,snarling, gush, grumble belch, sneercrowing, croaking, clucking, cooing, howls,",3,12,0.9820137900379085
+150,357,vendors travelers capitalists merge ports windfall travellers publishers seekers merchants,vendors capitalists windfall publishers merchants merge;travelers ports travelers seekers;,2,10,0.9933071490757153
+151,357,vendors travelers capitalists merge ports windfall travellers publishers seekers merchants,vendors capitalists windfall publishers merchants;travelers travellers ports seekers;merge,3,10,0.9655548043337889
+152,357,vendors travelers capitalists merge ports windfall travellers publishers seekers merchants,"vendors, capitalist, merge, windfall, merchants, publisherstravelers, ports, travellers, seekers",2,10,0.9933071490757153
+153,745,arrangement portion healthiest ration,"arrangementportion, healthiest, ration",2,4,0.8807970779778823
+154,745,arrangement portion healthiest ration,portion ration,1,4,0.9820137900379085
+155,745,arrangement portion healthiest ration,arrangement;portion ration;healthiest,3,4,0.791391472673955
+156,554,circulation affects caused damage prevents prevent likelihood intermittent,circulation;affects caused damage prevents prevent likelihood intermittent;,2,8,0.9820137900379085
+157,554,circulation affects caused damage prevents prevent likelihood intermittent,circulation;affects caused prevents prevent likelihood;intermittent damage,3,8,0.935030830871336
+158,554,circulation affects caused damage prevents prevent likelihood intermittent,circulation damage likelihood;affects caused prevents prevent;  intermittent,3,8,0.935030830871336
+159,860,hopping bouncing climbing swinging stride stroll fences muddy winding sliding slippery barefoot cruising poles cartwheels leaning tumbling stumbling notch,"hopping, bouncing, climbing, swinging, sliding, cruising, leaning, tumbling, stumblingstride, stroll, barefootfence, poles, notch, cartwheelsmuddy, winding, slippery",4,19,0.991422514586288
+160,860,hopping bouncing climbing swinging stride stroll fences muddy winding sliding slippery barefoot cruising poles cartwheels leaning tumbling stumbling notch,hopping bouncing climbing swinging stride stroll fences muddy winding sliding slippery barefoot cruising poles cartwheels leaning tumbling stumbling notch,1,19,0.9999999943972036
+161,860,hopping bouncing climbing swinging stride stroll fences muddy winding sliding slippery barefoot cruising poles cartwheels leaning tumbling stumbling notch,hopping bouncing climbing swinging stride stroll winding sliding slippery cruising leaning tumbling stumbling;fences poles cartwheels notch;barefoot  muddy,3,19,0.9982270454052078
+162,458,walked ran rode threw fell stole stepped rolled parked yard drove thrown jumped,walked ran rode threw feel stole stepped rolled parked drove thrown jumped;yard,2,13,0.998498817743263
+163,458,walked ran rode threw fell stole stepped rolled parked yard drove thrown jumped,walked ran rode threw fell stole stepped rolled parked drove thrown jumped;yard,2,13,0.998498817743263
+164,458,walked ran rode threw fell stole stepped rolled parked yard drove thrown jumped,"walked, ran, rode, stepped, parked, drovethrew, fell, stole, rolled, thrown, jumpedyard",3,13,0.9870462724693041
+165,646,routine interval shred exercise muscle lifting slack stretching,routine interval exercise muscle; lifting slack stretching shred,2,8,0.9820137900379085
+166,646,routine interval shred exercise muscle lifting slack stretching,"routine, intervalshred, exercise, muscle, lifting, slack, stretching",2,8,0.9820137900379085
+167,646,routine interval shred exercise muscle lifting slack stretching,routine interval exercise muscle lifting slack stretching shred,1,8,0.9996646498695336
+168,747,trails basin peaks dusk,trails basin peaks dusk,1,4,0.9820137900379085
+169,747,trails basin peaks dusk,trails basin peaks;dusk,2,4,0.8807970779778823
+170,747,trails basin peaks dusk,trails basin peaks;dusk;,2,4,0.8807970779778823
+171,71,lady boy twin little big baby wild young boss monster lucky,lady boy twin baby boss monster;little big wild young  lucky,2,11,0.995929862284104
+172,71,lady boy twin little big baby wild young boss monster lucky,"lady, bossboy, twin, little, big, baby, youngwild, luckymonster",4,11,0.9399133498259924
+173,71,lady boy twin little big baby wild young boss monster lucky,lady boy twin baby;little big young lucky;wild monster boss;,3,11,0.975075573352886
+174,109,designed build driven unlocked developed connected structures built,designed build structures developed built;driven;unlocked connected;,3,8,0.935030830871336
+175,109,designed build driven unlocked developed connected structures built,designed build driven unlocked developed connected built; structures,2,8,0.9820137900379085
+176,109,designed build driven unlocked developed connected structures built,designed build developed connected structures built,1,8,0.9996646498695336
+177,621,compromising flourish peril grandeur,compromising peril;flourish grandeur;,2,4,0.8807970779778823
+178,621,compromising flourish peril grandeur,flourish grandeur ;compromising peril,2,4,0.8807970779778823
+179,621,compromising flourish peril grandeur,compromising flourish peril grandeur,1,4,0.9820137900379085
+180,90,order open use regular full an tip fit or smart type free extra key line,regular full an tip fit or smart type free extra key line;order open use,2,15,0.9994472213630764
+181,90,order open use regular full an tip fit or smart type free extra key line,order tip fill regular open freesmart type key line use,2,15,0.9994472213630764
+182,90,order open use regular full an tip fit or smart type free extra key line,order open tip line type;use full regular fit smart free extra key;an or,3,15,0.9933071490757153
+183,341,odyssey nest civic regal caravan armored coop,odyssey nest civic caravan coop;regal armored,2,7,0.9706877692486436
+184,341,odyssey nest civic regal caravan armored coop,"odyssey, caravannest, coopcivic, regal, armored",3,7,0.9116003227929417
+185,341,odyssey nest civic regal caravan armored coop,,2,7,0.9706877692486436
+186,625,thumping muffled hoarse wailing shrill high-pitched screeching creaking,thumping muffled wailing screeching creaking;shrill high-pitched hoarse,2,8,0.9820137900379085
+187,625,thumping muffled hoarse wailing shrill high-pitched screeching creaking,wailing shrill high-pitched screeching;thumping muffled hoarse creaking;,2,8,0.9820137900379085
+188,625,thumping muffled hoarse wailing shrill high-pitched screeching creaking,thumping wailing screeching creaking ;muffled hoarse ;high-pitched shrill,3,8,0.935030830871336
+189,639,persons opinion previous choosing reasons terms opinions argument questions secrets advice decisions,"persons, termsopinion, choosing, reasons, opinions, argument, questions, secrets, advice, decisionsprevious",3,12,0.9820137900379085
+190,639,persons opinion previous choosing reasons terms opinions argument questions secrets advice decisions,persons opinion  reasons terms opinions argument questions secrets advice decisions;previous; choosing,3,12,0.9820137900379085
+191,639,persons opinion previous choosing reasons terms opinions argument questions secrets advice decisions,personsopinion choosing reasons terms opinions argument questions secrets advice decisionsprevious,3,12,0.9820137900379085
+192,841,bearing carpeted irons stool drafting reclining shaft cushion upright folding,carpeted cushion reclining foldingbearing irons draftingstool upright,3,10,0.9655548043337889
+193,841,bearing carpeted irons stool drafting reclining shaft cushion upright folding,bearing drafting reclining folding;carpeted upright; shaft cushion irons stool,3,10,0.9655548043337889
+194,841,bearing carpeted irons stool drafting reclining shaft cushion upright folding,"bearing, irons, stool, shaft, cushioncarpeted, drafting, reclining, upright, folding",2,10,0.9933071490757153
+195,182,larger bold tiny thin genuine large tall small smaller soft shape bigger tender plain,larger bold tiny thin genuine large tall small smaller soft shape bigger tender plain,1,14,0.9999991684719722
+196,182,larger bold tiny thin genuine large tall small smaller soft shape bigger tender plain,larger bold tiny thin large tall small smaller soft shape bigger tender plain genuine;,1,14,0.9999991684719722
+197,182,larger bold tiny thin genuine large tall small smaller soft shape bigger tender plain,larger bold tiny thin genuine large tall small smaller soft bigger tender plain;shape,2,14,0.9990889488055994
+198,603,important change focus decision interest situation further position progress plans changes effort current distance approach,important change focus decision interest situation further position progress plans changes effort current distance approach,1,15,0.999999694097773
+199,603,important change focus decision interest situation further position progress plans changes effort current distance approach,approach distance progress position further;decision plans;change changes progress;situation current;important;focus effort;interest,7,15,0.8949994149797352
+200,603,important change focus decision interest situation further position progress plans changes effort current distance approach,"important, focus, interest, position, plans, approachchange, decision, situation, further, progress, changes, effort, current, distance",2,15,0.9994472213630764
+201,764,tenth longest eighth youngest worlds sixth earliest third decade fourth,"tenth, eighth, sixth, third, fourthlongest, youngest, earliestworlds, decade",3,10,0.9655548043337889
+202,764,tenth longest eighth youngest worlds sixth earliest third decade fourth,tenth longest eighth youngest worlds sixth earliest third decade fourth,1,10,0.9999546021312976
+203,764,tenth longest eighth youngest worlds sixth earliest third decade fourth,tenth eighth sixth third fourth;longest;youngest earliest;decade;worlds,5,10,0.8807970779778823
+204,304,confuse admire observe describe involve suggest confess dislike prefer,confuse dislike;observe describe involve suggest; admire prefer confess;,3,9,0.9525741268224331
+205,304,confuse admire observe describe involve suggest confess dislike prefer,confuse;admire observe describe involve prefer;suggest confess;dislike;,4,9,0.9046505351008904
+206,304,confuse admire observe describe involve suggest confess dislike prefer,confuse admire observe describe involve suggest confess dislike prefer,1,9,0.9998766054240137
+207,807,golf battle cricket action figure race mission victory competition challenge ultimate draw,golf cricket race battle action mission victory competition challenge ultimate drawfigure,3,12,0.9820137900379085
+208,807,golf battle cricket action figure race mission victory competition challenge ultimate draw,"golf, battle, cricket, action, race, victory, competition, challenge, drawfiguremission, ultimate",3,12,0.9820137900379085
+209,807,golf battle cricket action figure race mission victory competition challenge ultimate draw,golf battle cricket action figure race mission victory competition challenge ultimate draw,1,12,0.9999938558253978
+210,223,romances panes robes fumes,romances;panes;robes;fumes,4,4,0.7310585786300049
+211,223,romances panes robes fumes,romances;panes;robes;fumes;,4,4,0.7310585786300049
+212,223,romances panes robes fumes,romances panes robes fumes,1,4,0.9820137900379085
+213,9,real gay face short cool like girls old look boys crazy crack hot,real crazy gayface look hotshort oldcrack,5,13,0.9308615796566531
+214,9,real gay face short cool like girls old look boys crazy crack hot,girls boys;hot cool short old real crazy;real;gay;crack;face;like;look;,8,13,0.8354835371034369
+215,9,real gay face short cool like girls old look boys crazy crack hot,real;gay;face;short cool old look hot crazy;like girls boys;crack;,6,13,0.8972159750827483
+216,701,tantalizing substantial commotion tepid troubling obscene apocalyptic poignant chatter bleak devilish startling disastrous gritty ominous,tantalizing substantial commotion tepid troubling obscene apocalyptic poignant bleak devilish startling disastrous gritty ominous;chatter,2,15,0.9994472213630764
+217,701,tantalizing substantial commotion tepid troubling obscene apocalyptic poignant chatter bleak devilish startling disastrous gritty ominous,tantalizing devilish substantial;commotion troubling disastrous ominous gritty;tepid obscene apocolyptic bleak;poignant chatter startling;,4,15,0.9770226300899744
+218,701,tantalizing substantial commotion tepid troubling obscene apocalyptic poignant chatter bleak devilish startling disastrous gritty ominous,tantalizing poignant;substantial apocalyptic bleak startling disastrous ominous;tepid troubling obscene commotion devilish;gritty chatter,4,15,0.9770226300899744
+219,604,floors beds baths bedrooms houses rooms bunk sofas suitcases,floors beds baths bedrooms houses rooms bunk sofas;suitcases,2,9,0.9890130573694068
+220,604,floors beds baths bedrooms houses rooms bunk sofas suitcases,floors beds baths bedrooms houses rooms bunk sofas suitcases;,1,9,0.9998766054240137
+221,604,floors beds baths bedrooms houses rooms bunk sofas suitcases,floors beds baths bedrooms houses rooms bunk sofas suitcases,1,9,0.9998766054240137
+222,497,flirted disliked mistook disagreed insulted confronted approached,flirted disliked mistook disagreed insulted confronted approached,1,7,0.9990889488055994
+223,497,flirted disliked mistook disagreed insulted confronted approached,flirted approached;disliked mistook disagreed insulted confronted;,2,7,0.9706877692486436
+224,497,flirted disliked mistook disagreed insulted confronted approached,flirted approached;disliked disagreed insulted confronted;mistook;,3,7,0.9116003227929417
+225,656,vernal peonies foliage bustle,vernal;peonies foliage;bustle,3,4,0.791391472673955
+226,656,vernal peonies foliage bustle,vernal;peonies foliage;bustle,3,4,0.791391472673955
+227,656,vernal peonies foliage bustle,vernal peonies foliage,1,4,0.9820137900379085
+228,546,proposed approve agrees agreed,approve agrees agreed;proposed,2,4,0.8807970779778823
+229,546,proposed approve agrees agreed,proposed approve agrees agreed,1,4,0.9820137900379085
+230,546,proposed approve agrees agreed,proposed approve agrees agreed,1,4,0.9820137900379085
+231,74,axe tango whisky perfume,axe tango whisky perfume,1,4,0.9820137900379085
+232,74,axe tango whisky perfume,"axe, perfumetango, whiskey",2,4,0.8807970779778823
+233,74,axe tango whisky perfume,axe whisky; tango perfume;,2,4,0.8807970779778823
+234,491,trolls pricks bastards dusty beware peasants filthy ungrateful thieving thieves,trolls pricks bastards peasants ungrateful thieving thieves;dusty filthybeware,3,10,0.9655548043337889
+235,491,trolls pricks bastards dusty beware peasants filthy ungrateful thieving thieves,trolls pricks bastards peasants thieving thieves;beware;filthy ungrateful dusty;,3,10,0.9655548043337889
+236,491,trolls pricks bastards dusty beware peasants filthy ungrateful thieving thieves,"trolls, pricks, bastards, peasants, thievesdusty, filthy, ungrateful, thievingbeware",3,10,0.9655548043337889
+237,383,staring stairs laying upstairs hanging asleep sit sitting stare casually halfway beside couch walking downstairs,staring sit sitting hanging stare walking laying asleepstairs upstairs couch downstairscasually halfway beside,3,15,0.9933071490757153
+238,383,staring stairs laying upstairs hanging asleep sit sitting stare casually halfway beside couch walking downstairs,staring hanging asleep sit sitting stare casually walking beside laying;stairs upstairs couch downstairs;halfway;,3,15,0.9933071490757153
+239,383,staring stairs laying upstairs hanging asleep sit sitting stare casually halfway beside couch walking downstairs,"staring, laying, hanging, sitting, sit, stare, walking, asleepstairs, upstairs, halfway, beside, downstairscasuallycouch",4,15,0.9770226300899744
+240,48,peddler tracks mill produced,peddler;tracks;mill produced,3,4,0.791391472673955
+241,48,peddler tracks mill produced,peddlertracks mill produced,3,4,0.791391472673955
+242,48,peddler tracks mill produced,peddler tracks mill; produced,2,4,0.8807970779778823
+243,188,rare possible place point occasion exception attend chose comment trace capable impossible impression amuse question direct rage grave force phrase sort,rare exception impossible grave;place point trace impression;occasion attend amuse;chose comment question direct rage force phrase sort;capable possible,5,21,0.9852259683067269
+244,188,rare possible place point occasion exception attend chose comment trace capable impossible impression amuse question direct rage grave force phrase sort,rare exception impossible trace capable place point occasionattend chose amuse question direct ragecomment impressiongrave,5,21,0.9852259683067269
+245,188,rare possible place point occasion exception attend chose comment trace capable impossible impression amuse question direct rage grave force phrase sort,rare possible capable impossible grave;place point sort phrase chose question direct comment attend trace amuse rage force;occasion exception impression,3,21,0.9990889488055994
+246,264,structure energy power system solution core effect level capacity advanced cloud range monitoring memory,structure energy power system solution core effect level capacity advanced cloud range monitoring memory,1,14,0.9999991684719722
+247,264,structure energy power system solution core effect level capacity advanced cloud range monitoring memory,structure system solution level capacity rangeenergy power core effectadvanced cloudmonitoring memory,6,14,0.9116003227929417
+248,264,structure energy power system solution core effect level capacity advanced cloud range monitoring memory,"structure, system, level, capacity, monitoring, memory, cloudenergy, power, coresolution, effect, advanced, range",3,14,0.9906840406549333
+249,744,pasture carcass lawns stumps shrub gnomes twenty-five grazing,pasture lawns shrub grazing gnomes stumps,1,8,0.9996646498695336
+250,744,pasture carcass lawns stumps shrub gnomes twenty-five grazing,pasture carcass lawns stumps shrub gnomes twenty-five; grazing,2,8,0.9820137900379085
+251,744,pasture carcass lawns stumps shrub gnomes twenty-five grazing,pasture lawns stumps shrub gnomes grazing;twenty-five;carcass;,3,8,0.935030830871336
+252,733,gnaw hunch firecracker blooded vein seam blot lump drawl slug blob fiend serpent,blooded vein blot seam;fiend serpent slug;hunch lump blob;firecracker;drawl;gnaw;,6,13,0.8972159750827483
+253,733,gnaw hunch firecracker blooded vein seam blot lump drawl slug blob fiend serpent,gnaw hunch blooded blot drawlfirecrackervein seam lump blobserpent fiend slug,4,13,0.9626731126558706
+254,733,gnaw hunch firecracker blooded vein seam blot lump drawl slug blob fiend serpent,gnaw hunch drawl;slug firecracker seam vein blot lump blob;fiend serpent;blooded,4,13,0.9626731126558706
+255,408,insist hiding bother fooling begging telling constantly lying arguing liking bothering wondering assuming pretending judging,insist hiding bother fooling begging telling constantly lying arguing liking bothering wondering assuming pretending judging,1,15,0.999999694097773
+256,408,insist hiding bother fooling begging telling constantly lying arguing liking bothering wondering assuming pretending judging,hiding fooling begging telling constantly lying arguing liking bothering wondering assuming pretending judging;bother insist;,2,15,0.9994472213630764
+257,408,insist hiding bother fooling begging telling constantly lying arguing liking bothering wondering assuming pretending judging,insist bother; fooling begging telling lying arguing liking bothering wondering assuming hiding pretending judging;constantly,3,15,0.9933071490757153
+258,677,fabled point-blank quaver,fabled; point-blank; quaver,3,3,0.7310585786300049
+259,677,fabled point-blank quaver,fabled point-blank; quaver,2,3,0.8175744761936437
+260,677,fabled point-blank quaver,fabled point-blankquaver,2,3,0.8175744761936437
+261,557,celebrated proudly drawn marked chosen,drawn marked chosen;proudly;celebrated,3,5,0.8411308951190849
+262,557,celebrated proudly drawn marked chosen,celebrated proudly;drawn marked;chosen;,3,5,0.8411308951190849
+263,557,celebrated proudly drawn marked chosen,celebrated proudly; drawn marked chosen;,2,5,0.9241418199787566
+264,452,lots few drinks plenty,lots few plenty;drinks,2,4,0.8807970779778823
+265,452,lots few drinks plenty,lots few plenty;drinks,2,4,0.8807970779778823
+266,452,lots few drinks plenty,"lots, few, plentydrinks",2,4,0.8807970779778823
+267,824,burners tractors buckles,burners;tractors;buckles,3,3,0.7310585786300049
+268,824,burners tractors buckles,burners tractors buckles,1,3,0.9525741268224331
+269,824,burners tractors buckles,burners;tractors;buckles;,3,3,0.7310585786300049
+270,524,armchair studious homely girlish demure exuberant wiry haggard,studious;armchair;homely demure wiry haggard;girlish;exuberant,5,8,0.8320183851339245
+271,524,armchair studious homely girlish demure exuberant wiry haggard,"armchairstudious, demure, exuberanthomely, girlish, wiry, haggard",3,8,0.935030830871336
+272,524,armchair studious homely girlish demure exuberant wiry haggard,armchair; studious homely girlish demure exuberant wiry haggard,2,8,0.9820137900379085
+273,244,colored ribbon glitter bows ribbons pearls pumps charm strands,colored ribbon glitter bows ribbons pearls pumps charm strands,1,9,0.9998766054240137
+274,244,colored ribbon glitter bows ribbons pearls pumps charm strands,colored ribbon glitter bows ribbons pearls charm strands;pumps;,2,9,0.9890130573694068
+275,244,colored ribbon glitter bows ribbons pearls pumps charm strands,colored; ribbon glitter bows ribbons pearls pumps charm strands,2,9,0.9890130573694068
+276,87,kidnaped intruded swarmed roundly leathered robed sizzled shoestrings ransacked impaled pummeled diffused,"kidnapped, intruded, ransacked, pummeled, swarmed,sizzled, impaledroundlyleathered, robed, shoestrings, diffused",3,12,0.9820137900379085
+277,87,kidnaped intruded swarmed roundly leathered robed sizzled shoestrings ransacked impaled pummeled diffused,"kidnapped, intruded, pummeled, swarmed, impaled, ransacked;leathered, robed, roundly;sizzled, diffused;shoestrings",4,12,0.9525741268224331
+278,87,kidnaped intruded swarmed roundly leathered robed sizzled shoestrings ransacked impaled pummeled diffused,kidnaped intruded swarmed roundly leathered robed sizzled shoestrings ransacked impaled pummeled diffused,1,12,0.9999938558253978
+279,543,annoys frankly goddammit complains bothers,annoys complains bothers;frankly; goddammit,3,5,0.8411308951190849
+280,543,annoys frankly goddammit complains bothers,annoys bothers complains;frankly;goddammit,3,5,0.8411308951190849
+281,543,annoys frankly goddammit complains bothers,complains bothers annoys;frankly;goddammit,3,5,0.8411308951190849
+282,377,dispatches discussions clippings cuttings newspapers columns outlines,dispatches discussions clippings cuttings newspapers columns outlines,1,7,0.9990889488055994
+283,377,dispatches discussions clippings cuttings newspapers columns outlines,clippings cuttings;columns outlines newspapers;dispatches discussions,3,7,0.9116003227929417
+284,377,dispatches discussions clippings cuttings newspapers columns outlines,dispatches discussions clippings cuttings newspapers columns outlines,1,7,0.9990889488055994
+285,862,graciously blindly continually,graciously blindly continually,1,3,0.9525741268224331
+286,862,graciously blindly continually,graciously;blindly continually;,2,3,0.8175744761936437
+287,862,graciously blindly continually,graciously blindly continually,1,3,0.9525741268224331
+288,310,plays stands takes turns comes drops gives gets makes goes brings works,plays stands takes turns comes drops gives gets makes goes brings works,1,12,0.9999938558253978
+289,310,plays stands takes turns comes drops gives gets makes goes brings works,"plays, stands, turns, drops, goes, brings, workstakes, comes, gives, gets, makes",2,12,0.9975273768433653
+290,310,plays stands takes turns comes drops gives gets makes goes brings works,plays stands takes turns comes drops gives gets makes goes brings works,1,12,0.9999938558253978
+291,26,chances chance lance note,chances chance lance note,1,4,0.9820137900379085
+292,26,chances chance lance note,"Chances, chance. lancenote",2,4,0.8807970779778823
+293,26,chances chance lance note,chances chance; lance; note,3,4,0.791391472673955
+294,466,primeval nightfall desolate abbey delirium watchmen oblivion,desolate delirium oblivion nightfall; primeval; abbey; watchmen,4,7,0.8519528019683106
+295,466,primeval nightfall desolate abbey delirium watchmen oblivion,primeval desolate oblivion delirium;watchmen;abbey;nightfall,4,7,0.8519528019683106
+296,466,primeval nightfall desolate abbey delirium watchmen oblivion,primeval nightfall  abbey delirium watchmen oblivion;desolate,2,7,0.9706877692486436
+298,602,exclaimed retorted mumbled murmured grunted remarked flatly muttered solemnly,exclaimed retorted mumbled murmured grunted remarked muttered ;flatly solemnly,2,9,0.9890130573694068
+299,602,exclaimed retorted mumbled murmured grunted remarked flatly muttered solemnly,exclaimed retorted mumbled murmured grunted remarked mutteredflatly solemnly,2,9,0.9890130573694068
+0,738,contempt distaste dismay selfishness modesty quietness familiarity contrition indignation pursuer indifference,contempt distaste indignation; modesty quietness familiarity;dismay contrition; selfishness indifference pursuer;,4,11,0.9399133498259924
+1,738,contempt distaste dismay selfishness modesty quietness familiarity contrition indignation pursuer indifference,"contempt, distaste, dismay, selfishness, contrition, indignation, indifferencemodesty, quietness, familiaritypursuer",3,11,0.975075573352886
+2,738,contempt distaste dismay selfishness modesty quietness familiarity contrition indignation pursuer indifference,contempt distaste dismay selfishness modesty quietness familiarity contrition indignation indifference; pursuer,2,11,0.995929862284104
+3,331,shuffled pricked gauged,shuffled pricked gauged,1,3,0.9525741268224331
+4,331,shuffled pricked gauged,shuffled pricked gauged,1,3,0.9525741268224331
+5,331,shuffled pricked gauged,shuffled;pricked;  gauged,3,3,0.7310585786300049
+6,871,affirm proclaim rooftops heavens summon prevail exalted rejoice humbly tidings deceive,"affirm, proclaim, summon, deceiverooftops, heavens, tidingsprevail, exalted, rejoice, humbly",3,11,0.975075573352886
+7,871,affirm proclaim rooftops heavens summon prevail exalted rejoice humbly tidings deceive,proclaim summon exalted rejoice humbly; affirm prevail deceive;rooftops heavens tidings,3,11,0.975075573352886
+8,871,affirm proclaim rooftops heavens summon prevail exalted rejoice humbly tidings deceive,affirm proclaim summon prevail rejoice deceive exalted; rooftops heavens tidings humbly;,2,11,0.995929862284104
+9,292,stationery supplies equipment supply items,"stationary, supplies, equipment, supply, items",1,5,0.9933071490757153
+10,292,stationery supplies equipment supply items,stationery supplies;equipment supply items;,2,5,0.9241418199787566
+11,292,stationery supplies equipment supply items,stationery supplies equipment supply items,1,5,0.9933071490757153
+12,504,labor terror rural general nuclear crisis provincial civil camps debate,labor rural terror general nuclear crisis provincial civil camps debate,2,10,0.9933071490757153
+13,504,labor terror rural general nuclear crisis provincial civil camps debate,labor;terror crisis nuclear;rural provincial civil;general camps debate;,4,10,0.9241418199787566
+14,504,labor terror rural general nuclear crisis provincial civil camps debate,labor terror rural general nuclear crisis provincial civil camps debate,1,10,0.9999546021312976
+15,439,anvil quilted hocking masonry gilt herringbone crucifix jeweler bugle alabaster russet riven mantel,anvil quilted hocking masonry gilt herringbone crucifix jeweler bugle alabaster russet riven mantel,1,13,0.999997739675702
+16,439,anvil quilted hocking masonry gilt herringbone crucifix jeweler bugle alabaster russet riven mantel,anvil masonry gilt crucifix russet riven mantelhocking jewelry gilt herringbone alabasterbugle,3,13,0.9870462724693041
+17,439,anvil quilted hocking masonry gilt herringbone crucifix jeweler bugle alabaster russet riven mantel,anvil masonry alabaster mantel;quilted herringbone;hocking;gilt;crucifix jeweler;bugle;russet riven;,7,13,0.8649635770771975
+18,492,barn folk dere bare inn,barn inn;folk;dere;bare;,4,5,0.7772998611746911
+19,492,barn folk dere bare inn,barn folk inn;dere bare;,2,5,0.9241418199787566
+20,492,barn folk dere bare inn,barn inn;folk;dere;bare,4,5,0.7772998611746911
+21,280,sign return signing bid deal signed hints,sign return signing signed; hints bid deal,2,7,0.9706877692486436
+22,280,sign return signing bid deal signed hints,sign signing signed bid deal;hints;return,3,7,0.9116003227929417
+23,280,sign return signing bid deal signed hints,sign signing deal signed,1,7,0.9990889488055994
+24,55,watching sleeping awake forever alive listening alone dying sleep lonely dreaming,watching sleeping listening dying lonely dreaming; awake forever alive sleep alone,2,11,0.995929862284104
+25,55,watching sleeping awake forever alive listening alone dying sleep lonely dreaming,"sleeping, sleep, dreaming;awake, alive;watching, listening;dying, forever;alone, lonely",5,11,0.9002495108803148
+26,55,watching sleeping awake forever alive listening alone dying sleep lonely dreaming,"watching, listening, dreamingsleeping, awake, dying, sleepforever, alive, alone, lonely",3,11,0.975075573352886
+27,520,alternately thoughtfully grimly curiously absently,alternately thoughtfully grimly curiously absently,1,5,0.9933071490757153
+28,520,alternately thoughtfully grimly curiously absently,thoughtfully curiously,1,5,0.9933071490757153
+29,520,alternately thoughtfully grimly curiously absently,alternately thoughtfully grimly curiously absently,1,5,0.9933071490757153
+30,488,westerly winds conditions partly overcast,westerly winds conditions partly overcast,1,5,0.9933071490757153
+31,488,westerly winds conditions partly overcast,westerly winds;conditions partly overcast;,2,5,0.9241418199787566
+32,488,westerly winds conditions partly overcast,westerly winds conditions partly overcast,1,5,0.9933071490757153
+33,339,souls mortal corpse plague spirits hound shadows demons darkness,souls plague spirits shadows darkness demons hound;mortal corpse,2,9,0.9890130573694068
+34,339,souls mortal corpse plague spirits hound shadows demons darkness,"souls, mortal, spiritscorpse, plaguehounddemons, darkness",4,9,0.9046505351008904
+35,339,souls mortal corpse plague spirits hound shadows demons darkness,souls mortal corpse plague spirits hound shadows demons darkness;,1,9,0.9998766054240137
+36,559,betrays paralyzes comforts,betrays;paralyzes;comforts,3,3,0.7310585786300049
+37,559,betrays paralyzes comforts,betrays paralyzes comforts,1,3,0.9525741268224331
+38,559,betrays paralyzes comforts,betrays paralyzes; comforts,2,3,0.8175744761936437
+39,813,undo rearrange enlarge untie distort,enlarge distort undo rearrange untie,2,5,0.9241418199787566
+40,813,undo rearrange enlarge untie distort,undo rearrange enlarge untie distort;,1,5,0.9933071490757153
+41,813,undo rearrange enlarge untie distort,undo rearrange untie;distort enlarge;,2,5,0.9241418199787566
+42,669,veiled gesture dubious deceptive accusation brazen tasteful prominent,veiled dubious deceptive accusation ;tasteful prominent ;prominent brazen,3,8,0.935030830871336
+43,669,veiled gesture dubious deceptive accusation brazen tasteful prominent,veiled dubious deceptive brazen tasteful prominent;gesture accusation,2,8,0.9820137900379085
+44,669,veiled gesture dubious deceptive accusation brazen tasteful prominent,veiled brazen tasteful prominent dubious deceptive;gesture accusation,2,8,0.9820137900379085
+45,686,jaunty drab well-made cagey hulking goddamned inscrutable ponderous elfin worsted money-making quixotic compresses mustached lifelike over-all,jaunty cagey hulking money-making;goddamned worsted mustached;drab well-made inscrutable ponderous elfin quixotic lifelike;over-all compresses,4,16,0.9820137900379085
+46,686,jaunty drab well-made cagey hulking goddamned inscrutable ponderous elfin worsted money-making quixotic compresses mustached lifelike over-all,Jaunty elfin lifelike Money-making Worsted compresses;Well-made goddamned over-all;Hulking quixotic Inscrutable ponderous drab mustaches;,3,16,0.9951952471128405
+47,686,jaunty drab well-made cagey hulking goddamned inscrutable ponderous elfin worsted money-making quixotic compresses mustached lifelike over-all,jaunty drab well-made cagey hulking goddamned inscrutable ponderous elfin worsted money-making quixotic compresses mustached lifelike over-all,1,16,0.9999998874648379
+48,618,pharmacist surveyor arrears structural laborer,pharmacist surveyor laborer;arrears;structural;,3,5,0.8411308951190849
+49,618,pharmacist surveyor arrears structural laborer,pharmacist surveyor structural laborerarrears,3,5,0.8411308951190849
+50,618,pharmacist surveyor arrears structural laborer,pharmacist surveyor arrears structural laborer,1,5,0.9933071490757153
+51,535,wobbly eared watery broody mischievous,wobbly;eared;watery;broody mischievous,4,5,0.7772998611746911
+52,535,wobbly eared watery broody mischievous,wobbly eared watery broody mischievous,1,5,0.9933071490757153
+53,535,wobbly eared watery broody mischievous,"wobbly, watery, broody, mischievouseared",2,5,0.9241418199787566
+54,411,whistling rumbling snoring growling noises noise yawning humming,whistling rumbling snoring growling yawning humming;noises noise;,2,8,0.9820137900379085
+55,411,whistling rumbling snoring growling noises noise yawning humming,whistling rumbling snoring growling noises noise yawning humming,1,8,0.9996646498695336
+56,411,whistling rumbling snoring growling noises noise yawning humming,whistling rumbling snoring growling noises noise yawning humming,1,8,0.9996646498695336
+57,249,strokes veil grenade,strokesveilgrenade,3,3,0.7310585786300049
+58,249,strokes veil grenade,strokes;veil;grenade,3,3,0.7310585786300049
+59,249,strokes veil grenade,strokes veil grenade,1,3,0.9525741268224331
+60,515,campagna pace fame due male pure fate,campagna pace fame due male pure fate,1,7,0.9990889488055994
+61,515,campagna pace fame due male pure fate,campagna fame fate pure;pace due;male,3,7,0.9116003227929417
+62,515,campagna pace fame due male pure fate,campagna pace fame maleduepure fate,6,7,0.7625419716560975
+63,301,library section sections,library; section sections;,2,3,0.8175744761936437
+64,301,library section sections,section sections;library,2,3,0.8175744761936437
+65,301,library section sections,"library, section, sections",1,3,0.9525741268224331
+66,407,favorable noble mental crucial individual vital considerable produce superior,favorable noble mental crucial individual vital considerable superior;produce,2,9,0.9890130573694068
+67,407,favorable noble mental crucial individual vital considerable produce superior,favorable noble considerable superior mental individual produce crucial vital,2,9,0.9890130573694068
+68,407,favorable noble mental crucial individual vital considerable produce superior,"favorable, noble, considerable, superiormental, individualcrucial, vitalproduce",4,9,0.9046505351008904
+69,80,charming fabulous precious love dream lovely angel beautiful smile handsome wonderful queen amazing beauty romantic sweet,"charming, fabulous, precious, love, lovely, angel, beautiful, handsome, wonderful, amazing, beauty, romantic, sweetdream, smile, queen",2,16,0.9996646498695336
+70,80,charming fabulous precious love dream lovely angel beautiful smile handsome wonderful queen amazing beauty romantic sweet,charming fabulous precious love lovely beautiful  handsome wonderful amazing  romantic sweet;dream angel queen smile beauty,2,16,0.9996646498695336
+71,80,charming fabulous precious love dream lovely angel beautiful smile handsome wonderful queen amazing beauty romantic sweet,charming fabulous precious love dream lovely angel beautiful smile handsome wonderful queen amazing beauty romantic sweet,1,16,0.9999998874648379
+72,105,collection pattern vintage fabric framed inspired prints painting illustration shabby canvas sheer portrait frame graphic,collection vintage;pattern fabric framed inspired prints painting illustration shabby canvas sheer portrait frame graphic;,2,15,0.9994472213630764
+73,105,collection pattern vintage fabric framed inspired prints painting illustration shabby canvas sheer portrait frame graphic,"collection, pattern, fabric, prints, canvas, sheer, vintage inspired, painting, illustration, shabby, portrait, graphicframe, framed",3,15,0.9933071490757153
+74,105,collection pattern vintage fabric framed inspired prints painting illustration shabby canvas sheer portrait frame graphic,collection pattern vintage fabric framed inspired prints painting illustration shabby canvas sheer portrait frame graphic,1,15,0.999999694097773
+75,38,chick likes kid name lover picture blind friend guy called person girl stranger named famous woman,"chick, kid, name, lover, friend, guy, person, girl, stranger, womanlikes, called, named,pictureblind, famous",4,16,0.9820137900379085
+76,38,chick likes kid name lover picture blind friend guy called person girl stranger named famous woman,chick kid friend guy person girl stranger woman;likes lover;name named famous;picture blind;,4,16,0.9820137900379085
+77,38,chick likes kid name lover picture blind friend guy called person girl stranger named famous woman,chick girl womanname namedlover friend stranger personfamouskidpicture called,8,16,0.8807970779778823
+78,768,glittering casts countenance graces,glittering;casts;countenance;graces;,4,4,0.7310585786300049
+79,768,glittering casts countenance graces,glittering; casts graces;countenance,3,4,0.791391472673955
+80,768,glittering casts countenance graces,casts graces;glittering;countenance,3,4,0.791391472673955
+81,877,footsteps twenties overlook crosses tread paths barriers backward,footsteps paths crosses backward barriers overlook;twenties,2,8,0.9820137900379085
+82,877,footsteps twenties overlook crosses tread paths barriers backward,footsteps crosses tread paths backwardtwentiesoverlookbarriers,4,8,0.8807970779778823
+83,877,footsteps twenties overlook crosses tread paths barriers backward,footsteps twenties overlook paths barriers; crosses tread;backward,3,8,0.935030830871336
+84,124,irritated nerve aggravated cranky nerves,irritated nerve aggravated cranky nerves,1,5,0.9933071490757153
+85,124,irritated nerve aggravated cranky nerves,irritated nerve aggravated cranky nerves,1,5,0.9933071490757153
+86,124,irritated nerve aggravated cranky nerves,irritated aggravated; nerve cranky nerves,2,5,0.9241418199787566
+87,709,test degree theology economics lesson lecture study physics biology science equation,test degree theology economics lesson lecture study physics biology science equation,1,11,0.999983298578152
+88,709,test degree theology economics lesson lecture study physics biology science equation,test lesson lecture;theology economics physics biology science equation;degree study;,3,11,0.975075573352886
+89,709,test degree theology economics lesson lecture study physics biology science equation,test degree theology economics lesson lecture study physics biology science equation;,1,11,0.999983298578152
+90,314,uttered answered understood composed spoke spoken preached described,uttered answered understood composed spoke spoken preached described,1,8,0.9996646498695336
+91,314,uttered answered understood composed spoke spoken preached described,uttered answered understood composed spoke spoken preached described,1,8,0.9996646498695336
+92,314,uttered answered understood composed spoke spoken preached described,uttered answered understood composed spoke spoken preached described,1,8,0.9996646498695336
+93,360,shapes vowels symbols symbol varieties similarity,shapes vowels symbols symbol varieties; similarity,2,6,0.9525741268224331
+94,360,shapes vowels symbols symbol varieties similarity,shapes vowels symbols symbol;varieties similarity;,2,6,0.9525741268224331
+95,360,shapes vowels symbols symbol varieties similarity,shapes vowels symbols symbol varieties;similarity,2,6,0.9525741268224331
+96,366,zenith continental colonial,zenith;continental colonial,2,3,0.8175744761936437
+97,366,zenith continental colonial,zenith continental colonial,1,3,0.9525741268224331
+98,366,zenith continental colonial,zenith; continental colonial,2,3,0.8175744761936437
+99,65,sounds looked looks pretty looking,"soundslooked, looks, lookingpretty",3,5,0.8411308951190849
+100,65,sounds looked looks pretty looking,sounds;looked looks pretty looking;,2,5,0.9241418199787566
+101,65,sounds looked looks pretty looking,sounds looked looks looking;pretty,2,5,0.9241418199787566
+102,70,sushi shack kinder buffet cafeteria hut cafe subway,"shack, hutbuffet, cafe, cafeteriasushikindersubway",5,8,0.8320183851339245
+103,70,sushi shack kinder buffet cafeteria hut cafe subway,sushi buffet cafeteria cafe;shack hut subway;kinder;,3,8,0.935030830871336
+104,70,sushi shack kinder buffet cafeteria hut cafe subway,sushi shack kinder buffet cafeteria hut cafe subway,1,8,0.9996646498695336
+105,538,heaving idling rotting tingling parched clogged mangled loins straining quivering,"heaving, straining, quivering, tingling, idlingrotting, parched, clogged, mangledloins",3,10,0.9655548043337889
+106,538,heaving idling rotting tingling parched clogged mangled loins straining quivering,heaving quivering strainingidling rotting tingling magledparched cloggedloins,4,10,0.9241418199787566
+107,538,heaving idling rotting tingling parched clogged mangled loins straining quivering,heaving idling rotting tingling parched clogged mangled straining quivering;loins,2,10,0.9933071490757153
+108,478,northeast north peninsula coast southern valley islands south east northern,northeast north southern  south east northern;peninsula coast valley islands,2,10,0.9933071490757153
+109,478,northeast north peninsula coast southern valley islands south east northern,northeast north peninsula coast southern valley islands south east northern,1,10,0.9999546021312976
+110,478,northeast north peninsula coast southern valley islands south east northern,northeast north southern south east northern ;peninsula coast valley islands,2,10,0.9933071490757153
+111,211,service services management board business market company estate program building companies security network firm jobs job office,service services management board business market company estate program building companies security network firm jobs job office,1,17,0.9999999586006244
+112,211,service services management board business market company estate program building companies security network firm jobs job office,service services; management board business market company companies security network firm jobs job;estate program building office;,3,17,0.9965525486984363
+113,211,service services management board business market company estate program building companies security network firm jobs job office,service services management board business market company program companies network firm jobs job office;estate building;security;,3,17,0.9965525486984363
+114,271,surface lightning cables blizzard frostbite,surface;lightning;cables;blizzard frostbite,4,5,0.7772998611746911
+115,271,surface lightning cables blizzard frostbite,surface lightning cables; blizzard frostbite;,2,5,0.9241418199787566
+116,271,surface lightning cables blizzard frostbite,surface lightning cables; blizzard frostbite,2,5,0.9241418199787566
+117,501,savage widow stern fury hollow shun fowl,savage stern fury shun fowl;widow;hollow;,3,7,0.9116003227929417
+118,501,savage widow stern fury hollow shun fowl,"savage, stern, fury, fowlwidow, hollow, shun",2,7,0.9706877692486436
+119,501,savage widow stern fury hollow shun fowl,savage stern fury,1,7,0.9990889488055994
+120,316,bout sum sayin wit thinkin doin comin nothin dey takin bein tryin waitin lovin bumpin,bout sum sayin wit thinkin doin comin nothin dey takin bein tryin waitin lovin bumpin,1,15,0.999999694097773
+121,316,bout sum sayin wit thinkin doin comin nothin dey takin bein tryin waitin lovin bumpin,sayin thinkin doin comin nothin takin tryin waitin lovin bumpin,1,15,0.999999694097773
+122,316,bout sum sayin wit thinkin doin comin nothin dey takin bein tryin waitin lovin bumpin,"bout, sum, saying, wit, thinkin, doin, comin, nothin, dey, takin, bein, tryin, waitin, lovin, bumpin",1,15,0.999999694097773
+123,245,receive offering offer advance delivering reward offered receiving accepting received,receive offering reward offer advance delivering offered receiving accepting received,1,10,0.9999546021312976
+124,245,receive offering offer advance delivering reward offered receiving accepting received,receive offering offer advance delivering reward offered receiving accepting received;,1,10,0.9999546021312976
+125,245,receive offering offer advance delivering reward offered receiving accepting received,receive reward receiving accepting received;offering offer advance delivering offered;,2,10,0.9933071490757153
+126,762,sins sinners surrender neglect mourn,sins sinners surrender neglect mourn;,1,5,0.9933071490757153
+127,762,sins sinners surrender neglect mourn,sins sinners,1,5,0.9933071490757153
+128,762,sins sinners surrender neglect mourn,sins sinners; surrender neglect mourn,2,5,0.9241418199787566
+129,82,( ) : --,( ) : --;,1,4,0.9820137900379085
+130,82,( ) : --,() : --,1,4,0.9820137900379085
+131,82,( ) : --,( ) : --,1,4,0.9820137900379085
+132,537,cooled shattered refreshed shoveled rested calmed rained warmed rattled caved,cooled shattered refreshed shoveled rested calmed rained warmed rattled caved,1,10,0.9999546021312976
+133,537,cooled shattered refreshed shoveled rested calmed rained warmed rattled caved,cooled refreshed rested calmed;shattered shoveled rattled caved;,2,10,0.9933071490757153
+134,537,cooled shattered refreshed shoveled rested calmed rained warmed rattled caved,"cooled, refreshed, calmed, rained, warmedshattered, shoveled, caved, rattled",2,10,0.9933071490757153
+135,541,occasions adjustments anecdotes citations descriptions discoveries quotations techniques expressions diagrams impressions purposes,occasions adjustments anecdotes citations descriptions discoveries quotations techniques expressions diagrams impressions purposes,1,12,0.9999938558253978
+136,541,occasions adjustments anecdotes citations descriptions discoveries quotations techniques expressions diagrams impressions purposes,occasions adjustments anecdotes citations descriptions discoveries quotations techniques expressions diagrams impressions purposes;,1,12,0.9999938558253978
+137,541,occasions adjustments anecdotes citations descriptions discoveries quotations techniques expressions diagrams impressions purposes,"occasions, discoveries, purposesadjustmentsanecdotesdescriptions, citations, quotations, expressions, diagrams, impressionstechniques",5,12,0.9168273035060777
+138,102,linked identified wounded battling,linked identified wounded; battling,2,4,0.8807970779778823
+139,102,linked identified wounded battling,linked identifiedwounded battling,2,4,0.8807970779778823
+140,102,linked identified wounded battling,linked identified;wounded battling;,2,4,0.8807970779778823
+141,776,contribution participation distinction initiative contributions formation,contribution participation distinction initiative contributions formation;,1,6,0.9975273768433653
+142,776,contribution participation distinction initiative contributions formation,contribution participation distinction initiative contributions formation,1,6,0.9975273768433653
+143,776,contribution participation distinction initiative contributions formation,contribution participation distinction initiative contributions formation,1,6,0.9975273768433653
+144,518,hidden beneath visible glowing bursting objects floating,hidden beneathvisible glowing bursting floatingobjects,3,7,0.9116003227929417
+145,518,hidden beneath visible glowing bursting objects floating,hidden beneath visible glowing bursting floating;objects,2,7,0.9706877692486436
+146,518,hidden beneath visible glowing bursting objects floating,hidden beneath visible objects;glowing bursting floating;,2,7,0.9706877692486436
+147,723,sulky neat rounded sturdy civilized,neat rounded sturdy civilized;sulky,2,5,0.9241418199787566
+148,723,sulky neat rounded sturdy civilized,"sulkyneat, rounded, sturdycivilized",3,5,0.8411308951190849
+149,723,sulky neat rounded sturdy civilized,sulky; neat rounded sturdy civilized;,2,5,0.9241418199787566
+150,514,drawings gowns twists sketches spectacles monologue sketching,drawings gowns twists sketches spectacles monologue; sketching;,2,7,0.9706877692486436
+151,514,drawings gowns twists sketches spectacles monologue sketching,"drawings, twists, sketches, sketchinggowns, spectaclesmonologue",3,7,0.9116003227929417
+152,514,drawings gowns twists sketches spectacles monologue sketching,DRAWINGS SKETCHES SKETCHINGGOWNS TWISTS SPECTACLES MONOLOGUE,3,7,0.9116003227929417
+153,371,breakfasts dinner tasting meals lunch breakfast meal,breakfasts dinner tasting meals lunch breakfast meal,1,7,0.9990889488055994
+154,371,breakfasts dinner tasting meals lunch breakfast meal,breakfasts dinner meals lunch breakfast meal tasting,1,7,0.9990889488055994
+155,371,breakfasts dinner tasting meals lunch breakfast meal,breakfasts dinner tasting meals lunch breakfast meal;,1,7,0.9990889488055994
+156,196,coats infant wool silk wedge knit knitted slipper mittens tweed leather shawl sheepskin striped scarf cotton,"coats, wool, silk, knit, knitted, slipper, mitten, tweed, leather, shawl, sheepskin, striped, scarf cotton infantwedge",3,16,0.9951952471128405
+157,196,coats infant wool silk wedge knit knitted slipper mittens tweed leather shawl sheepskin striped scarf cotton,coats infant wool silk wedge knit knitted slipper mittens tweed leather shawl sheepskin striped scarf cotton,1,16,0.9999998874648379
+158,196,coats infant wool silk wedge knit knitted slipper mittens tweed leather shawl sheepskin striped scarf cotton,coats slipper mittens scarf wedge;wool silk knit knitted cotton tweed leather shawl sheepskin;infant striped,3,16,0.9951952471128405
+159,104,case files filed ammo ship cases ships prop,case files ammo ship cases ships;filed prop,2,8,0.9820137900379085
+160,104,case files filed ammo ship cases ships prop,case ammo;file filed;ship ships;prop;,4,8,0.8807970779778823
+161,104,case files filed ammo ship cases ships prop,case files filed casesammo ship shipsprop,3,8,0.935030830871336
+162,516,tell stop calling quit argue talk speak nobody hear everybody listen act shut lie stand fool entertain somebody fight,tell stop calling quit argue talk speak hear listen act shut lie stand fool entertain fight;nobody everybody somebody,2,19,0.9999251537724895
+163,516,tell stop calling quit argue talk speak nobody hear everybody listen act shut lie stand fool entertain somebody fight,tell calling argue talk speak hear listen act lie stand fool entertain fight;stop quit shut;nobody everybody somebody;,3,19,0.9982270454052078
+164,516,tell stop calling quit argue talk speak nobody hear everybody listen act shut lie stand fool entertain somebody fight,"tell, calling, argue, talk, speak, hear, listen, stop, quitnobody, everybody, somebodyact, shut, lie, stand, fool, entertain, fight",4,19,0.991422514586288
+165,165,eyes sharp eye mirror tone hair touch skin clear body angle teeth,"mirror, clearsharp, tone, angle, toucheyes, eye, hair, skin, body, teeth",3,12,0.9820137900379085
+166,165,eyes sharp eye mirror tone hair touch skin clear body angle teeth,eyes eye hair skin body teeth;sharp tone clear angle;mirror;touch,4,12,0.9525741268224331
+167,165,eyes sharp eye mirror tone hair touch skin clear body angle teeth,eyes sharp eye mirror tone hair touch skin body angle teeth;clear,2,12,0.9975273768433653
+168,596,paper mock outline papers essay,paper outline papers essay,1,5,0.9933071490757153
+169,596,paper mock outline papers essay,paper mock outline papers essay,1,5,0.9933071490757153
+170,596,paper mock outline papers essay,paper mock outline papers essay;,1,5,0.9933071490757153
+171,438,attractive embarrassing obviously somehow clearly apparently totally shocked possibly exactly fault hardly sounded completely surprised sadly seemed convinced,"attractive;convinced, obviously, clearly, totally, apparently, exactly, completely, convinced;embarrassing, shocked, fault, surprised;possibly, hardly, somehow, sounded, seemed",4,18,0.9890130573694068
+172,438,attractive embarrassing obviously somehow clearly apparently totally shocked possibly exactly fault hardly sounded completely surprised sadly seemed convinced,"attractiveembarrassing, shocked, sounded, surprised, sadly, convincedobviously, somehow, clearly, apparently, totally, possibly, exactly, hardly, completely, seemedfault",4,18,0.9890130573694068
+173,438,attractive embarrassing obviously somehow clearly apparently totally shocked possibly exactly fault hardly sounded completely surprised sadly seemed convinced,fault;somehow;completely sadly obviously apparently hardly exactly possibly clearly totally;convinced surprised seemed sounded;shocked attractive embarrassing,5,18,0.973403006423134
+174,831,beginnings joyous remembrance prosperous expectant dreary,"beginnings, remembrance, expectantjoyous, prosperous, dreary",2,6,0.9525741268224331
+175,831,beginnings joyous remembrance prosperous expectant dreary,beginnings expectant;joyful remembrance prosperous;dreary;,3,6,0.8807970779778823
+176,831,beginnings joyous remembrance prosperous expectant dreary,beginnings  remembrance;prosperous expectant dreary joyous,2,6,0.9525741268224331
+177,312,augmented fringe contrast slate speck,augmented fringe contrast slate speck,1,5,0.9933071490757153
+178,312,augmented fringe contrast slate speck,augmented fringe,1,5,0.9933071490757153
+179,312,augmented fringe contrast slate speck,"augmentedfringe, speckcontrast, slate",3,5,0.8411308951190849
+180,350,inserted dumps scratched glued shoved sniffed poked spat flashed scraped rubbed chewed severed marbles tossed squeezed wiped licked flushed,inserted dumps scratched glued shoved sniffed poked spat flashed scraped rubbed chewed severed marbles tossed squeezed wiped licked flushed,1,19,0.9999999943972036
+181,350,inserted dumps scratched glued shoved sniffed poked spat flashed scraped rubbed chewed severed marbles tossed squeezed wiped licked flushed,inserted dumps scratched glued shoved sniffed poked spat flashed scraped rubbed chewed severed tossed squeezed wiped licked flushed;marbles,2,19,0.9999251537724895
+182,350,inserted dumps scratched glued shoved sniffed poked spat flashed scraped rubbed chewed severed marbles tossed squeezed wiped licked flushed,"inserted, shoved, poked, scratched, sniffed, flashed, scraped, rubbed, chewed, severed, tossed, squeezed, wiped, licked, flushed, gluedDumps, marbles",2,19,0.9999251537724895
+183,303,dressing fancy wearing wore bathing dressed suits wear clothes pajamas,dressing fancy wearing wore bathing dressed suits wear clothes pajamas;,1,10,0.9999546021312976
+184,303,dressing fancy wearing wore bathing dressed suits wear clothes pajamas,dressing wearing wore dressed suits wear clothes pajamas fancy bathing,1,10,0.9999546021312976
+185,303,dressing fancy wearing wore bathing dressed suits wear clothes pajamas,dressing wearing wore dressed wear fancy;bathing;suits clothes pajamas,3,10,0.9655548043337889
+186,522,glittered voluminous frayed threadbare taut puffed,"glittered, tautvoluminous, puffedfrayed, threadbare",3,6,0.8807970779778823
+187,522,glittered voluminous frayed threadbare taut puffed,frayed threadbare; voluminous taut puffed; glittered,3,6,0.8807970779778823
+188,522,glittered voluminous frayed threadbare taut puffed,glittered voluminous frayed threadbare taut puffed,1,6,0.9975273768433653
+189,571,responsible patient vulnerable psychologist seeking trained skilled experienced,responsible vulnerable seekingpsychologist patient trained skilled experienced,2,8,0.9820137900379085
+190,571,responsible patient vulnerable psychologist seeking trained skilled experienced,responsible trained skilled experienced;patient psychologist;vulnerable;seeking;,4,8,0.8807970779778823
+191,571,responsible patient vulnerable psychologist seeking trained skilled experienced,responsible vulnerable trained skilled experienced;patient psychologist;seeking,3,8,0.935030830871336
+192,849,whir dirge three-dimensional fragrant lapels expanse,whir; dirge;three-dimensional; fragrant; lapels;expanse;,6,6,0.7310585786300049
+193,849,whir dirge three-dimensional fragrant lapels expanse,whir dirge;three-dimensional;fragrant;lapels;expanse;,5,6,0.7685247834990175
+194,849,whir dirge three-dimensional fragrant lapels expanse,whir dirge;three-dimensional expanse;fragrant;lapels;,4,6,0.8175744761936437
+195,432,pistols cleat wagons shooters maniacs swarming canons bandits pigeons,pistols cleat wagons shooters maniacs canons bandits pigeon;swarming,2,9,0.9890130573694068
+196,432,pistols cleat wagons shooters maniacs swarming canons bandits pigeons,pistols shooters canons shooters maniacs bandits;cleat;wagons;swarming;pigeons;,5,9,0.8581489350995123
+197,432,pistols cleat wagons shooters maniacs swarming canons bandits pigeons,"pistols, wagons, canons, pigeonscleatshooters, maniacs, bandits",3,9,0.9525741268224331
+198,641,holds wakes opens leaves sends knocks pulls hopes,holds opens knocks pulls;wakes; hopes;leaves sends,4,8,0.8807970779778823
+199,641,holds wakes opens leaves sends knocks pulls hopes,opens leaves sends knocks pulls holds;wakes;hopes,3,8,0.935030830871336
+200,641,holds wakes opens leaves sends knocks pulls hopes,holds wakes opens leaves sends knocks pulls hopes,1,8,0.9996646498695336
+201,88,visitor alert exchange stock index monthly trade credit weekly,alert exchange stock index monthly trade credit weeklyvisitor,2,9,0.9890130573694068
+202,88,visitor alert exchange stock index monthly trade credit weekly,exchange stock index trade credit ;monthly weekly,2,9,0.9890130573694068
+203,88,visitor alert exchange stock index monthly trade credit weekly,visitor alert exchange stock index monthly trade credit; weekly,2,9,0.9890130573694068
+204,869,congregation lordship pulpit hallowed pews,congregation pews;lordship pulpit hallowed;,2,5,0.9241418199787566
+205,869,congregation lordship pulpit hallowed pews,congregation lordship pulpit pews hallowed,1,5,0.9933071490757153
+206,869,congregation lordship pulpit hallowed pews,"congregation, pulpit, pewslordship, hallowed",2,5,0.9241418199787566
+207,564,hopped sneaked raced lucked,hopped sneaked raced lucked,2,4,0.8807970779778823
+208,564,hopped sneaked raced lucked,hopped sneaked raced lucked,1,4,0.9820137900379085
+209,564,hopped sneaked raced lucked,hopped sneaked raced lucked,1,4,0.9820137900379085
+210,660,concierge tenancy liaison clerical humiliation supervision bereavement,"concierge, liaisontenancy, supervision, clericalhumiliation, bereavement",3,7,0.9116003227929417
+211,660,concierge tenancy liaison clerical humiliation supervision bereavement,concierge tenancy liaison;clerical supervision; humiliation bereavement;,3,7,0.9116003227929417
+212,660,concierge tenancy liaison clerical humiliation supervision bereavement,concierge tenancy liaison clerical; humiliation supervision bereavement,2,7,0.9706877692486436
+213,352,covers ties sets split,covers;ties;sets;split,4,4,0.7310585786300049
+214,352,covers ties sets split,covers ties sets split,1,4,0.9820137900379085
+215,352,covers ties sets split,covers ties sets;split;,2,4,0.8807970779778823
+216,186,titled internationally exclusively,titled;internationally;exclusively,3,3,0.7310585786300049
+217,186,titled internationally exclusively,internationally exclusively;titled,2,3,0.8175744761936437
+218,186,titled internationally exclusively,TITLED INTERNATIONALLY EXCLUSIVELY,1,3,0.9525741268224331
+219,367,path aim ego maintain detect,"path, aimegomaintain, detect",3,5,0.8411308951190849
+220,367,path aim ego maintain detect,path aim maintain detectego,2,5,0.9241418199787566
+221,367,path aim ego maintain detect,path aim ego; maintain detect,2,5,0.9241418199787566
+222,265,ignorant rude polite hypocrite,ignorant rude polite; hypocrite,2,4,0.8807970779778823
+223,265,ignorant rude polite hypocrite,ignorant rude polite hypocrite,1,4,0.9820137900379085
+224,265,ignorant rude polite hypocrite,"ignorant, rude, hypocritepolite",2,4,0.8807970779778823
+225,731,awkwardly politely sits frantically calmly violently seated quietly angrily repeatedly loudly,awkwardly politely frantically calmly violently quietly angrily repeatedly loudly;sits  seated,2,11,0.995929862284104
+226,731,awkwardly politely sits frantically calmly violently seated quietly angrily repeatedly loudly,awkwardly politely  frantically calmly violently quietly angrily repeatedly loudly;sits seated,2,11,0.995929862284104
+227,731,awkwardly politely sits frantically calmly violently seated quietly angrily repeatedly loudly,frantically violently angrily loudlypolitely calmly quietly sits seated,3,11,0.975075573352886
+228,234,bees mice chickens cows turkeys mosquitoes,"bees, mosquitoesmice, cowschickens, turkeys",3,6,0.8807970779778823
+229,234,bees mice chickens cows turkeys mosquitoes,bees mice chickens cows turkeys mosquitoes,1,6,0.9975273768433653
+230,234,bees mice chickens cows turkeys mosquitoes,mice chickens cows turkeys;bees mosquitoes,2,6,0.9525741268224331
+231,767,tedious purposeful costly vigorous debilitating paced heap,tedious vigorous debilitating;purposeful;costly;paced;heap;,5,7,0.8021838885585817
+232,767,tedious purposeful costly vigorous debilitating paced heap,tedious purposeful costly vigorous debilitating paced; heap,2,7,0.9706877692486436
+233,767,tedious purposeful costly vigorous debilitating paced heap,purposeful vigorous paced; tedious debilitating heap costly;,2,7,0.9706877692486436
+234,766,explanations budge co-operate oughta sedate checkbook tempt wanta improvise,"explanations, oughta, wantabudge, co-operate, tempt, improvisesedatecheckbook",4,9,0.9046505351008904
+235,766,explanations budge co-operate oughta sedate checkbook tempt wanta improvise,explanationsbudge co-operate tempt improviseoughta wantasedatecheckbook,5,9,0.8581489350995123
+236,766,explanations budge co-operate oughta sedate checkbook tempt wanta improvise,explanations budge co-operate oughta sedate; checkbook tempt wanta improvise;,2,9,0.9890130573694068
+237,898,extinguish disarm outrun defied inspect,inspect;extinguish disarm outrun,2,5,0.9241418199787566
+238,898,extinguish disarm outrun defied inspect,extinguish disarm inspect;outrun defied;,2,5,0.9241418199787566
+239,898,extinguish disarm outrun defied inspect,extinguish disarm outrun defied inspect,1,5,0.9933071490757153
+240,710,foreheads bulge chests nostrils armpits calves,foreheads nostrils; bulge chests armpits calves;,2,6,0.9525741268224331
+241,710,foreheads bulge chests nostrils armpits calves,foreheads chests nostrils armpits calves;bulge,2,6,0.9525741268224331
+242,710,foreheads bulge chests nostrils armpits calves,foreheads chests nostrils armpits calves;bulge;,2,6,0.9525741268224331
+243,718,lavatory microscope drapery focal showerhead keyhole,lavatory microscope drapery showerhead keyhole;focal,2,6,0.9525741268224331
+244,718,lavatory microscope drapery focal showerhead keyhole,lavatory showerhead drapery keyhole;microscope;focal;,3,6,0.8807970779778823
+245,718,lavatory microscope drapery focal showerhead keyhole,lavatory showerhead;microscope focal;drapery keyhole,3,6,0.8807970779778823
+246,786,glamor moralistic swingy,glamor;moralistic;swingy,3,3,0.7310585786300049
+247,786,glamor moralistic swingy,glamor swingy,1,3,0.9525741268224331
+248,786,glamor moralistic swingy,glamor moralistic swingy,1,3,0.9525741268224331
+249,567,chord mechanics chords instrument blurred,chord mechanics chords instrument; blurred,2,5,0.9241418199787566
+250,567,chord mechanics chords instrument blurred,chord chords instrument;mechanics;blurred;,3,5,0.8411308951190849
+251,567,chord mechanics chords instrument blurred,"chord, chords, instrumentblurredmechanics",3,5,0.8411308951190849
+252,94,stores hostess store booths shops depot,stores store booths shops depot;hostess,2,6,0.9525741268224331
+253,94,stores hostess store booths shops depot,stores hostess store booths shops depot,1,6,0.9975273768433653
+254,94,stores hostess store booths shops depot,STORES STORE BOOTHS SHOPS DEPOTHOSTESS,2,6,0.9525741268224331
+255,690,sadness betrayal anger fears confusion sanity grief disappointment boredom guilt sorrow anticipation loneliness bitterness,sadness betrayal anger fears confusion sanity grief disappointment boredom guilt sorrow anticipation loneliness bitterness,1,14,0.9999991684719722
+256,690,sadness betrayal anger fears confusion sanity grief disappointment boredom guilt sorrow anticipation loneliness bitterness,sadness betrayal anger fears confusion sanity grief disappointment boredom guilt sorrow anticipation loneliness bitterness,1,14,0.9999991684719722
+257,690,sadness betrayal anger fears confusion sanity grief disappointment boredom guilt sorrow anticipation loneliness bitterness,sadness betrayal anger fears confusion sanity grief disappointment boredom guilt sorrow anticipation loneliness bitterness;,1,14,0.9999991684719722
+258,839,thrust barbed dangling motions lint limb circles bending,thrust motions barbed dangling bending circleslintlimb,4,8,0.8807970779778823
+259,839,thrust barbed dangling motions lint limb circles bending,thrust barbed motions lint limb circles; dangling bending,2,8,0.9820137900379085
+260,839,thrust barbed dangling motions lint limb circles bending,"thrust, dangling, motions, limb, circles, bendingbarbedlint",3,8,0.935030830871336
+261,545,tongue head feet heads backs fist fingers arms kisses lips hands mouth finger balls,tongue head hands finger balls feet heads backs fist fingers arms; kisses lips mouth;,2,14,0.9990889488055994
+262,545,tongue head feet heads backs fist fingers arms kisses lips hands mouth finger balls,tongue head feet heads backs fist fingers arms kisses lips hands mouth finger balls,1,14,0.9999991684719722
+263,545,tongue head feet heads backs fist fingers arms kisses lips hands mouth finger balls,tongue head feet heads backs fist fingers arms kisses lips hands mouth finger balls,1,14,0.9999991684719722
+264,551,settled tempted thoroughly satisfied relieved fully encouraged bothered determined desperately comfortable,settled tempted  satisfied relieved encouraged bothered determined comfortable;thoroughly desperately fully,2,11,0.995929862284104
+265,551,settled tempted thoroughly satisfied relieved fully encouraged bothered determined desperately comfortable,"settled, satisfied, relieved, comfortabletempted, botheredthoroughly, fullyencouraged, determined, desperately",4,11,0.9399133498259924
+266,551,settled tempted thoroughly satisfied relieved fully encouraged bothered determined desperately comfortable,settled thoroughly satisfied relieved fully determined comfortable;tempted encouraged bothered desperately;,2,11,0.995929862284104
+267,230,plagued sickened accustomed ridden persuaded betrayed spared disowned tormented neglected stricken,plagued sickened ridden tormented neglected strickenaccustomed persuaded betrayed spared disowned,2,11,0.995929862284104
+268,230,plagued sickened accustomed ridden persuaded betrayed spared disowned tormented neglected stricken,plagued sickened accustomed ridden persuaded betrayed spared disowned tormented neglected stricken,1,11,0.999983298578152
+269,230,plagued sickened accustomed ridden persuaded betrayed spared disowned tormented neglected stricken,"plagued, sickened, ridden, tormented, strickenaccustomed, persuaded, sparedbetrayed, disowned, neglected",3,11,0.975075573352886
+270,276,launched launch expansion,launched launch;expansion,2,3,0.8175744761936437
+271,276,launched launch expansion,launched launch expansion;,1,3,0.9525741268224331
+272,276,launched launch expansion,launched launchexpansion,2,3,0.8175744761936437
+273,736,choking firecrackers spilling cursing spitting grunt chugging,choking spilling cursing spitting grunt chugging;firecrackers,2,7,0.9706877692486436
+274,736,choking firecrackers spilling cursing spitting grunt chugging,choking spitting spilling;firecrackers cursing grunt chugging;,2,7,0.9706877692486436
+275,736,choking firecrackers spilling cursing spitting grunt chugging,choking chugging cursing grunt;firecrackers;spilling spitting,3,7,0.9116003227929417
+276,0,de um do em ``,de um do em,1,5,0.9933071490757153
+277,0,de um do em ``,de um do em,1,5,0.9933071490757153
+278,0,de um do em ``,de um do em,1,5,0.9933071490757153
+279,634,inexperience tenets activism hierarchy reciprocal livelihood,inexperience activism hierarchy reciprocal;tenets livelihood,2,6,0.9525741268224331
+280,634,inexperience tenets activism hierarchy reciprocal livelihood,activism;inexperience;tenets hierarchy;livelihood reciprocal,4,6,0.8175744761936437
+281,634,inexperience tenets activism hierarchy reciprocal livelihood,tenets activism hierarchyinexperiencereciprocallivelihood,4,6,0.8175744761936437
+282,146,strips pounded penetrated,strips;pounded penetrated,2,3,0.8175744761936437
+283,146,strips pounded penetrated,strips pounded penetrated;,1,3,0.9525741268224331
+284,146,strips pounded penetrated,pounded penetrated;strips,2,3,0.8175744761936437
+285,17,kindly shout instant account following limit hacked follow mention favorites followed thirsty,kindly;shout account following limit hacked follow mention favorites followed;instant;thirsty;,4,12,0.9525741268224331
+286,17,kindly shout instant account following limit hacked follow mention favorites followed thirsty,kindly favorites;shout mention;instant following followed limit;account hacked thirsty;,4,12,0.9525741268224331
+287,17,kindly shout instant account following limit hacked follow mention favorites followed thirsty,kindly; instant account following limit hacked follow mention shout favorites followed; thirsty;,3,12,0.9820137900379085
+288,231,farm land farmer plant dealer village factory oyster shelter island neighborhood,farm land farmer plant dealer village factory oyster shelter island neighborhood,1,11,0.999983298578152
+289,231,farm land farmer plant dealer village factory oyster shelter island neighborhood,farm land farmer plant dealer village factory shelter island neighborhoodoyster,3,11,0.975075573352886
+290,231,farm land farmer plant dealer village factory oyster shelter island neighborhood,"farm, land, farmer, plantdealer, factoryvillage, shelter, island, neighborhoodoyster",4,11,0.9399133498259924
+291,628,bespectacled harpy bridegroom well-fed peace-loving redcoats,bespectacled;harpy;well-fed;bridegroom;peace-loving;redcoats;,6,6,0.7310585786300049
+292,628,bespectacled harpy bridegroom well-fed peace-loving redcoats,"bespectacled, well-fed, peace-lovingharpy, bridegroom, redcoats",2,6,0.9525741268224331
+293,628,bespectacled harpy bridegroom well-fed peace-loving redcoats,harpy bridegroom redcoats;well-fed peace-loving bespectacled,2,6,0.9525741268224331
+294,141,missing least ago twice since lost months failed taken once ended seen years row already nearly finally times watched almost yesterday missed,"missing, lost, failed, taken, seen, watched, missedago, since, months, ended, years, already, nearly, finally, times, almost, yesterdayleast, twice, once",3,22,0.9993470346624472
+295,141,missing least ago twice since lost months failed taken once ended seen years row already nearly finally times watched almost yesterday missed,missing lost taken seen watched missed;least since once already nearly finally almost;ago twice months years times yesterday ;failed ended already;,4,22,0.995929862284104
+296,141,missing least ago twice since lost months failed taken once ended seen years row already nearly finally times watched almost yesterday missed,missing missed lost failed taken ended least once twice years times ago months since already nearly finally times yesterday almostseen watchedrow,4,22,0.995929862284104
+298,289,soldiers tribal army navy supreme troops military patriot forces ivory border soldier flag liberty civilian brotherhood,soldiers tribal army navy troops military patriot forces soldier civilian brotherhood;supreme;ivory border flag liberty;,3,16,0.9951952471128405
+299,289,soldiers tribal army navy supreme troops military patriot forces ivory border soldier flag liberty civilian brotherhood,soldiers tribal army navy supreme troops military patriot forces ivory border soldier flag liberty civilian brotherhood,1,16,0.9999998874648379
+300,289,soldiers tribal army navy supreme troops military patriot forces ivory border soldier flag liberty civilian brotherhood,"soldiers, tribal army, navy, troops, military, patriot, forces, border, soldier, flag, liberty, civilian, brotherhoodsupreme",2,16,0.9996646498695336
