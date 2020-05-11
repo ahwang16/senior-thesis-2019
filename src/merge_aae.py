@@ -51,15 +51,26 @@ def create_missing_words_df(df):
 
 
 if __name__ == "__main__":
-	words_dfs = []
+	# words_dfs = []
+	# for x in range(55):
+	# 	try:
+	# 		df = pd.read_csv("aae_words_glove_{}.csv".format(x))
+	# 		words_dfs.append(create_missing_words_df(df))
+	# 		print(x, "works")
+	# 	except:
+	# 		print(x, "does not work")
+
+	# words = pd.concat(words_dfs, axis=0)
+	# words.to_csv("aae_words.csv")
+
+	clusters_dfs = []
 	for x in range(55):
 		try:
-			df = pd.read_csv("aae_words_glove_{}.csv".format(x))
-			words_dfs.append(create_missing_words_df(df))
+			clusters_dfs.append(pd.read_csv("aae_clusters_glove_{}.csv".format(x)))
 			print(x, "works")
 		except:
 			print(x, "does not work")
 
-	words = pd.concat(words_dfs, axis=0)
-	words.to_csv("aae_words.csv")
+	clusters = pd.concat(clusters_dfs, axis=0)
+	clusters.to_csv("aae_clusters.csv")
 
