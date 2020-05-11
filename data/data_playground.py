@@ -1,6 +1,8 @@
 # import pickle as pkl
 # from sklearn.cluster import KMeans
 import sys
+import matplotlib.pyplot as plt
+import pickle as pkl
 
 '''
 with open("kmeans_clusters.pkl", "rb") as k:
@@ -10,6 +12,27 @@ print(clusters)
 '''
 
 if __name__ == "__main__" :
+	sizes = []
+	for x in range(55):
+		try:
+			with open("kmeans_clusters_aae_{}.pkl".format(x), "rb") as infile:
+				cluster_file = pkl.load(infile)
+			for cluster in cluster_file:
+				sizes.append(len(cluster_file[cluster]))
+			print(x, "works")
+		except:
+			print(x, "does not work")
+
+	plt.hist(sizes)
+	plt.title("Size of Clusters (AAE)")
+	plt.xlabel("Number of Words Per Cluster")
+	plt.ylabel("Number of Clusters")
+	plt.savefig("aae_hist.png")
+		
+
+
+
+'''
 	filename = sys.argv[1]
 
 	tweet = open(sys.argv[2], "w")
@@ -35,4 +58,4 @@ if __name__ == "__main__" :
 
 	tweet.close()
 	vocab.close()
-			
+'''		
