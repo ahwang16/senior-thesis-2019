@@ -1,0 +1,41 @@
+corpus,cluster,num_clusters,new_cluster
+2,"dms, msgs, msg",1,dms msgs msg
+2,"em, do, moro, na, nas, da, e",4,do em da; na nas; moro; e
+2,"logo, num, os, com, um, outro, belo, mone, ou, tens, pro",,
+2,"wifi, instagram, twitter, whatsapp, etc, app, google, facebook, internet, mail",3,wifi internet mail google; instagram twitter whatsapp app facebook; etc
+2,"fb, dm, offline, inbox, skype, insta, chat",1,dm chat inbox skype insta offline fb
+2,"sont, qui, ils, ont",,
+2,"gostei, nessa, á, é, nova, uma, tempo, eles, sim, gata, nem, vc, diz, amg, ó ",,
+2,"aff, sai, ja, mae, rs, alo, mor, dai, irma, bj, dae, cu, ali, ri, kk, bia, faze",,
+2,"emojis, interactions, imessage, contacts, messages, loading, notification, emails",1,imessages messages notification emails loading emojis interactions
+2,"jt, rm, rb, rp, item, pcs",,
+2,"diva, anita, anna, nina, vanessa, tia, tati, amanda, laura, bianca, maria, carol, rosa, rita, angla, sara",2,anita anna nina tia tati bianca laura maria rosa rita; carol angla sara vanessa amanda
+2,"bf, ex, gf, ain, crush",2,bf ex gf; ain crush
+2,"bando, macho, gringo, negro, mono, chino",2,gringo negro chino; bando macho mono
+2,"harry, mila, styles, naya, lux, lou, malik, louis, payne, hacked, dmed",3,harry mila naya malik louis payne lou; hacked dmed; lux
+2,"retweeted, deactivate, unblocked, unfollowed, unfriended",1,retweeted deactivate unblocked unfollowed unfriended
+2,"ans, belle, fait, était, montre, encore, petite, quand, qu'il lui, mdr, juste, elle, sorti, est, une, ça, coup, c'est, aussi, vrai",,
+2,"android, samsung, gadget, gb, auto, ipad, galaxy, pc, tab, ipod, tablet, iphone, apple, mini",4,samsung apple galaxy pc; ipad ipod mini iphone tablet gadget; gb; auto tab
+2,"adorable, cutie, pic, gorgeous, handsome, sexy, avi, sweet, cute, cues, perf",4,adorable cutie cute sweet; pic avi perf; gorgeous handsome sexy; cues
+2,"pau, ate, rum, vaca, mole, tweet, mention, spam, twit, unfollow",4,unfollow tweet twit mention spam; vaca rum ate; mole; pau
+2,"real, swag, hot, fake, old, gay, like",2,fake old gay; real swag hot like
+3,"haself, hungova, shleeep",2,hungova shleeep; haself
+3,"deza, lola, c.o",,
+3,"bme, alc, bmg",2,bme bmg; alc
+3,"raveen, quanda, shamira",2,raveen; quanda shamira
+3,"shavon, olda, tameka",2,shavon tameka; olda
+3,"follwing, joinin, ffback",2,follwing ffback; joinin
+3,"suit, front, plush, cocoon",2,suit front plush; cocoon
+3,"awfull, incomprehensible, inhabitants",2,awfull incomprehensible; inhabitants
+3,"awn, thais, chamar",,
+3,"carlin, t., b.",,
+3,"gaga, vote, gq",,
+3,"hilfiger, unisex, linen, satin",2,hilfiger unisex; linen satin
+3,"shootah, hyz, bizz, bakk",3,shootah bakk; hyz; bizz
+3,"emah, erny, mayda",,
+3,"darrion, jaylon, kamiyah, gavee, kalls, jalissa",3,darrion jaylon kamiyah jalissa; gavee; kalls
+3,"verda, estas, borde",,
+3,"using, graph, tracking",2,using; graph tracking
+3,"ivona, mybae, qit, antie",,
+3,"sedikit, abiakan, jareka",,
+3,"demonic, depraved, hyena",2,demonic depraved; hyena
